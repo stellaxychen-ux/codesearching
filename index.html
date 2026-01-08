@@ -45,6 +45,7 @@
       display:flex;
       justify-content:space-between;
       align-items:center;
+      gap:12px;
     }
 
     .title{
@@ -56,6 +57,7 @@
       display:flex;
       gap:10px;
       align-items:center;
+      white-space:nowrap;
     }
 
     .badge{
@@ -65,6 +67,7 @@
       padding:6px 10px;
       border-radius:999px;
       font-weight:600;
+      white-space:nowrap;
     }
 
     .hero{
@@ -138,12 +141,51 @@
       letter-spacing:1px;
       color:#888;
       font-weight:700;
+      display:flex;
+      align-items:center;
+      gap:8px;
+      white-space:nowrap;
     }
 
     .desc{
       margin-top:6px;
       font-size:1.02rem;
       color:#444;
+      line-height:1.35;
+    }
+
+    .meta{
+      margin-top:10px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:12px;
+      color:#9aa0a6;
+      font-size:.85rem;
+    }
+
+    .copy-btn{
+      border:none;
+      background:#eef1f4;
+      color:#333;
+      font-weight:700;
+      padding:8px 10px;
+      border-radius:10px;
+      cursor:pointer;
+      transition:.15s;
+    }
+    .copy-btn:hover{ transform: translateY(-1px); }
+
+    .sym{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      font-size:.72rem;
+      font-weight:800;
+      color:#6b7280;
+      background:#f3f4f6;
+      padding:4px 8px;
+      border-radius:999px;
     }
 
     .empty{
@@ -155,6 +197,7 @@
       box-shadow:var(--shadow);
     }
 
+    /* 分类颜色 */
     .cat-Diag{border-color:#4caf50}
     .cat-Prev{border-color:#8bc34a}
     .cat-Perio{border-color:#ff9800}
@@ -173,7 +216,7 @@
 
   <div class="header">
     <div class="title"><i class="fas fa-tooth"></i> ADA Item Codes</div>
-    <div class="badge">AU · 13th Edition</div>
+    <div class="badge" id="dbStatus">Loading db.json…</div>
   </div>
 
   <div class="hero">
@@ -182,7 +225,7 @@
 
     <div class="search-wrap">
       <i class="fas fa-search"></i>
-      <input id="q" placeholder="e.g. 251, extraction, crown…" />
+      <input id="q" placeholder="e.g. 251, extraction, crown…" autocomplete="off" />
     </div>
   </div>
 
@@ -196,50 +239,183 @@
 </div>
 
 <script>
-let DB = [];
-
-fetch('./db.json')
-  .then(r => r.json())
-  .then(data => DB = data);
-
-const input = document.getElementById('q');
-const results = document.getElementById('results');
-
-function esc(s=''){
-  return s.replace(/[&<>"']/g,m=>({
-    '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'
-  }[m]));
-}
-
-function search(){
-  const q = input.value.toLowerCase().trim();
-  if(!q){
-    results.innerHTML = `<div class="empty"><p>Ready to search ADA database</p></div>`;
-    return;
+  // ---------- Helpers ----------
+  function esc(s=''){
+    return String(s).replace(/[&<>"']/g, m => ({
+      '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'
+    }[m]));
   }
 
-  const hits = DB.filter(x =>
-    x.c.startsWith(q) ||
-    x.d.toLowerCase().includes(q)
-  ).slice(0,80);
-
-  if(!hits.length){
-    results.innerHTML = `<div class="empty">No results for <b>${esc(q)}</b></div>`;
-    return;
+  function categoryFor(codeStr){
+    // 3-digit item number → bucket by hundreds
+    const n = parseInt(codeStr, 10);
+    if (Number.isNaN(n)) return 'Gen';
+    const h = Math.floor(n / 100);
+    const map = {
+      0: 'Diag',
+      1: 'Prev',
+      2: 'Perio',
+      3: 'Surg',
+      4: 'Endo',
+      5: 'Rest',
+      6: 'Pros',
+      7: 'Pros',
+      8: 'Ortho',
+      9: 'Gen'
+    };
+    return map[h] || 'Gen';
   }
 
-  results.innerHTML = hits.map(x=>`
-    <div class="card cat-${esc(x.t)}">
-      <div class="row">
-        <div class="code">#${esc(x.c)}</div>
-        <div class="cat">${esc(x.t)}</div>
+  function debounce(fn, wait=160){
+    let t;
+    return (...args) => {
+      clearTimeout(t);
+      t = setTimeout(() => fn(...args), wait);
+    };
+  }
+
+  async function copyText(text, btn){
+    try{
+      await navigator.clipboard.writeText(text);
+      const old = btn.textContent;
+      btn.textContent = 'Copied!';
+      setTimeout(() => btn.textContent = old, 1200);
+    }catch(e){
+      btn.textContent = 'Copy failed';
+      setTimeout(() => btn.textContent = 'Copy code', 1200);
+    }
+  }
+
+  // ---------- Data ----------
+  // db.json format you have:
+  // [
+  //   { "code": "011", "title": "...", "symbols": ["#"] },
+  //   ...
+  // ]
+  let DB = [];
+  let INDEX = [];
+
+  const input = document.getElementById('q');
+  const results = document.getElementById('results');
+  const dbStatus = document.getElementById('dbStatus');
+
+  function buildIndex(){
+    INDEX = DB.map(x => {
+      const code = String(x.code || '').padStart(3, '0');
+      const title = String(x.title || '');
+      const symbols = Array.isArray(x.symbols) ? x.symbols : [];
+      const cat = categoryFor(code);
+      return {
+        c: code,
+        d: title,
+        t: cat,
+        symbols,
+        _title: title.toLowerCase()
+      };
+    });
+  }
+
+  function renderEmpty(msg){
+    results.innerHTML = `
+      <div class="empty">
+        <i class="fas fa-search" style="font-size:2rem;opacity:.25"></i>
+        <p>${esc(msg)}</p>
       </div>
-      <div class="desc">${esc(x.d)}</div>
-    </div>
-  `).join('');
-}
+    `;
+  }
 
-input.addEventListener('input', search);
+  function renderList(list, totalCount){
+    results.innerHTML =
+      list.map(x => {
+        const sym = (x.symbols && x.symbols.length)
+          ? `<span class="sym">${esc(x.symbols.join(' '))}</span>`
+          : '';
+
+        return `
+          <div class="card cat-${esc(x.t)}">
+            <div class="row">
+              <div class="code">#${esc(x.c)}</div>
+              <div class="cat">${esc(x.t)} ${sym}</div>
+            </div>
+
+            <div class="desc">${esc(x.d)}</div>
+
+            <div class="meta">
+              <span>${esc(x.c)} · ${esc(x.t)}</span>
+              <button class="copy-btn" data-code="${esc(x.c)}">Copy code</button>
+            </div>
+          </div>
+        `;
+      }).join('') +
+      (totalCount > list.length
+        ? `<div class="empty" style="padding:16px;">Showing ${list.length} of ${totalCount}. Refine your keywords.</div>`
+        : '');
+
+    // bind copy buttons
+    document.querySelectorAll('.copy-btn').forEach(btn => {
+      btn.addEventListener('click', () => copyText(btn.dataset.code, btn));
+    });
+  }
+
+  function searchCore(){
+    const q = input.value.toLowerCase().trim();
+
+    if(!q){
+      renderEmpty('Ready to search ADA database');
+      return;
+    }
+
+    // token search: all words must exist in title OR code prefix matches
+    const tokens = q.split(/\s+/).filter(Boolean);
+
+    const hits = INDEX.filter(x => {
+      if (x.c.startsWith(q)) return true;
+      if (tokens.length === 1) return x._title.includes(tokens[0]);
+      return tokens.every(t => x._title.includes(t));
+    });
+
+    // sort: code prefix matches first, then alphabetical
+    hits.sort((a,b) => {
+      const ap = a.c.startsWith(q) ? 0 : 1;
+      const bp = b.c.startsWith(q) ? 0 : 1;
+      if (ap !== bp) return ap - bp;
+      return a.c.localeCompare(b.c);
+    });
+
+    const top = hits.slice(0, 80);
+    if (!hits.length){
+      renderEmpty(`No results for "${q}"`);
+      return;
+    }
+    renderList(top, hits.length);
+  }
+
+  const search = debounce(searchCore, 140);
+
+  input.addEventListener('input', search);
+
+  // ---------- Load db.json ----------
+  (async function init(){
+    try{
+      const r = await fetch('./db.json', { cache: 'no-store' });
+      if(!r.ok) throw new Error('HTTP ' + r.status);
+      DB = await r.json();
+
+      buildIndex();
+      dbStatus.textContent = `Loaded ${INDEX.length} items`;
+      renderEmpty('Ready to search ADA database');
+    }catch(err){
+      dbStatus.textContent = 'Failed to load db.json';
+      results.innerHTML = `
+        <div class="empty">
+          <p><b>db.json load failed</b></p>
+          <p style="margin-top:8px">
+            Make sure <code>db.json</code> is in the same folder as <code>index.html</code>.
+          </p>
+        </div>
+      `;
+    }
+  })();
 </script>
 
 </body>
