@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>ADA Dental Item Codes (AU)</title>
+  <title>ADA Item Codes (AU)</title>
 
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 
@@ -11,19 +11,31 @@
     :root{
       --primary:#007aff;
       --secondary:#5856d6;
+
       --bg:#f2f2f7;
       --card:#ffffff;
       --text:#1c1c1e;
       --muted:#8e8e93;
+
+      --warn-bg:#fff3e0;
+      --warn-text:#e65100;
+
+      --note-bg:#eef7ff;
+      --note-text:#0b62b4;
+
       --radius:16px;
-      --shadow:0 4px 20px rgba(0,0,0,.06);
+      --shadow:0 6px 24px rgba(0,0,0,.08);
+      --shadow-soft:0 2px 12px rgba(0,0,0,.05);
+      --border:rgba(60,60,67,.12);
     }
+
+    *{ box-sizing:border-box; }
 
     body{
       margin:0;
       padding:20px;
       background:var(--bg);
-      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,sans-serif;
+      font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,Helvetica,sans-serif;
       color:var(--text);
       display:flex;
       justify-content:center;
@@ -31,115 +43,72 @@
 
     .app{
       width:100%;
-      max-width:900px;
+      max-width:980px;
       display:flex;
       flex-direction:column;
-      gap:20px;
+      gap:18px;
     }
 
+    /* Header */
     .header{
       background:var(--card);
-      padding:16px 20px;
+      border:1px solid var(--border);
+      padding:14px 16px;
       border-radius:var(--radius);
-      box-shadow:var(--shadow);
+      box-shadow:var(--shadow-soft);
       display:flex;
       justify-content:space-between;
       align-items:center;
       gap:12px;
+      position:sticky;
+      top:12px;
+      z-index:20;
+      backdrop-filter: blur(8px);
     }
 
     .title{
-      font-weight:800;
-      font-size:1.2rem;
-      background:linear-gradient(45deg,var(--primary),var(--secondary));
-      -webkit-background-clip:text;
-      -webkit-text-fill-color:transparent;
+      font-weight:900;
+      font-size:1.1rem;
+      letter-spacing:-.2px;
       display:flex;
-      gap:10px;
       align-items:center;
+      gap:10px;
       white-space:nowrap;
     }
 
-    .badge{
-      font-size:.75rem;
-      background:#eef1f4;
-      color:var(--muted);
-      padding:6px 10px;
-      border-radius:999px;
-      font-weight:600;
-      white-space:nowrap;
-    }
-
-    .hero{
-      background:linear-gradient(135deg,var(--primary),var(--secondary));
-      padding:36px 28px;
-      border-radius:var(--radius);
-      color:#fff;
-      box-shadow:var(--shadow);
-      text-align:center;
-    }
-
-    .hero input{
-      margin-top:16px;
-      width:100%;
-      max-width:620px;
-      padding:18px 24px 18px 48px;
-      border:none;
-      border-radius:999px;
-      font-size:1.05rem;
-      outline:none;
-      box-shadow:0 10px 30px rgba(0,0,0,.25);
-    }
-
-    .search-wrap{
-      position:relative;
-      display:flex;
-      justify-content:center;
-    }
-
-    .search-wrap i{
-      position:absolute;
-      left:calc(50% - 300px + 18px);
-      top:50%;
-      transform:translateY(-50%);
-      color:#999;
-    }
-
-    .results{
-      display:grid;
-      gap:12px;
-    }
-
-    .card{
-      background:#fff;
-      padding:16px 20px;
+    .logo-badge{
+      width:34px;height:34px;
       border-radius:12px;
-      border-left:6px solid #ddd;
-      box-shadow:0 2px 10px rgba(0,0,0,.04);
-      transition:.2s;
-    }
-
-    .card:hover{
-      transform:translateY(-2px);
-      box-shadow:0 8px 20px rgba(0,0,0,.08);
-    }
-
-    .row{
       display:flex;
-      justify-content:space-between;
+      align-items:center;
+      justify-content:center;
+      background:linear-gradient(135deg,var(--primary),var(--secondary));
+      color:#fff;
+      box-shadow:0 10px 25px rgba(0,122,255,.25);
+    }
+
+    .sub{
+      font-size:.82rem;
+      color:var(--muted);
+      margin-top:2px;
+      line-height:1.2;
+    }
+
+    .right{
+      display:flex;
       align-items:center;
       gap:10px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
     }
 
-    .code{
-      font-weight:800;
-      font-size:1.3rem;
-    }
-
-    .cat{
-      font-size:.75rem;
-      letter-spacing:1px;
-      color:#888;
+    .pill{
+      font-size:.78rem;
+      color:var(--muted);
+      background:#eef1f4;
+      border:1px solid rgba(0,0,0,.04);
+      padding:7px 10px;
+      border-radius:999px;
       font-weight:700;
       display:flex;
       align-items:center;
@@ -147,67 +116,296 @@
       white-space:nowrap;
     }
 
-    .desc{
-      margin-top:6px;
+    .pill strong{ color:#111; }
+
+    /* Hero search */
+    .hero{
+      border-radius:var(--radius);
+      background:linear-gradient(135deg,var(--primary),var(--secondary));
+      box-shadow:var(--shadow);
+      padding:22px 18px;
+      color:#fff;
+    }
+
+    .hero-top{
+      display:flex;
+      gap:14px;
+      align-items:flex-start;
+      justify-content:space-between;
+      flex-wrap:wrap;
+    }
+
+    .hero h2{
+      margin:0;
+      font-size:1.25rem;
+      letter-spacing:-.3px;
+    }
+
+    .hero p{
+      margin:6px 0 0;
+      opacity:.9;
+      font-size:.92rem;
+    }
+
+    .search-row{
+      margin-top:14px;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+
+    .search-wrap{
+      flex:1;
+      min-width:260px;
+      position:relative;
+    }
+
+    .search-wrap i{
+      position:absolute;
+      left:16px;
+      top:50%;
+      transform:translateY(-50%);
+      color:#aab2c0;
+    }
+
+    input.search{
+      width:100%;
+      padding:14px 14px 14px 44px;
+      border:none;
+      border-radius:999px;
+      outline:none;
       font-size:1.02rem;
-      color:#444;
+      box-shadow:0 10px 30px rgba(0,0,0,.22);
+    }
+
+    .toggle{
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      border:none;
+      cursor:pointer;
+      border-radius:999px;
+      padding:10px 12px;
+      font-weight:800;
+      font-size:.86rem;
+      display:flex;
+      align-items:center;
+      gap:8px;
+      transition:.15s;
+      user-select:none;
+    }
+    .btn:active{ transform:scale(.98); }
+
+    .btn-ghost{
+      background:rgba(255,255,255,.18);
+      color:#fff;
+      border:1px solid rgba(255,255,255,.22);
+    }
+    .btn-ghost.active{
+      background:#fff;
+      color:#0b0b0c;
+      border-color:rgba(255,255,255,.5);
+    }
+
+    /* Results */
+    .results{
+      display:grid;
+      gap:12px;
+    }
+
+    .empty{
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      padding:38px;
+      text-align:center;
+      color:#9aa0a6;
+      box-shadow:var(--shadow-soft);
+    }
+
+    /* Item card */
+    .card{
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:14px;
+      box-shadow:var(--shadow-soft);
+      overflow:hidden;
+    }
+
+    .card-head{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
+      gap:12px;
+      padding:14px 14px 12px;
+      border-left:6px solid #ddd;
+    }
+
+    .left-info{
+      flex:1;
+      min-width:0;
+    }
+
+    .code{
+      font-weight:950;
+      font-size:1.35rem;
+      letter-spacing:-.6px;
+      display:flex;
+      align-items:center;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    .title-line{
+      margin-top:6px;
+      font-size:1.03rem;
+      color:#2f2f33;
       line-height:1.35;
+      word-break:break-word;
     }
 
     .meta{
       margin-top:10px;
       display:flex;
-      justify-content:space-between;
+      flex-wrap:wrap;
+      gap:8px;
       align-items:center;
-      gap:12px;
-      color:#9aa0a6;
-      font-size:.85rem;
     }
 
-    .copy-btn{
-      border:none;
-      background:#eef1f4;
-      color:#333;
-      font-weight:700;
-      padding:8px 10px;
-      border-radius:10px;
-      cursor:pointer;
-      transition:.15s;
-    }
-    .copy-btn:hover{ transform: translateY(-1px); }
-
-    .sym{
+    .tag{
       display:inline-flex;
       align-items:center;
       gap:6px;
-      font-size:.72rem;
-      font-weight:800;
-      color:#6b7280;
-      background:#f3f4f6;
-      padding:4px 8px;
+      font-size:.78rem;
+      font-weight:900;
+      padding:6px 10px;
       border-radius:999px;
+      border:1px solid rgba(0,0,0,.06);
+      background:#f3f4f6;
+      color:#59606a;
     }
 
-    .empty{
-      background:var(--card);
-      border-radius:var(--radius);
-      padding:40px;
-      text-align:center;
-      color:#999;
-      box-shadow:var(--shadow);
+    .tag-cat{
+      background:#eef7ff;
+      color:#0b62b4;
     }
 
-    /* 分类颜色 */
-    .cat-Diag{border-color:#4caf50}
-    .cat-Prev{border-color:#8bc34a}
-    .cat-Perio{border-color:#ff9800}
-    .cat-Surg{border-color:#f44336}
-    .cat-Endo{border-color:#ff2d55}
-    .cat-Rest{border-color:#2196f3}
-    .cat-Pros{border-color:#00bcd4}
-    .cat-Ortho{border-color:#9c27b0}
-    .cat-Impl{border-color:#795548}
-    .cat-Gen{border-color:#607d8b}
+    .tag-warn{
+      background:var(--warn-bg);
+      color:var(--warn-text);
+    }
+
+    .tag-note{
+      background:rgba(255,255,255,.22);
+      color:#fff;
+      border-color:rgba(255,255,255,.26);
+    }
+
+    .actions{
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+      align-items:flex-end;
+      flex-wrap:wrap;
+    }
+
+    .action-btn{
+      border:none;
+      background:#eef1f4;
+      color:#111;
+      font-weight:900;
+      padding:9px 10px;
+      border-radius:12px;
+      cursor:pointer;
+      transition:.15s;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      font-size:.85rem;
+      white-space:nowrap;
+    }
+    .action-btn:hover{ transform:translateY(-1px); }
+
+    /* Expand details */
+    details{
+      border-top:1px solid var(--border);
+      background:#fafafa;
+    }
+    summary{
+      list-style:none;
+      cursor:pointer;
+      padding:12px 14px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      font-weight:900;
+      color:#2f2f33;
+      user-select:none;
+    }
+    summary::-webkit-details-marker{ display:none; }
+
+    .detail-body{
+      padding:0 14px 14px;
+      color:#404047;
+      font-size:.92rem;
+      line-height:1.5;
+    }
+
+    .callout{
+      margin-top:10px;
+      border-radius:12px;
+      padding:10px 12px;
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+      border:1px solid rgba(0,0,0,.06);
+    }
+
+    .callout.warn{
+      background:var(--warn-bg);
+      color:var(--warn-text);
+    }
+
+    .callout.note{
+      background:var(--note-bg);
+      color:var(--note-text);
+    }
+
+    .hint{
+      margin-top:10px;
+      color:#7a808a;
+      font-size:.85rem;
+    }
+
+    /* Category colors (border-left) */
+    .cat-Diag .card-head{ border-left-color:#4caf50; }
+    .cat-Prev .card-head{ border-left-color:#8bc34a; }
+    .cat-Perio .card-head{ border-left-color:#ff9800; }
+    .cat-Surg .card-head{ border-left-color:#f44336; }
+    .cat-Endo .card-head{ border-left-color:#ff2d55; }
+    .cat-Rest .card-head{ border-left-color:#2196f3; }
+    .cat-Pros .card-head{ border-left-color:#00bcd4; }
+    .cat-Ortho .card-head{ border-left-color:#9c27b0; }
+    .cat-Impl .card-head{ border-left-color:#795548; }
+    .cat-Gen  .card-head{ border-left-color:#607d8b; }
+
+    mark{
+      background:rgba(255, 214, 10, .35);
+      padding:0 2px;
+      border-radius:4px;
+    }
+
+    @media (max-width: 520px){
+      body{ padding:14px; }
+      .header{ top:10px; }
+      .actions{ flex-direction:row; align-items:center; }
+      .action-btn{ padding:9px 10px; }
+    }
   </style>
 </head>
 
@@ -215,17 +413,44 @@
 <div class="app">
 
   <div class="header">
-    <div class="title"><i class="fas fa-tooth"></i> ADA Item Codes</div>
-    <div class="badge" id="dbStatus">Loading db.json…</div>
+    <div>
+      <div class="title">
+        <div class="logo-badge"><i class="fas fa-tooth"></i></div>
+        <div>
+          ADA Item Codes (AU)
+          <div class="sub">Search codes & titles • Notion-friendly</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="right">
+      <div class="pill" id="dbStatus"><i class="fa-solid fa-database"></i> Loading…</div>
+      <div class="pill" id="hitStatus"><i class="fa-solid fa-magnifying-glass"></i> <strong>0</strong> hits</div>
+    </div>
   </div>
 
   <div class="hero">
-    <h2 style="margin:0">Australian Dental Association</h2>
-    <p style="opacity:.9;margin:6px 0 0">Search by code or keyword</p>
+    <div class="hero-top">
+      <div>
+        <h2>Australian Dental Association</h2>
+        <p>输入 <b>代码</b>（例如 251）或 <b>关键词</b>（extraction / crown / radiograph…）</p>
+      </div>
 
-    <div class="search-wrap">
-      <i class="fas fa-search"></i>
-      <input id="q" placeholder="e.g. 251, extraction, crown…" autocomplete="off" />
+      <div class="toggle">
+        <button class="btn btn-ghost" id="btnWarnOnly"><i class="fa-solid fa-triangle-exclamation"></i> Warnings only</button>
+        <button class="btn btn-ghost" id="btnClear"><i class="fa-solid fa-xmark"></i> Clear</button>
+      </div>
+    </div>
+
+    <div class="search-row">
+      <div class="search-wrap">
+        <i class="fas fa-search"></i>
+        <input id="q" class="search" placeholder="Try: 251 / extraction / consult / bitewing…" autocomplete="off" />
+      </div>
+    </div>
+
+    <div class="hint" style="color:rgba(255,255,255,.85);">
+      Tip: 支持多词搜索（例如 <b>root canal</b>）。结果默认最多显示 80 条。
     </div>
   </div>
 
@@ -239,78 +464,123 @@
 </div>
 
 <script>
-  // ---------- Helpers ----------
+  // db.json format:
+  // [
+  //   { "code": "011", "title": "...", "symbols": ["#"] },
+  //   ...
+  // ]
+
+  const input = document.getElementById('q');
+  const results = document.getElementById('results');
+  const dbStatus = document.getElementById('dbStatus');
+  const hitStatus = document.getElementById('hitStatus');
+  const btnWarnOnly = document.getElementById('btnWarnOnly');
+  const btnClear = document.getElementById('btnClear');
+
+  let DB = [];
+  let INDEX = [];
+  let WARN_ONLY = false;
+
   function esc(s=''){
     return String(s).replace(/[&<>"']/g, m => ({
       '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'
     }[m]));
   }
 
+  function debounce(fn, wait=140){
+    let t;
+    return (...args) => { clearTimeout(t); t = setTimeout(() => fn(...args), wait); };
+  }
+
   function categoryFor(codeStr){
-    // 3-digit item number → bucket by hundreds
     const n = parseInt(codeStr, 10);
     if (Number.isNaN(n)) return 'Gen';
     const h = Math.floor(n / 100);
-    const map = {
-      0: 'Diag',
-      1: 'Prev',
-      2: 'Perio',
-      3: 'Surg',
-      4: 'Endo',
-      5: 'Rest',
-      6: 'Pros',
-      7: 'Pros',
-      8: 'Ortho',
-      9: 'Gen'
-    };
+    const map = {0:'Diag',1:'Prev',2:'Perio',3:'Surg',4:'Endo',5:'Rest',6:'Pros',7:'Pros',8:'Ortho',9:'Gen'};
     return map[h] || 'Gen';
   }
 
-  function debounce(fn, wait=160){
-    let t;
-    return (...args) => {
-      clearTimeout(t);
-      t = setTimeout(() => fn(...args), wait);
-    };
+  // Convert symbols to human-friendly tags/callouts (no guessing specific rules)
+  function symbolMeta(symbols){
+    const set = new Set((symbols || []).map(String));
+    const hasAny = set.size > 0;
+
+    const tags = [];
+    const callouts = [];
+
+    // Generic guidance: symbol means "there are notes/restrictions in the schedule for this item"
+    if (hasAny){
+      tags.push({ kind:'warn', text:`Notes ${[...set].join(' ')}` });
+      callouts.push({
+        kind:'warn',
+        icon:'fa-solid fa-triangle-exclamation',
+        title:'Notes / restrictions exist in the ADA schedule',
+        body:`This item has symbol(s): <b>${esc([...set].join(' '))}</b>. Please check the official Schedule & Glossary notes for eligibility/limitations.`
+      });
+    }
+
+    // If specific known symbols appear, add a lighter extra hint (still not claiming exact rule)
+    if (set.has('T')){
+      callouts.push({
+        kind:'note',
+        icon:'fa-solid fa-circle-info',
+        title:'T symbol',
+        body:'Marked with <b>T</b> in the source document. Treat this as “check the schedule notes” before claiming.'
+      });
+    }
+    if (set.has('#')){
+      callouts.push({
+        kind:'note',
+        icon:'fa-solid fa-circle-info',
+        title:'# symbol',
+        body:'Marked with <b>#</b> in the source document. Usually indicates additional notes apply—confirm in the schedule before use.'
+      });
+    }
+
+    return { tags, callouts };
   }
 
-  async function copyText(text, btn){
+  function highlight(text, q){
+    if (!q) return esc(text);
+    const tokens = q.split(/\s+/).filter(Boolean).slice(0,6);
+    if (!tokens.length) return esc(text);
+
+    let safe = esc(text);
+    tokens.forEach(t => {
+      const tt = esc(t);
+      // simple case-insensitive highlight via regex on escaped string
+      try{
+        const re = new RegExp(tt.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'), 'ig');
+        safe = safe.replace(re, m => `<mark>${m}</mark>`);
+      }catch(e){}
+    });
+    return safe;
+  }
+
+  async function copyToClipboard(text, btn){
     try{
       await navigator.clipboard.writeText(text);
-      const old = btn.textContent;
-      btn.textContent = 'Copied!';
-      setTimeout(() => btn.textContent = old, 1200);
+      const old = btn.innerHTML;
+      btn.innerHTML = '<i class="fa-solid fa-check"></i> Copied';
+      setTimeout(() => btn.innerHTML = old, 1100);
     }catch(e){
-      btn.textContent = 'Copy failed';
-      setTimeout(() => btn.textContent = 'Copy code', 1200);
+      btn.innerHTML = '<i class="fa-solid fa-xmark"></i> Failed';
+      setTimeout(() => btn.innerHTML = '<i class="fa-regular fa-copy"></i> Copy', 1100);
     }
   }
 
-  // ---------- Data ----------
-  // db.json format you have:
-  // [
-  //   { "code": "011", "title": "...", "symbols": ["#"] },
-  //   ...
-  // ]
-  let DB = [];
-  let INDEX = [];
-
-  const input = document.getElementById('q');
-  const results = document.getElementById('results');
-  const dbStatus = document.getElementById('dbStatus');
-
   function buildIndex(){
     INDEX = DB.map(x => {
-      const code = String(x.code || '').padStart(3, '0');
+      const code = String(x.code || '').padStart(3,'0');
       const title = String(x.title || '');
       const symbols = Array.isArray(x.symbols) ? x.symbols : [];
       const cat = categoryFor(code);
+      const meta = symbolMeta(symbols);
       return {
-        c: code,
-        d: title,
-        t: cat,
-        symbols,
-        _title: title.toLowerCase()
+        code, title, cat, symbols,
+        _title: title.toLowerCase(),
+        _warn: (symbols && symbols.length) ? 1 : 0,
+        _meta: meta
       };
     });
   }
@@ -324,94 +594,156 @@
     `;
   }
 
-  function renderList(list, totalCount){
-    results.innerHTML =
-      list.map(x => {
-        const sym = (x.symbols && x.symbols.length)
-          ? `<span class="sym">${esc(x.symbols.join(' '))}</span>`
-          : '';
+  function renderList(list, totalHits, q){
+    hitStatus.innerHTML = `<i class="fa-solid fa-magnifying-glass"></i> <strong>${totalHits}</strong> hits`;
 
-        return `
-          <div class="card cat-${esc(x.t)}">
-            <div class="row">
-              <div class="code">#${esc(x.c)}</div>
-              <div class="cat">${esc(x.t)} ${sym}</div>
+    results.innerHTML = list.map(item => {
+      const metaTags = [
+        { kind:'cat', text: item.cat },
+        ...(item._meta.tags || [])
+      ];
+
+      const tagsHtml = metaTags.map(t => {
+        const cls = t.kind === 'warn' ? 'tag tag-warn' : (t.kind === 'cat' ? 'tag tag-cat' : 'tag');
+        const icon = t.kind === 'warn' ? '<i class="fa-solid fa-triangle-exclamation"></i>' : '<i class="fa-solid fa-tag"></i>';
+        return `<span class="${cls}">${icon} ${esc(t.text)}</span>`;
+      }).join('');
+
+      const detailCallouts = (item._meta.callouts || []).map(c => `
+        <div class="callout ${c.kind}">
+          <i class="${esc(c.icon)}" style="margin-top:2px;"></i>
+          <div>
+            <div style="font-weight:900;margin-bottom:3px;">${esc(c.title)}</div>
+            <div>${c.body}</div>
+          </div>
+        </div>
+      `).join('');
+
+      return `
+        <div class="card cat-${esc(item.cat)}">
+          <div class="card-head">
+            <div class="left-info">
+              <div class="code">#${esc(item.code)}</div>
+              <div class="title-line">${highlight(item.title, q)}</div>
+              <div class="meta">${tagsHtml}</div>
             </div>
 
-            <div class="desc">${esc(x.d)}</div>
-
-            <div class="meta">
-              <span>${esc(x.c)} · ${esc(x.t)}</span>
-              <button class="copy-btn" data-code="${esc(x.c)}">Copy code</button>
+            <div class="actions">
+              <button class="action-btn" data-copy="${esc(item.code)}" data-mode="code">
+                <i class="fa-regular fa-copy"></i> Copy code
+              </button>
+              <button class="action-btn" data-copy="${esc(item.code)} — ${esc(item.title)}" data-mode="full">
+                <i class="fa-regular fa-copy"></i> Copy full
+              </button>
             </div>
           </div>
-        `;
-      }).join('') +
-      (totalCount > list.length
-        ? `<div class="empty" style="padding:16px;">Showing ${list.length} of ${totalCount}. Refine your keywords.</div>`
-        : '');
+
+          <details>
+            <summary>
+              <span><i class="fa-solid fa-circle-info"></i> Details</span>
+              <span style="color:#8e8e93;font-weight:900;">
+                ${item.symbols && item.symbols.length ? `Symbols: ${esc(item.symbols.join(' '))}` : 'No symbols'}
+                &nbsp; <i class="fa-solid fa-chevron-down"></i>
+              </span>
+            </summary>
+            <div class="detail-body">
+              <div><b>Item code:</b> ${esc(item.code)}</div>
+              <div><b>Category:</b> ${esc(item.cat)}</div>
+              <div><b>Title:</b> ${esc(item.title)}</div>
+
+              ${detailCallouts || ''}
+
+              <div class="hint">
+                If you need the *exact* official rule text (e.g., “cannot be claimed with …”), we can extend the extractor to pull the notes per item into db.json.
+              </div>
+            </div>
+          </details>
+        </div>
+      `;
+    }).join('') + (totalHits > list.length
+      ? `<div class="empty" style="padding:16px;">Showing ${list.length} of ${totalHits}. Refine keywords for more precise results.</div>`
+      : '');
 
     // bind copy buttons
-    document.querySelectorAll('.copy-btn').forEach(btn => {
-      btn.addEventListener('click', () => copyText(btn.dataset.code, btn));
+    document.querySelectorAll('[data-copy]').forEach(btn => {
+      btn.addEventListener('click', () => copyToClipboard(btn.dataset.copy, btn));
     });
   }
 
   function searchCore(){
     const q = input.value.toLowerCase().trim();
 
-    if(!q){
+    if (!q){
       renderEmpty('Ready to search ADA database');
+      hitStatus.innerHTML = `<i class="fa-solid fa-magnifying-glass"></i> <strong>0</strong> hits`;
       return;
     }
 
-    // token search: all words must exist in title OR code prefix matches
     const tokens = q.split(/\s+/).filter(Boolean);
 
-    const hits = INDEX.filter(x => {
-      if (x.c.startsWith(q)) return true;
+    let hits = INDEX.filter(x => {
+      if (x.code.startsWith(q)) return true;
       if (tokens.length === 1) return x._title.includes(tokens[0]);
       return tokens.every(t => x._title.includes(t));
     });
 
-    // sort: code prefix matches first, then alphabetical
+    if (WARN_ONLY){
+      hits = hits.filter(x => x._warn === 1);
+    }
+
+    // sort: code prefix match first, then warnings first, then code asc
     hits.sort((a,b) => {
-      const ap = a.c.startsWith(q) ? 0 : 1;
-      const bp = b.c.startsWith(q) ? 0 : 1;
+      const ap = a.code.startsWith(q) ? 0 : 1;
+      const bp = b.code.startsWith(q) ? 0 : 1;
       if (ap !== bp) return ap - bp;
-      return a.c.localeCompare(b.c);
+      if (b._warn !== a._warn) return b._warn - a._warn;
+      return a.code.localeCompare(b.code);
     });
 
-    const top = hits.slice(0, 80);
     if (!hits.length){
       renderEmpty(`No results for "${q}"`);
+      hitStatus.innerHTML = `<i class="fa-solid fa-magnifying-glass"></i> <strong>0</strong> hits`;
       return;
     }
-    renderList(top, hits.length);
+
+    const top = hits.slice(0, 80);
+    renderList(top, hits.length, q);
   }
 
-  const search = debounce(searchCore, 140);
+  const search = debounce(searchCore, 130);
+
+  btnWarnOnly.addEventListener('click', () => {
+    WARN_ONLY = !WARN_ONLY;
+    btnWarnOnly.classList.toggle('active', WARN_ONLY);
+    searchCore();
+  });
+
+  btnClear.addEventListener('click', () => {
+    input.value = '';
+    WARN_ONLY = false;
+    btnWarnOnly.classList.remove('active');
+    renderEmpty('Ready to search ADA database');
+    hitStatus.innerHTML = `<i class="fa-solid fa-magnifying-glass"></i> <strong>0</strong> hits`;
+    input.focus();
+  });
 
   input.addEventListener('input', search);
 
-  // ---------- Load db.json ----------
+  // Load db.json
   (async function init(){
     try{
       const r = await fetch('./db.json', { cache: 'no-store' });
       if(!r.ok) throw new Error('HTTP ' + r.status);
       DB = await r.json();
-
       buildIndex();
-      dbStatus.textContent = `Loaded ${INDEX.length} items`;
+      dbStatus.innerHTML = `<i class="fa-solid fa-database"></i> Loaded <strong>${INDEX.length}</strong>`;
       renderEmpty('Ready to search ADA database');
     }catch(err){
-      dbStatus.textContent = 'Failed to load db.json';
+      dbStatus.innerHTML = `<i class="fa-solid fa-database"></i> Failed`;
       results.innerHTML = `
         <div class="empty">
           <p><b>db.json load failed</b></p>
-          <p style="margin-top:8px">
-            Make sure <code>db.json</code> is in the same folder as <code>index.html</code>.
-          </p>
+          <p style="margin-top:8px">Make sure <code>db.json</code> is in the same folder as <code>index.html</code>.</p>
         </div>
       `;
     }
