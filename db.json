@@ -1,0 +1,1889 @@
+[
+  {
+    "code": "011",
+    "title": "Comprehensive oral examination",
+    "symbols": [
+      "#"
+    ]
+  },
+  {
+    "code": "012",
+    "title": "Periodic oral examination",
+    "symbols": []
+  },
+  {
+    "code": "013",
+    "title": "Oral examination – limited",
+    "symbols": []
+  },
+  {
+    "code": "014",
+    "title": "Consultation",
+    "symbols": [
+      "#"
+    ]
+  },
+  {
+    "code": "015",
+    "title": "Consultation – extended (30 minutes or more)",
+    "symbols": [
+      "#"
+    ]
+  },
+  {
+    "code": "016",
+    "title": "Consultation by referral",
+    "symbols": [
+      "#"
+    ]
+  },
+  {
+    "code": "017",
+    "title": "Consultation by referral – extended (30 minutes or more)",
+    "symbols": [
+      "#"
+    ]
+  },
+  {
+    "code": "018",
+    "title": "Written report (not elsewhere included)",
+    "symbols": [
+      "T"
+    ]
+  },
+  {
+    "code": "019",
+    "title": "Referral",
+    "symbols": [
+      "#"
+    ]
+  },
+  {
+    "code": "022",
+    "title": "Intraoral radiograph – per exposure",
+    "symbols": [
+      "#"
+    ]
+  },
+  {
+    "code": "026",
+    "title": "Cone Beam Computed Tomography – scan acquisition – per appointment",
+    "symbols": [
+      "#"
+    ]
+  },
+  {
+    "code": "035",
+    "title": "relocation following dislocation",
+    "symbols": []
+  },
+  {
+    "code": "036",
+    "title": "Ceramic restorations: see Tooth-coloured restorations –",
+    "symbols": []
+  },
+  {
+    "code": "037",
+    "title": "Panoramic radiograph – per exposure",
+    "symbols": [
+      "#"
+    ]
+  },
+  {
+    "code": "038",
+    "title": "Hand-wrist radiograph for skeletal age assessment",
+    "symbols": [
+      "#"
+    ]
+  },
+  {
+    "code": "039",
+    "title": "Computed tomography of the skull or parts thereof",
+    "symbols": [
+      "#"
+    ]
+  },
+  {
+    "code": "041",
+    "title": "Bacteriological examination",
+    "symbols": []
+  },
+  {
+    "code": "042",
+    "title": "Culture examination and identification",
+    "symbols": []
+  },
+  {
+    "code": "043",
+    "title": "Antibiotic sensitivity test",
+    "symbols": []
+  },
+  {
+    "code": "044",
+    "title": "Collection of specimen for pathology examination",
+    "symbols": []
+  },
+  {
+    "code": "047",
+    "title": "Saliva screening test",
+    "symbols": []
+  },
+  {
+    "code": "048",
+    "title": "Microbiological screening test",
+    "symbols": []
+  },
+  {
+    "code": "051",
+    "title": "Biopsy of tissue",
+    "symbols": []
+  },
+  {
+    "code": "052",
+    "title": "Histopathological examination of tissue",
+    "symbols": []
+  },
+  {
+    "code": "053",
+    "title": "Cytological investigation",
+    "symbols": []
+  },
+  {
+    "code": "055",
+    "title": "Blood collection",
+    "symbols": []
+  },
+  {
+    "code": "056",
+    "title": "Haematological examination",
+    "symbols": []
+  },
+  {
+    "code": "057",
+    "title": "Procedures to derive biologically active components from a collection of blood",
+    "symbols": []
+  },
+  {
+    "code": "059",
+    "title": "Comprehensive head and neck cancer examination and risk assessment",
+    "symbols": []
+  },
+  {
+    "code": "061",
+    "title": "Pulp testing – per appointment",
+    "symbols": []
+  },
+  {
+    "code": "071",
+    "title": "Diagnostic model – per model",
+    "symbols": [
+      "#"
+    ]
+  },
+  {
+    "code": "072",
+    "title": "Photographic records – intraoral – per appointment",
+    "symbols": [
+      "#"
+    ]
+  },
+  {
+    "code": "073",
+    "title": "Photographic records – extraoral – per appointment",
+    "symbols": [
+      "#"
+    ]
+  },
+  {
+    "code": "074",
+    "title": "Diagnostic modelling – physical – per tooth",
+    "symbols": [
+      "#"
+    ]
+  },
+  {
+    "code": "075",
+    "title": "Diagnostic modelling – digital – per tooth",
+    "symbols": [
+      "#"
+    ]
+  },
+  {
+    "code": "076",
+    "title": "Intraoral evaluation of diagnostic modelling – per tooth or tooth replacement",
+    "symbols": [
+      "#"
+    ]
+  },
+  {
+    "code": "081",
+    "title": "Cephalometric analysis – excluding radiographs",
+    "symbols": [
+      "#"
+    ]
+  },
+  {
+    "code": "082",
+    "title": "Tooth-jaw size prediction analysis",
+    "symbols": [
+      "#"
+    ]
+  },
+  {
+    "code": "083",
+    "title": "Tomographic analysis",
+    "symbols": [
+      "#"
+    ]
+  },
+  {
+    "code": "087",
+    "title": "Cone Beam Computed Tomography analysis and/or interpretation – small field of view",
+    "symbols": []
+  },
+  {
+    "code": "088",
+    "title": "Cone Beam Computed Tomography analysis and/or interpretation – maxillary or mandibular",
+    "symbols": []
+  },
+  {
+    "code": "089",
+    "title": "Cone Beam Computed Tomography analysis and/or interpretation – maxillary and mandibular",
+    "symbols": []
+  },
+  {
+    "code": "090",
+    "title": "Cone Beam Computed Tomography analysis and/or interpretation",
+    "symbols": []
+  },
+  {
+    "code": "091",
+    "title": "Cone Beam Computed Tomography analysis and/or interpretation – orofacial structures",
+    "symbols": [
+      "#"
+    ]
+  },
+  {
+    "code": "111",
+    "title": "Removal of plaque and/or stain",
+    "symbols": [
+      "#"
+    ]
+  },
+  {
+    "code": "113",
+    "title": "remineralisation agents",
+    "symbols": []
+  },
+  {
+    "code": "114",
+    "title": "Removal of calculus – first appointment",
+    "symbols": []
+  },
+  {
+    "code": "115",
+    "title": "Removal of calculus – subsequent appointment",
+    "symbols": []
+  },
+  {
+    "code": "116",
+    "title": "Enamel micro-abrasion – per tooth",
+    "symbols": []
+  },
+  {
+    "code": "117",
+    "title": "provision of medicament",
+    "symbols": []
+  },
+  {
+    "code": "118",
+    "title": "home application",
+    "symbols": []
+  },
+  {
+    "code": "122",
+    "title": "provision of medicament",
+    "symbols": []
+  },
+  {
+    "code": "123",
+    "title": "Application of a cariostatic agent – per tooth",
+    "symbols": []
+  },
+  {
+    "code": "131",
+    "title": "Dietary analysis and advice",
+    "symbols": []
+  },
+  {
+    "code": "141",
+    "title": "Oral hygiene instruction",
+    "symbols": []
+  },
+  {
+    "code": "142",
+    "title": "Tobacco counselling",
+    "symbols": []
+  },
+  {
+    "code": "151",
+    "title": "Provision of a mouthguard – indirect",
+    "symbols": [
+      "T"
+    ]
+  },
+  {
+    "code": "153",
+    "title": "Bi-maxillary mouthguard – indirect",
+    "symbols": [
+      "T"
+    ]
+  },
+  {
+    "code": "161",
+    "title": "Fissure and/or tooth surface sealing – per tooth",
+    "symbols": []
+  },
+  {
+    "code": "163",
+    "title": "Resin infiltration – per tooth",
+    "symbols": [
+      "#"
+    ]
+  },
+  {
+    "code": "165",
+    "title": "Desensitising procedure – per appointment",
+    "symbols": []
+  },
+  {
+    "code": "171",
+    "title": "Odontoplasty – per tooth",
+    "symbols": []
+  },
+  {
+    "code": "213",
+    "title": "Treatment of acute periodontal infection – per appointment",
+    "symbols": []
+  },
+  {
+    "code": "221",
+    "title": "Clinical periodontal analysis and recording",
+    "symbols": []
+  },
+  {
+    "code": "222",
+    "title": "Periodontal debridement – per tooth",
+    "symbols": []
+  },
+  {
+    "code": "223",
+    "title": "Non-surgical treatment of peri-implant disease – per implant",
+    "symbols": []
+  },
+  {
+    "code": "231",
+    "title": "Gingivectomy – per tooth",
+    "symbols": []
+  },
+  {
+    "code": "232",
+    "title": "Periodontal flap surgery – per tooth",
+    "symbols": []
+  },
+  {
+    "code": "233",
+    "title": "Surgical treatment of peri-implant disease – per implant",
+    "symbols": []
+  },
+  {
+    "code": "234",
+    "title": "Application of biologically active material",
+    "symbols": []
+  },
+  {
+    "code": "235",
+    "title": "xenograft",
+    "symbols": []
+  },
+  {
+    "code": "236",
+    "title": "Guided tissue regeneration – per tooth or implant",
+    "symbols": []
+  },
+  {
+    "code": "237",
+    "title": "Guided tissue regeneration – membrane removal",
+    "symbols": []
+  },
+  {
+    "code": "238",
+    "title": "Periodontal surgery for crown lengthening – per tooth",
+    "symbols": []
+  },
+  {
+    "code": "239",
+    "title": "Gingival xenograft – per tooth",
+    "symbols": []
+  },
+  {
+    "code": "241",
+    "title": "Root resection – per root",
+    "symbols": []
+  },
+  {
+    "code": "242",
+    "title": "Osseous surgery – per tooth or implant",
+    "symbols": []
+  },
+  {
+    "code": "243",
+    "title": "Osseous graft – per tooth or implant",
+    "symbols": []
+  },
+  {
+    "code": "244",
+    "title": "Osseous graft – block",
+    "symbols": []
+  },
+  {
+    "code": "245",
+    "title": "Periodontal surgery involving one tooth",
+    "symbols": []
+  },
+  {
+    "code": "246",
+    "title": "Maxillary sinus augmentation – trans-alveolar technique – per sinus",
+    "symbols": []
+  },
+  {
+    "code": "247",
+    "title": "Maxillary sinus augmentation – lateral wall approach – per sinus",
+    "symbols": []
+  },
+  {
+    "code": "250",
+    "title": "Active non-surgical periodontal therapy – per quadrant",
+    "symbols": []
+  },
+  {
+    "code": "251",
+    "title": "Supportive periodontal therapy – per appointment",
+    "symbols": []
+  },
+  {
+    "code": "311",
+    "title": "Removal of a tooth or part(s) thereof",
+    "symbols": []
+  },
+  {
+    "code": "314",
+    "title": "Sectional removal of a tooth or part(s) thereof",
+    "symbols": []
+  },
+  {
+    "code": "322",
+    "title": "Surgical removal of a tooth or tooth fragment not requiring removal of bone or tooth division",
+    "symbols": []
+  },
+  {
+    "code": "324",
+    "title": "Surgical removal of a tooth or tooth fragment requiring bone removal and/or tooth division",
+    "symbols": []
+  },
+  {
+    "code": "331",
+    "title": "Alveoloplasty – per segment",
+    "symbols": []
+  },
+  {
+    "code": "332",
+    "title": "Ostectomy – per jaw",
+    "symbols": []
+  },
+  {
+    "code": "337",
+    "title": "Reduction of fibrous tuberosity",
+    "symbols": []
+  },
+  {
+    "code": "338",
+    "title": "Reduction of flabby ridge – per segment",
+    "symbols": []
+  },
+  {
+    "code": "341",
+    "title": "Removal of hyperplastic tissue",
+    "symbols": []
+  },
+  {
+    "code": "343",
+    "title": "Repositioning of muscle attachment",
+    "symbols": []
+  },
+  {
+    "code": "344",
+    "title": "Vestibuloplasty",
+    "symbols": []
+  },
+  {
+    "code": "345",
+    "title": "Skin or mucosal graft",
+    "symbols": []
+  },
+  {
+    "code": "351",
+    "title": "Repair of skin and subcutaneous tissue or mucous membrane",
+    "symbols": []
+  },
+  {
+    "code": "352",
+    "title": "Fracture of maxilla or mandible – not requiring fixation",
+    "symbols": []
+  },
+  {
+    "code": "353",
+    "title": "Fracture of maxilla or mandible – with wiring of teeth or intraoral fixation",
+    "symbols": []
+  },
+  {
+    "code": "354",
+    "title": "Fracture of maxilla or mandible – with external fixation",
+    "symbols": []
+  },
+  {
+    "code": "355",
+    "title": "Fracture of zygoma",
+    "symbols": []
+  },
+  {
+    "code": "359",
+    "title": "Fracture of the maxilla or mandible requiring open reduction",
+    "symbols": []
+  },
+  {
+    "code": "361",
+    "title": "Mandible – relocation following dislocation",
+    "symbols": []
+  },
+  {
+    "code": "363",
+    "title": "Mandible – relocation requiring open operation",
+    "symbols": []
+  },
+  {
+    "code": "365",
+    "title": "Osteotomy – maxilla",
+    "symbols": []
+  },
+  {
+    "code": "366",
+    "title": "Osteotomy – mandible",
+    "symbols": []
+  },
+  {
+    "code": "373",
+    "title": "Botulinum",
+    "symbols": []
+  },
+  {
+    "code": "375",
+    "title": "Surgery to salivary duct",
+    "symbols": []
+  },
+  {
+    "code": "376",
+    "title": "Surgery to salivary gland",
+    "symbols": []
+  },
+  {
+    "code": "377",
+    "title": "Repair of soft tissue",
+    "symbols": []
+  },
+  {
+    "code": "378",
+    "title": "Surgical removal of foreign body",
+    "symbols": []
+  },
+  {
+    "code": "379",
+    "title": "Marsupialisation of cyst",
+    "symbols": []
+  },
+  {
+    "code": "381",
+    "title": "Surgical exposure of an unerupted tooth – per tooth",
+    "symbols": []
+  },
+  {
+    "code": "382",
+    "title": "Surgical exposure and attachment of device for orthodontic traction",
+    "symbols": []
+  },
+  {
+    "code": "384",
+    "title": "Repositioning of displaced tooth/teeth – per tooth",
+    "symbols": []
+  },
+  {
+    "code": "385",
+    "title": "Surgical repositioning of unerupted tooth – per tooth",
+    "symbols": []
+  },
+  {
+    "code": "386",
+    "title": "Splinting of displaced tooth/teeth – per displaced tooth",
+    "symbols": []
+  },
+  {
+    "code": "387",
+    "title": "Replantation and splinting of a tooth – per avulsed or intentionally removed tooth",
+    "symbols": []
+  },
+  {
+    "code": "388",
+    "title": "Transplantation of tooth or tooth bud",
+    "symbols": []
+  },
+  {
+    "code": "389",
+    "title": "Surgery to isolate and preserve neurovascular tissue",
+    "symbols": []
+  },
+  {
+    "code": "391",
+    "title": "Surgical intervention of a frenum",
+    "symbols": []
+  },
+  {
+    "code": "392",
+    "title": "Drainage of abscess",
+    "symbols": []
+  },
+  {
+    "code": "393",
+    "title": "Surgery involving the maxillary antrum",
+    "symbols": []
+  },
+  {
+    "code": "394",
+    "title": "Surgery for osteomyelitis",
+    "symbols": []
+  },
+  {
+    "code": "395",
+    "title": "Repair of nerve trunk",
+    "symbols": []
+  },
+  {
+    "code": "399",
+    "title": "Control of reactionary or secondary post-operative haemorrhage",
+    "symbols": []
+  },
+  {
+    "code": "411",
+    "title": "Direct pulp capping",
+    "symbols": []
+  },
+  {
+    "code": "412",
+    "title": "Incomplete endodontic therapy (tooth not suitable for further treatment)",
+    "symbols": []
+  },
+  {
+    "code": "414",
+    "title": "Pulpotomy",
+    "symbols": []
+  },
+  {
+    "code": "415",
+    "title": "Oral examination",
+    "symbols": []
+  },
+  {
+    "code": "416",
+    "title": "Complete chemo-mechanical preparation of root canal – each additional canal",
+    "symbols": []
+  },
+  {
+    "code": "417",
+    "title": "Root canal obturation – one canal",
+    "symbols": []
+  },
+  {
+    "code": "418",
+    "title": "Root canal obturation – each additional canal",
+    "symbols": []
+  },
+  {
+    "code": "419",
+    "title": "Extirpation of pulp or debridement of root canal(s)",
+    "symbols": []
+  },
+  {
+    "code": "421",
+    "title": "Resorbable root canal filling – primary tooth",
+    "symbols": []
+  },
+  {
+    "code": "431",
+    "title": "Periapical curettage – per root",
+    "symbols": []
+  },
+  {
+    "code": "432",
+    "title": "Apicectomy – per root",
+    "symbols": []
+  },
+  {
+    "code": "433",
+    "title": "Exploratory periradicular surgery",
+    "symbols": []
+  },
+  {
+    "code": "434",
+    "title": "Apical seal – per canal",
+    "symbols": []
+  },
+  {
+    "code": "436",
+    "title": "Sealing of perforation",
+    "symbols": []
+  },
+  {
+    "code": "437",
+    "title": "Extirpation of pulp: see also Chemo-mechanical",
+    "symbols": []
+  },
+  {
+    "code": "438",
+    "title": "Hemisection",
+    "symbols": []
+  },
+  {
+    "code": "445",
+    "title": "Exploratory periradicular surgery",
+    "symbols": []
+  },
+  {
+    "code": "451",
+    "title": "Removal of root filling – per canal",
+    "symbols": []
+  },
+  {
+    "code": "452",
+    "title": "Removal of a cemented root canal post or post crown",
+    "symbols": []
+  },
+  {
+    "code": "453",
+    "title": "Removal or bypassing fractured endodontic instrument",
+    "symbols": []
+  },
+  {
+    "code": "455",
+    "title": "Additional appointment for irrigation and/or dressing of the root canal system – per tooth",
+    "symbols": []
+  },
+  {
+    "code": "457",
+    "title": "Obturation of resorption defect or perforation (non-surgical)",
+    "symbols": []
+  },
+  {
+    "code": "459",
+    "title": "Guided endodontic repair – per tooth",
+    "symbols": []
+  },
+  {
+    "code": "511",
+    "title": "Metallic restoration – one surface – direct",
+    "symbols": []
+  },
+  {
+    "code": "512",
+    "title": "Metallic restoration – two surfaces – direct",
+    "symbols": []
+  },
+  {
+    "code": "513",
+    "title": "Metallic restoration – three surfaces – direct",
+    "symbols": []
+  },
+  {
+    "code": "514",
+    "title": "Metallic restoration – four surfaces – direct",
+    "symbols": []
+  },
+  {
+    "code": "515",
+    "title": "Metallic restoration – five surfaces – direct",
+    "symbols": []
+  },
+  {
+    "code": "521",
+    "title": "Adhesive restoration – one surface – anterior tooth – direct",
+    "symbols": []
+  },
+  {
+    "code": "522",
+    "title": "Adhesive restoration – two surfaces – anterior tooth – direct",
+    "symbols": []
+  },
+  {
+    "code": "523",
+    "title": "Other items of",
+    "symbols": []
+  },
+  {
+    "code": "524",
+    "title": "Adhesive restoration – four surfaces – anterior tooth – direct",
+    "symbols": []
+  },
+  {
+    "code": "525",
+    "title": "Adhesive restoration – five surfaces – anterior tooth – direct",
+    "symbols": []
+  },
+  {
+    "code": "526",
+    "title": "Adhesive restoration – veneer – anterior tooth – direct",
+    "symbols": [
+      "#"
+    ]
+  },
+  {
+    "code": "531",
+    "title": "Adhesive restoration – one surface – posterior tooth – direct",
+    "symbols": []
+  },
+  {
+    "code": "532",
+    "title": "Adhesive restoration – two surfaces – posterior tooth – direct",
+    "symbols": []
+  },
+  {
+    "code": "533",
+    "title": "Adhesive restoration – three surfaces – posterior tooth – direct",
+    "symbols": []
+  },
+  {
+    "code": "534",
+    "title": "Adhesive restoration – four surfaces – posterior tooth – direct",
+    "symbols": []
+  },
+  {
+    "code": "535",
+    "title": "(plus other items",
+    "symbols": []
+  },
+  {
+    "code": "536",
+    "title": "Adhesive restoration – veneer – posterior tooth – direct",
+    "symbols": [
+      "#"
+    ]
+  },
+  {
+    "code": "541",
+    "title": "Metallic restoration – one surface – indirect",
+    "symbols": []
+  },
+  {
+    "code": "542",
+    "title": "Metallic restoration – two surfaces – indirect",
+    "symbols": []
+  },
+  {
+    "code": "543",
+    "title": "Metallic restoration – three surfaces – indirect",
+    "symbols": []
+  },
+  {
+    "code": "544",
+    "title": "Metallic restoration – four surfaces – indirect",
+    "symbols": []
+  },
+  {
+    "code": "545",
+    "title": "Metallic restoration – five surfaces – indirect",
+    "symbols": []
+  },
+  {
+    "code": "551",
+    "title": "Tooth-coloured restoration – one surface – indirect",
+    "symbols": []
+  },
+  {
+    "code": "552",
+    "title": "Tooth-coloured restoration – two surfaces – indirect",
+    "symbols": []
+  },
+  {
+    "code": "553",
+    "title": "Tooth-coloured restoration – three surfaces – indirect",
+    "symbols": []
+  },
+  {
+    "code": "554",
+    "title": "Tooth-coloured restoration – four surfaces – indirect",
+    "symbols": []
+  },
+  {
+    "code": "555",
+    "title": "Tooth-coloured restoration – five surfaces – indirect",
+    "symbols": []
+  },
+  {
+    "code": "556",
+    "title": "Tooth-coloured restoration – veneer – indirect",
+    "symbols": [
+      "#"
+    ]
+  },
+  {
+    "code": "571",
+    "title": "Adaptation of new restoration to existing removable prosthesis – per tooth",
+    "symbols": []
+  },
+  {
+    "code": "572",
+    "title": "Provisional/interim restoration – per tooth",
+    "symbols": []
+  },
+  {
+    "code": "574",
+    "title": "Metal band",
+    "symbols": []
+  },
+  {
+    "code": "575",
+    "title": "Pin retention – per pin",
+    "symbols": []
+  },
+  {
+    "code": "577",
+    "title": "Cusp capping – per cusp",
+    "symbols": []
+  },
+  {
+    "code": "578",
+    "title": "indirect",
+    "symbols": []
+  },
+  {
+    "code": "579",
+    "title": "Bonding of tooth fragment",
+    "symbols": []
+  },
+  {
+    "code": "586",
+    "title": "Preformed Full Crown – metallic – significant tooth preparation",
+    "symbols": []
+  },
+  {
+    "code": "587",
+    "title": "Preformed Full Crown – metallic – minimal tooth preparation",
+    "symbols": []
+  },
+  {
+    "code": "588",
+    "title": "Preformed Full Crown – tooth-coloured",
+    "symbols": []
+  },
+  {
+    "code": "595",
+    "title": "Removal of indirect restoration",
+    "symbols": []
+  },
+  {
+    "code": "596",
+    "title": "Recementing of indirect restoration",
+    "symbols": []
+  },
+  {
+    "code": "597",
+    "title": "Post – direct",
+    "symbols": []
+  },
+  {
+    "code": "598",
+    "title": "Restoration root capping – direct",
+    "symbols": []
+  },
+  {
+    "code": "611",
+    "title": "Full crown – polymeric material – indirect",
+    "symbols": []
+  },
+  {
+    "code": "613",
+    "title": "Full crown – ceramic – indirect",
+    "symbols": []
+  },
+  {
+    "code": "615",
+    "title": "Full crown – veneered – indirect",
+    "symbols": []
+  },
+  {
+    "code": "618",
+    "title": "Full crown – metallic – indirect",
+    "symbols": []
+  },
+  {
+    "code": "625",
+    "title": "Post and core for crown – indirect",
+    "symbols": []
+  },
+  {
+    "code": "627",
+    "title": "Preliminary restoration for crown – direct",
+    "symbols": []
+  },
+  {
+    "code": "629",
+    "title": "Post and root cap – indirect",
+    "symbols": []
+  },
+  {
+    "code": "631",
+    "title": "Provisional crown – per tooth",
+    "symbols": []
+  },
+  {
+    "code": "632",
+    "title": "Provisional bridge pontic – per pontic",
+    "symbols": []
+  },
+  {
+    "code": "633",
+    "title": "Provisional implant abutment – per abutment",
+    "symbols": []
+  },
+  {
+    "code": "634",
+    "title": "Provisional implant restoration – per implant abutment",
+    "symbols": []
+  },
+  {
+    "code": "642",
+    "title": "Bridge pontic – direct – per pontic",
+    "symbols": []
+  },
+  {
+    "code": "643",
+    "title": "Bridge pontic – indirect – per pontic",
+    "symbols": []
+  },
+  {
+    "code": "644",
+    "title": "Semi-fixed attachment",
+    "symbols": []
+  },
+  {
+    "code": "645",
+    "title": "Precision or magnetic attachment",
+    "symbols": []
+  },
+  {
+    "code": "648",
+    "title": "Bonded retainer – direct – per tooth",
+    "symbols": []
+  },
+  {
+    "code": "649",
+    "title": "Bonded retainer – indirect – per tooth",
+    "symbols": []
+  },
+  {
+    "code": "651",
+    "title": "Recementing crown or veneer",
+    "symbols": []
+  },
+  {
+    "code": "652",
+    "title": "Recementing bridge or splint – per abutment",
+    "symbols": []
+  },
+  {
+    "code": "653",
+    "title": "Rebonding of bridge or splint where retreatment of bridge surface is required",
+    "symbols": []
+  },
+  {
+    "code": "655",
+    "title": "Removal of crown",
+    "symbols": []
+  },
+  {
+    "code": "656",
+    "title": "Removal of bridge or splint",
+    "symbols": []
+  },
+  {
+    "code": "658",
+    "title": "denture tooth replacement",
+    "symbols": []
+  },
+  {
+    "code": "659",
+    "title": "repair – indirect",
+    "symbols": []
+  },
+  {
+    "code": "661",
+    "title": "Fitting of implant abutment – per abutment",
+    "symbols": []
+  },
+  {
+    "code": "663",
+    "title": "Removal of implant and/or retention device",
+    "symbols": []
+  },
+  {
+    "code": "664",
+    "title": "Fitting of bar for denture – per tooth or implant",
+    "symbols": []
+  },
+  {
+    "code": "665",
+    "title": "Prosthesis with resin base attached to implants – removable – per arch",
+    "symbols": []
+  },
+  {
+    "code": "666",
+    "title": "Prosthesis with metal frame attached to implants – fixed – per arch",
+    "symbols": []
+  },
+  {
+    "code": "667",
+    "title": "Prosthesis with metal frame attached to implants – removable – per arch",
+    "symbols": []
+  },
+  {
+    "code": "668",
+    "title": "Implant prosthetic screw replacement",
+    "symbols": []
+  },
+  {
+    "code": "669",
+    "title": "Removal and reattachment of prosthesis fixed to implant(s) – per implant",
+    "symbols": []
+  },
+  {
+    "code": "671",
+    "title": "veneered – indirect",
+    "symbols": []
+  },
+  {
+    "code": "672",
+    "title": "Full crown attached to osseointegrated implant – veneered – indirect",
+    "symbols": []
+  },
+  {
+    "code": "673",
+    "title": "Full crown attached to osseointegrated implant – metallic – indirect",
+    "symbols": []
+  },
+  {
+    "code": "678",
+    "title": "Diagnostic template",
+    "symbols": []
+  },
+  {
+    "code": "679",
+    "title": "Surgical implant guide",
+    "symbols": []
+  },
+  {
+    "code": "684",
+    "title": "Insertion of the first stage of two-stage endosseous implant – per implant",
+    "symbols": []
+  },
+  {
+    "code": "685",
+    "title": "Insertion of the first stage of two-stage maxillofacial endosseous implant – per implant",
+    "symbols": []
+  },
+  {
+    "code": "686",
+    "title": "Insertion of a one-stage maxillofacial endosseous implant – per implant",
+    "symbols": []
+  },
+  {
+    "code": "687",
+    "title": "Insertion of a mini-implant – per implant",
+    "symbols": []
+  },
+  {
+    "code": "688",
+    "title": "Insertion of a one-stage endosseous implant – per implant",
+    "symbols": []
+  },
+  {
+    "code": "689",
+    "title": "Provisional implant",
+    "symbols": []
+  },
+  {
+    "code": "690",
+    "title": "Provisional retention or anchorage device",
+    "symbols": []
+  },
+  {
+    "code": "691",
+    "title": "Second-stage surgery of two-stage endosseous implant – per implant",
+    "symbols": []
+  },
+  {
+    "code": "692",
+    "title": "Closure of the screw access chamber",
+    "symbols": []
+  },
+  {
+    "code": "693",
+    "title": "Remodelling of a fixed implant prosthesis",
+    "symbols": []
+  },
+  {
+    "code": "694",
+    "title": "Repair or replacement of the ceramic component of an implant metal-ceramic or all ceramic crown",
+    "symbols": []
+  },
+  {
+    "code": "695",
+    "title": "Cleaning and polishing of an implant prosthesis",
+    "symbols": [
+      "@"
+    ]
+  },
+  {
+    "code": "696",
+    "title": "Removal of fractured abutment screw",
+    "symbols": []
+  },
+  {
+    "code": "711",
+    "title": "Immediate tooth",
+    "symbols": []
+  },
+  {
+    "code": "712",
+    "title": "Complete mandibular denture",
+    "symbols": []
+  },
+  {
+    "code": "713",
+    "title": "Provisional complete maxillary denture",
+    "symbols": []
+  },
+  {
+    "code": "714",
+    "title": "Provisional complete mandibular denture",
+    "symbols": []
+  },
+  {
+    "code": "715",
+    "title": "Provisional complete maxillary and mandibular dentures",
+    "symbols": []
+  },
+  {
+    "code": "716",
+    "title": "Metal palate or plate",
+    "symbols": []
+  },
+  {
+    "code": "719",
+    "title": "Complete maxillary and mandibular dentures",
+    "symbols": []
+  },
+  {
+    "code": "721",
+    "title": "Partial maxillary denture – resin base",
+    "symbols": []
+  },
+  {
+    "code": "722",
+    "title": "Wrought bar 738",
+    "symbols": []
+  },
+  {
+    "code": "723",
+    "title": "Provisional partial maxillary denture",
+    "symbols": []
+  },
+  {
+    "code": "724",
+    "title": "Provisional partial mandibular denture",
+    "symbols": []
+  },
+  {
+    "code": "727",
+    "title": "Partial maxillary denture – custom fabricated metal framework",
+    "symbols": []
+  },
+  {
+    "code": "728",
+    "title": "Partial mandibular denture – custom fabricated metal framework",
+    "symbols": []
+  },
+  {
+    "code": "731",
+    "title": "Retainer (clasp) – per tooth",
+    "symbols": []
+  },
+  {
+    "code": "732",
+    "title": "Occlusal rest – per rest",
+    "symbols": []
+  },
+  {
+    "code": "733",
+    "title": "Tooth/teeth (partial denture)",
+    "symbols": []
+  },
+  {
+    "code": "734",
+    "title": "Overlays – per tooth",
+    "symbols": []
+  },
+  {
+    "code": "735",
+    "title": "Precision or magnetic denture attachment",
+    "symbols": []
+  },
+  {
+    "code": "736",
+    "title": "Immediate tooth replacement – per tooth",
+    "symbols": []
+  },
+  {
+    "code": "737",
+    "title": "Resilient lining",
+    "symbols": []
+  },
+  {
+    "code": "738",
+    "title": "Wrought bar",
+    "symbols": []
+  },
+  {
+    "code": "739",
+    "title": "Metal backing of denture teeth – per backing",
+    "symbols": []
+  },
+  {
+    "code": "741",
+    "title": "Adjustment of a denture",
+    "symbols": []
+  },
+  {
+    "code": "743",
+    "title": "Relining – complete denture – processed",
+    "symbols": []
+  },
+  {
+    "code": "744",
+    "title": "Relining – partial denture – processed",
+    "symbols": []
+  },
+  {
+    "code": "745",
+    "title": "Remodelling – complete denture",
+    "symbols": []
+  },
+  {
+    "code": "746",
+    "title": "Remodelling – partial denture",
+    "symbols": []
+  },
+  {
+    "code": "751",
+    "title": "Relining – complete denture – direct",
+    "symbols": []
+  },
+  {
+    "code": "752",
+    "title": "Relining – partial denture – direct",
+    "symbols": []
+  },
+  {
+    "code": "753",
+    "title": "Cleaning and polishing of pre-existing denture",
+    "symbols": [
+      "@"
+    ]
+  },
+  {
+    "code": "754",
+    "title": "Denture base modification",
+    "symbols": []
+  },
+  {
+    "code": "755",
+    "title": "Maintenance of overdenture attachment – per attachment",
+    "symbols": []
+  },
+  {
+    "code": "761",
+    "title": "Reattaching pre-existing retainer (clasp) to denture",
+    "symbols": [
+      "@"
+    ]
+  },
+  {
+    "code": "762",
+    "title": "Replacing/adding retainer (clasp) to denture – per retainer (clasp)",
+    "symbols": []
+  },
+  {
+    "code": "763",
+    "title": "Repairing broken base of a complete denture",
+    "symbols": [
+      "@"
+    ]
+  },
+  {
+    "code": "764",
+    "title": "Repairing broken base of a partial denture",
+    "symbols": [
+      "@"
+    ]
+  },
+  {
+    "code": "765",
+    "title": "Replacing and/or adding a new tooth to a denture or implant prosthesis – per tooth",
+    "symbols": []
+  },
+  {
+    "code": "766",
+    "title": "Reattaching an existing tooth to a denture – per denture tooth",
+    "symbols": [
+      "$"
+    ]
+  },
+  {
+    "code": "768",
+    "title": "Adding a denture tooth to a partial denture to replace an extracted or decoronated tooth",
+    "symbols": []
+  },
+  {
+    "code": "769",
+    "title": "Repair or addition to metal frame",
+    "symbols": [
+      "$"
+    ]
+  },
+  {
+    "code": "771",
+    "title": "Tissue conditioning – per application",
+    "symbols": []
+  },
+  {
+    "code": "772",
+    "title": "Splint – resin",
+    "symbols": []
+  },
+  {
+    "code": "773",
+    "title": "Splint – metal – indirect",
+    "symbols": []
+  },
+  {
+    "code": "775",
+    "title": "Characterisation of denture base",
+    "symbols": []
+  },
+  {
+    "code": "776",
+    "title": "Impression – dental appliance repair/modification",
+    "symbols": [
+      "$"
+    ]
+  },
+  {
+    "code": "777",
+    "title": "Identification",
+    "symbols": [
+      "$"
+    ]
+  },
+  {
+    "code": "778",
+    "title": "Inlay for denture tooth",
+    "symbols": [
+      "$"
+    ]
+  },
+  {
+    "code": "779",
+    "title": "Surgical guide for an immediate denture",
+    "symbols": []
+  },
+  {
+    "code": "781",
+    "title": "Obturator",
+    "symbols": []
+  },
+  {
+    "code": "782",
+    "title": "Surgical/interim obturator",
+    "symbols": []
+  },
+  {
+    "code": "783",
+    "title": "Revision of surgical/interim obturator",
+    "symbols": []
+  },
+  {
+    "code": "785",
+    "title": "Interim or diagnostic maxillofacial prosthesis",
+    "symbols": []
+  },
+  {
+    "code": "786",
+    "title": "Mandibular resection prosthesis",
+    "symbols": []
+  },
+  {
+    "code": "787",
+    "title": "Extraoral prosthesis – ear",
+    "symbols": []
+  },
+  {
+    "code": "788",
+    "title": "Extraoral prosthesis – nose",
+    "symbols": []
+  },
+  {
+    "code": "789",
+    "title": "Extraoral prosthesis – eye",
+    "symbols": []
+  },
+  {
+    "code": "790",
+    "title": "Adjustment of a maxillofacial prosthesis",
+    "symbols": []
+  },
+  {
+    "code": "811",
+    "title": "Passive removable appliance – per arch",
+    "symbols": []
+  },
+  {
+    "code": "821",
+    "title": "Active removable appliance – per arch",
+    "symbols": []
+  },
+  {
+    "code": "823",
+    "title": "Functional orthopaedic appliance – custom fabrication",
+    "symbols": []
+  },
+  {
+    "code": "824",
+    "title": "Functional orthopaedic appliance – prefabricated",
+    "symbols": []
+  },
+  {
+    "code": "825",
+    "title": "Sequential plastic aligners – per arch",
+    "symbols": []
+  },
+  {
+    "code": "829",
+    "title": "Partial banding – per arch",
+    "symbols": []
+  },
+  {
+    "code": "831",
+    "title": "Full arch banding – per arch",
+    "symbols": []
+  },
+  {
+    "code": "833",
+    "title": "Removal of banding – per arch",
+    "symbols": []
+  },
+  {
+    "code": "841",
+    "title": "Fixed palatal or lingual arch appliance",
+    "symbols": []
+  },
+  {
+    "code": "842",
+    "title": "Partial banding for inter-maxillary elastics (vertical and/or cross elastics)",
+    "symbols": []
+  },
+  {
+    "code": "843",
+    "title": "Expansion appliance – fixed – per arch",
+    "symbols": []
+  },
+  {
+    "code": "844",
+    "title": "Sagittal movement appliance",
+    "symbols": []
+  },
+  {
+    "code": "845",
+    "title": "Passive appliance – fixed",
+    "symbols": []
+  },
+  {
+    "code": "846",
+    "title": "Minor tooth guidance – fixed",
+    "symbols": []
+  },
+  {
+    "code": "851",
+    "title": "\u0007Extraoral appliance",
+    "symbols": []
+  },
+  {
+    "code": "862",
+    "title": "Bonding of attachment for application of orthodontic force",
+    "symbols": []
+  },
+  {
+    "code": "871",
+    "title": "Orthodontic adjustment",
+    "symbols": []
+  },
+  {
+    "code": "872",
+    "title": "Reattachment of passive appliance – fixed",
+    "symbols": []
+  },
+  {
+    "code": "873",
+    "title": "Repair of passive appliance – fixed",
+    "symbols": [
+      "$"
+    ]
+  },
+  {
+    "code": "874",
+    "title": "Removal of passive appliance – fixed",
+    "symbols": []
+  },
+  {
+    "code": "875",
+    "title": "Repair of removable appliance – resin base",
+    "symbols": [
+      "T"
+    ]
+  },
+  {
+    "code": "876",
+    "title": "repair of removable appliance – resin base",
+    "symbols": []
+  },
+  {
+    "code": "877",
+    "title": "adjustment",
+    "symbols": []
+  },
+  {
+    "code": "878",
+    "title": "Relining – removable appliance – processed",
+    "symbols": []
+  },
+  {
+    "code": "881",
+    "title": "Course of orthodontic treatment",
+    "symbols": []
+  },
+  {
+    "code": "882",
+    "title": "Course of orthodontic treatment with orthognathic surgery",
+    "symbols": []
+  },
+  {
+    "code": "911",
+    "title": "Palliative care – per appointment",
+    "symbols": []
+  },
+  {
+    "code": "915",
+    "title": "After-hours callout",
+    "symbols": []
+  },
+  {
+    "code": "916",
+    "title": "Travel to provide services",
+    "symbols": []
+  },
+  {
+    "code": "919",
+    "title": "Teleconsultation",
+    "symbols": [
+      "#"
+    ]
+  },
+  {
+    "code": "920",
+    "title": "Extended teleconsultation – 30 minutes or more",
+    "symbols": [
+      "#"
+    ]
+  },
+  {
+    "code": "921",
+    "title": "Teleconsultation by referral",
+    "symbols": [
+      "#"
+    ]
+  },
+  {
+    "code": "926",
+    "title": "Treatment discussion",
+    "symbols": []
+  },
+  {
+    "code": "927",
+    "title": "Provision of medication/medicament",
+    "symbols": [
+      "#"
+    ]
+  },
+  {
+    "code": "928",
+    "title": "Intravenous cannulation and establishment of infusion",
+    "symbols": []
+  },
+  {
+    "code": "929",
+    "title": "Provision of neuromodulator therapy",
+    "symbols": [
+      "#"
+    ]
+  },
+  {
+    "code": "941",
+    "title": "Local anaesthesia",
+    "symbols": []
+  },
+  {
+    "code": "942",
+    "title": "Sedation – intravenous – per 30 minutes or part thereof",
+    "symbols": []
+  },
+  {
+    "code": "943",
+    "title": "Relative analgesia – inhalation of nitrous oxide and oxygen mixture – per 30 minutes or part thereof",
+    "symbols": []
+  },
+  {
+    "code": "944",
+    "title": "Relaxation therapy",
+    "symbols": []
+  },
+  {
+    "code": "945",
+    "title": "Low level laser therapy – per appointment",
+    "symbols": []
+  },
+  {
+    "code": "948",
+    "title": "Dental acupuncture – per appointment",
+    "symbols": []
+  },
+  {
+    "code": "949",
+    "title": "Treatment under general anaesthesia/sedation",
+    "symbols": []
+  },
+  {
+    "code": "961",
+    "title": "Minor occlusal adjustment – per appointment",
+    "symbols": []
+  },
+  {
+    "code": "963",
+    "title": "pantographic tracing",
+    "symbols": []
+  },
+  {
+    "code": "964",
+    "title": "Registration and mounting of dental models for occlusal analysis",
+    "symbols": [
+      "#"
+    ]
+  },
+  {
+    "code": "965",
+    "title": "Occlusal appliance",
+    "symbols": []
+  },
+  {
+    "code": "966",
+    "title": "Adjustment of pre-existing occlusal appliance – per appointment",
+    "symbols": []
+  },
+  {
+    "code": "967",
+    "title": "Pantographic tracing",
+    "symbols": []
+  },
+  {
+    "code": "968",
+    "title": "Occlusal adjustment following occlusal analysis – per appointment",
+    "symbols": []
+  },
+  {
+    "code": "971",
+    "title": "Physical therapy for temporomandibular joint and associated structures – per appointment",
+    "symbols": []
+  },
+  {
+    "code": "972",
+    "title": "Repair/addition – occlusal appliance",
+    "symbols": [
+      "$"
+    ]
+  },
+  {
+    "code": "981",
+    "title": "Splinting and stabilisation – direct – per tooth",
+    "symbols": []
+  },
+  {
+    "code": "982",
+    "title": "Endodontics: see Chemo-mechanical preparation of root",
+    "symbols": []
+  },
+  {
+    "code": "984",
+    "title": "Mandibular advancement appliance for diagnosed snoring and obstructive sleep apnoea",
+    "symbols": []
+  },
+  {
+    "code": "985",
+    "title": "Repair/addition – snoring or sleep apnoea device",
+    "symbols": [
+      "$"
+    ]
+  },
+  {
+    "code": "986",
+    "title": "Post-operative care not otherwise included",
+    "symbols": []
+  },
+  {
+    "code": "987",
+    "title": "Recontour tissue – per appointment",
+    "symbols": [
+      "#"
+    ]
+  },
+  {
+    "code": "990",
+    "title": "Treatment not otherwise included (specify)",
+    "symbols": [
+      "#"
+    ]
+  }
+]
