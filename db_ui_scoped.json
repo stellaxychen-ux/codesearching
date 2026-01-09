@@ -1,0 +1,4335 @@
+[
+  {
+    "code": "011",
+    "title": "Comprehensive oral examination",
+    "category": "Diag",
+    "symbols": [
+      "#"
+    ],
+    "notes": "A comprehensive evaluation and recording of the current status of the dentition, mouth and associated structures performed on a patient. This applies to new patients, established patients who have had a significant change in health conditions, or established patients who have been absent from active treatment for two or more years. This may require interpretation of information acquired through additional diagnostic procedures reported and itemised separately. This evaluation includes recording an appropriate oral and medical history and any other relevant information.",
+    "warnings": [],
+    "fund_rules": {
+      "bupa": [
+        {
+          "frequency": "once every 6 months",
+          "network": "Members First Ultimate providers",
+          "url": "https://www.bupadental.com.au/no-gap-dental",
+          "scope_label": "Commonly includes",
+          "scope_codes": [
+            "011",
+            "012",
+            "013",
+            "014",
+            "015",
+            "022",
+            "037",
+            "111",
+            "114",
+            "115",
+            "121"
+          ]
+        }
+      ],
+      "medibank": [
+        {
+          "frequency": "up to 2 per year",
+          "network": "Members’ Choice Advantage dentists",
+          "url": "https://www.medibank.com.au/health-insurance/why-medibank/members-choice/dentists-network/",
+          "scope_label": "Commonly includes",
+          "scope_codes": [
+            "011",
+            "012",
+            "013",
+            "014",
+            "015",
+            "022",
+            "037",
+            "111",
+            "114",
+            "115",
+            "121"
+          ]
+        }
+      ],
+      "hcf": [
+        {
+          "frequency": "1–2 per year (selected covers)",
+          "network": "HCF Dental Centres / No-Gap services",
+          "url": "https://www.hcf.com.au/members/no-gap-services",
+          "scope_label": "Commonly includes",
+          "scope_codes": [
+            "011",
+            "012",
+            "013",
+            "014",
+            "015",
+            "022",
+            "037",
+            "111",
+            "114",
+            "115",
+            "121"
+          ]
+        }
+      ],
+      "nib": [
+        {
+          "frequency": "service limits apply",
+          "network": "nib Dental Care Centres",
+          "url": "https://www.nib.com.au/health-information/member-information/nib-dental-care-centres",
+          "scope_label": "Includes",
+          "scope_codes": [
+            "011",
+            "012",
+            "013",
+            "014",
+            "015",
+            "022",
+            "037",
+            "111",
+            "114",
+            "115",
+            "121"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "code": "012",
+    "title": "Periodic oral examination",
+    "category": "Diag",
+    "symbols": [],
+    "notes": "An evaluation of the dentition, mouth and associated structures performed on a patient of record to determine any changes in the patient’s oral and medical health status since a previous comprehensive or periodic examination. This may require interpretation of information acquired through additional diagnostic procedures reported and itemised separately.",
+    "warnings": [],
+    "fund_rules": {
+      "bupa": [
+        {
+          "frequency": "once every 6 months",
+          "network": "Members First Ultimate providers",
+          "url": "https://www.bupadental.com.au/no-gap-dental",
+          "scope_label": "Commonly includes",
+          "scope_codes": [
+            "011",
+            "012",
+            "013",
+            "014",
+            "015",
+            "022",
+            "037",
+            "111",
+            "114",
+            "115",
+            "121"
+          ]
+        }
+      ],
+      "medibank": [
+        {
+          "frequency": "up to 2 per year",
+          "network": "Members’ Choice Advantage dentists",
+          "url": "https://www.medibank.com.au/health-insurance/why-medibank/members-choice/dentists-network/",
+          "scope_label": "Commonly includes",
+          "scope_codes": [
+            "011",
+            "012",
+            "013",
+            "014",
+            "015",
+            "022",
+            "037",
+            "111",
+            "114",
+            "115",
+            "121"
+          ]
+        }
+      ],
+      "hcf": [
+        {
+          "frequency": "1–2 per year (selected covers)",
+          "network": "HCF Dental Centres / No-Gap services",
+          "url": "https://www.hcf.com.au/members/no-gap-services",
+          "scope_label": "Commonly includes",
+          "scope_codes": [
+            "011",
+            "012",
+            "013",
+            "014",
+            "015",
+            "022",
+            "037",
+            "111",
+            "114",
+            "115",
+            "121"
+          ]
+        }
+      ],
+      "nib": [
+        {
+          "frequency": "service limits apply",
+          "network": "nib Dental Care Centres",
+          "url": "https://www.nib.com.au/health-information/member-information/nib-dental-care-centres",
+          "scope_label": "Includes",
+          "scope_codes": [
+            "011",
+            "012",
+            "013",
+            "014",
+            "015",
+            "022",
+            "037",
+            "111",
+            "114",
+            "115",
+            "121"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "code": "013",
+    "title": "Oral examination – limited",
+    "category": "Diag",
+    "symbols": [],
+    "notes": "A limited evaluation of the dentition, mouth and associated structures performed on a patient. This may be for a specific oral health problem or complaint. This may require interpretation of information acquired through additional diagnostic procedures reported and itemised separately. This evaluation includes recording an appropriate oral and medical history and any other relevant information.",
+    "warnings": [],
+    "fund_rules": {
+      "bupa": [
+        {
+          "frequency": "once every 6 months",
+          "network": "Members First Ultimate providers",
+          "url": "https://www.bupadental.com.au/no-gap-dental",
+          "scope_label": "Commonly includes",
+          "scope_codes": [
+            "011",
+            "012",
+            "013",
+            "014",
+            "015",
+            "022",
+            "037",
+            "111",
+            "114",
+            "115",
+            "121"
+          ]
+        }
+      ],
+      "medibank": [
+        {
+          "frequency": "up to 2 per year",
+          "network": "Members’ Choice Advantage dentists",
+          "url": "https://www.medibank.com.au/health-insurance/why-medibank/members-choice/dentists-network/",
+          "scope_label": "Commonly includes",
+          "scope_codes": [
+            "011",
+            "012",
+            "013",
+            "014",
+            "015",
+            "022",
+            "037",
+            "111",
+            "114",
+            "115",
+            "121"
+          ]
+        }
+      ],
+      "hcf": [
+        {
+          "frequency": "1–2 per year (selected covers)",
+          "network": "HCF Dental Centres / No-Gap services",
+          "url": "https://www.hcf.com.au/members/no-gap-services",
+          "scope_label": "Commonly includes",
+          "scope_codes": [
+            "011",
+            "012",
+            "013",
+            "014",
+            "015",
+            "022",
+            "037",
+            "111",
+            "114",
+            "115",
+            "121"
+          ]
+        }
+      ],
+      "nib": [
+        {
+          "frequency": "service limits apply",
+          "network": "nib Dental Care Centres",
+          "url": "https://www.nib.com.au/health-information/member-information/nib-dental-care-centres",
+          "scope_label": "Includes",
+          "scope_codes": [
+            "011",
+            "012",
+            "013",
+            "014",
+            "015",
+            "022",
+            "037",
+            "111",
+            "114",
+            "115",
+            "121"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "code": "014",
+    "title": "Consultation",
+    "category": "Diag",
+    "symbols": [
+      "#"
+    ],
+    "notes": "A consultation to seek advice or discuss treatment options regarding a specific dental or oral condition. This consultation includes recording an appropriate medical history and any other relevant information.",
+    "warnings": [],
+    "fund_rules": {
+      "bupa": [
+        {
+          "frequency": "once every 6 months",
+          "network": "Members First Ultimate providers",
+          "url": "https://www.bupadental.com.au/no-gap-dental",
+          "scope_label": "Commonly includes",
+          "scope_codes": [
+            "011",
+            "012",
+            "013",
+            "014",
+            "015",
+            "022",
+            "037",
+            "111",
+            "114",
+            "115",
+            "121"
+          ]
+        }
+      ],
+      "medibank": [
+        {
+          "frequency": "up to 2 per year",
+          "network": "Members’ Choice Advantage dentists",
+          "url": "https://www.medibank.com.au/health-insurance/why-medibank/members-choice/dentists-network/",
+          "scope_label": "Commonly includes",
+          "scope_codes": [
+            "011",
+            "012",
+            "013",
+            "014",
+            "015",
+            "022",
+            "037",
+            "111",
+            "114",
+            "115",
+            "121"
+          ]
+        }
+      ],
+      "hcf": [
+        {
+          "frequency": "1–2 per year (selected covers)",
+          "network": "HCF Dental Centres / No-Gap services",
+          "url": "https://www.hcf.com.au/members/no-gap-services",
+          "scope_label": "Commonly includes",
+          "scope_codes": [
+            "011",
+            "012",
+            "013",
+            "014",
+            "015",
+            "022",
+            "037",
+            "111",
+            "114",
+            "115",
+            "121"
+          ]
+        }
+      ],
+      "nib": [
+        {
+          "frequency": "service limits apply",
+          "network": "nib Dental Care Centres",
+          "url": "https://www.nib.com.au/health-information/member-information/nib-dental-care-centres",
+          "scope_label": "Includes",
+          "scope_codes": [
+            "011",
+            "012",
+            "013",
+            "014",
+            "015",
+            "022",
+            "037",
+            "111",
+            "114",
+            "115",
+            "121"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "code": "015",
+    "title": "Consultation – extended (30 minutes or more)",
+    "category": "Diag",
+    "symbols": [
+      "#"
+    ],
+    "notes": "An extended consultation to seek advice or discuss treatment options regarding a specific dental or oral complaint. This consultation includes recording an appropriate medical history and any other relevant information.",
+    "warnings": [],
+    "fund_rules": {
+      "bupa": [
+        {
+          "frequency": "once every 6 months",
+          "network": "Members First Ultimate providers",
+          "url": "https://www.bupadental.com.au/no-gap-dental",
+          "scope_label": "Commonly includes",
+          "scope_codes": [
+            "011",
+            "012",
+            "013",
+            "014",
+            "015",
+            "022",
+            "037",
+            "111",
+            "114",
+            "115",
+            "121"
+          ]
+        }
+      ],
+      "medibank": [
+        {
+          "frequency": "up to 2 per year",
+          "network": "Members’ Choice Advantage dentists",
+          "url": "https://www.medibank.com.au/health-insurance/why-medibank/members-choice/dentists-network/",
+          "scope_label": "Commonly includes",
+          "scope_codes": [
+            "011",
+            "012",
+            "013",
+            "014",
+            "015",
+            "022",
+            "037",
+            "111",
+            "114",
+            "115",
+            "121"
+          ]
+        }
+      ],
+      "hcf": [
+        {
+          "frequency": "1–2 per year (selected covers)",
+          "network": "HCF Dental Centres / No-Gap services",
+          "url": "https://www.hcf.com.au/members/no-gap-services",
+          "scope_label": "Commonly includes",
+          "scope_codes": [
+            "011",
+            "012",
+            "013",
+            "014",
+            "015",
+            "022",
+            "037",
+            "111",
+            "114",
+            "115",
+            "121"
+          ]
+        }
+      ],
+      "nib": [
+        {
+          "frequency": "service limits apply",
+          "network": "nib Dental Care Centres",
+          "url": "https://www.nib.com.au/health-information/member-information/nib-dental-care-centres",
+          "scope_label": "Includes",
+          "scope_codes": [
+            "011",
+            "012",
+            "013",
+            "014",
+            "015",
+            "022",
+            "037",
+            "111",
+            "114",
+            "115",
+            "121"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "code": "016",
+    "title": "Consultation by referral",
+    "category": "Diag",
+    "symbols": [
+      "#"
+    ],
+    "notes": "A consultation with a patient referred by a dental or medical practitioner for an opinion or management of a specific dental disorder. The consultation may not necessarily be with a specialist. The referring practitioner should be provided with a report from the consultant, included within the item number. Diagnostic Services",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "017",
+    "title": "Consultation by referral – extended (30 minutes or more)",
+    "category": "Diag",
+    "symbols": [
+      "#"
+    ],
+    "notes": "An extended consultation with a patient referred by a dental or medical practitioner for an opinion or management of a specific dental disorder. The consultation may not necessarily be with a specialist. The referring practitioner should be provided with a report from the consultant, included within the item number.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "018",
+    "title": "Written report (not elsewhere included)",
+    "category": "Diag",
+    "symbols": [
+      "T"
+    ],
+    "notes": "A written report not addressed to a referring practitioner involved in the patient’s care.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "019",
+    "title": "Referral",
+    "category": "Diag",
+    "symbols": [
+      "#"
+    ],
+    "notes": "The preparation of correspondence referring a patient to another practitioner and providing appropriate information. Radiological Examination, Analysis and Interpretation Radiographic itemisation also applies to digitised images – per exposure. Some procedures in this section may attract a medicare rebate for approved dental practitioners. It is not appropriate practice to use both ADA and medicare item numbers to describe the same procedure.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "022",
+    "title": "Intraoral radiograph – per exposure",
+    "category": "Diag",
+    "symbols": [
+      "#"
+    ],
+    "notes": "Taking and interpreting an intraoral radiograph.",
+    "warnings": [],
+    "fund_rules": {
+      "bupa": [
+        {
+          "frequency": "once every 6 months",
+          "network": "Members First Ultimate providers",
+          "url": "https://www.bupadental.com.au/no-gap-dental",
+          "scope_label": "Commonly includes",
+          "scope_codes": [
+            "011",
+            "012",
+            "013",
+            "014",
+            "015",
+            "022",
+            "037",
+            "111",
+            "114",
+            "115",
+            "121"
+          ]
+        }
+      ],
+      "medibank": [
+        {
+          "frequency": "up to 2 per year",
+          "network": "Members’ Choice Advantage dentists",
+          "url": "https://www.medibank.com.au/health-insurance/why-medibank/members-choice/dentists-network/",
+          "scope_label": "Commonly includes",
+          "scope_codes": [
+            "011",
+            "012",
+            "013",
+            "014",
+            "015",
+            "022",
+            "037",
+            "111",
+            "114",
+            "115",
+            "121"
+          ]
+        }
+      ],
+      "hcf": [
+        {
+          "frequency": "1–2 per year (selected covers)",
+          "network": "HCF Dental Centres / No-Gap services",
+          "url": "https://www.hcf.com.au/members/no-gap-services",
+          "scope_label": "Commonly includes",
+          "scope_codes": [
+            "011",
+            "012",
+            "013",
+            "014",
+            "015",
+            "022",
+            "037",
+            "111",
+            "114",
+            "115",
+            "121"
+          ]
+        }
+      ],
+      "nib": [
+        {
+          "frequency": "service limits apply",
+          "network": "nib Dental Care Centres",
+          "url": "https://www.nib.com.au/health-information/member-information/nib-dental-care-centres",
+          "scope_label": "Includes",
+          "scope_codes": [
+            "011",
+            "012",
+            "013",
+            "014",
+            "015",
+            "022",
+            "037",
+            "111",
+            "114",
+            "115",
+            "121"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "code": "026",
+    "title": "Cone Beam Computed Tomography – scan acquisition – per appointment",
+    "category": "Diag",
+    "symbols": [
+      "#"
+    ],
+    "notes": "Acquisition of a Cone Beam Computed Tomography (CBCT) scan and the associated images. Reconstructed images from this scan are included in this item number. For interpretation and/or analysis, see items 087, 088, 089, 090, 091. CBCT is also referred to as 'CBVT'.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "031",
+    "title": "Extraoral radiograph – maxillary, mandibular – per exposure",
+    "category": "Diag",
+    "symbols": [
+      "#"
+    ],
+    "notes": "Taking and interpreting a radiograph of the upper and/or lower jaw using a film placed outside the mouth – for example, oblique lateral radiograph. Diagnostic Services Diagnostic Services Diagnostic Services",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "033",
+    "title": "\u0007Lateral, antero-posterior, postero-anterior or submento-vertex radiograph of the skull",
+    "category": "Diag",
+    "symbols": [],
+    "notes": "– per exposure # Taking and interpreting an extraoral radiograph of the head taken from the lateral, antero-posterior, postero- anterior or submento-vertex of the skull. No cephalostat is used.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "035",
+    "title": "relocation following dislocation",
+    "category": "Diag",
+    "symbols": [],
+    "notes": "361, 363 Temporomanidular: Cone Beam Computed Tomography analysis 090, 091 medicament provision",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "036",
+    "title": "Cephalometric radiograph – lateral, antero-posterior, postero-anterior or submento-vertex",
+    "category": "Diag",
+    "symbols": [],
+    "notes": "– per exposure # Taking and interpreting a radiograph of the head taken from the side, the front or the back or through the vertex of the skull for the purpose of measurement and analysis. A cephalostat is used to standardise the conditions of imaging.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "037",
+    "title": "Panoramic radiograph – per exposure",
+    "category": "Diag",
+    "symbols": [
+      "#"
+    ],
+    "notes": "Taking and interpreting an extraoral radiograph presenting a panoramic view of part or all of the mandible and/or maxilla and/or adjacent structures.",
+    "warnings": [],
+    "fund_rules": {
+      "bupa": [
+        {
+          "frequency": "once every 6 months",
+          "network": "Members First Ultimate providers",
+          "url": "https://www.bupadental.com.au/no-gap-dental",
+          "scope_label": "Commonly includes",
+          "scope_codes": [
+            "011",
+            "012",
+            "013",
+            "014",
+            "015",
+            "022",
+            "037",
+            "111",
+            "114",
+            "115",
+            "121"
+          ]
+        }
+      ],
+      "medibank": [
+        {
+          "frequency": "up to 2 per year",
+          "network": "Members’ Choice Advantage dentists",
+          "url": "https://www.medibank.com.au/health-insurance/why-medibank/members-choice/dentists-network/",
+          "scope_label": "Commonly includes",
+          "scope_codes": [
+            "011",
+            "012",
+            "013",
+            "014",
+            "015",
+            "022",
+            "037",
+            "111",
+            "114",
+            "115",
+            "121"
+          ]
+        }
+      ],
+      "hcf": [
+        {
+          "frequency": "1–2 per year (selected covers)",
+          "network": "HCF Dental Centres / No-Gap services",
+          "url": "https://www.hcf.com.au/members/no-gap-services",
+          "scope_label": "Commonly includes",
+          "scope_codes": [
+            "011",
+            "012",
+            "013",
+            "014",
+            "015",
+            "022",
+            "037",
+            "111",
+            "114",
+            "115",
+            "121"
+          ]
+        }
+      ],
+      "nib": [
+        {
+          "frequency": "service limits apply",
+          "network": "nib Dental Care Centres",
+          "url": "https://www.nib.com.au/health-information/member-information/nib-dental-care-centres",
+          "scope_label": "Includes",
+          "scope_codes": [
+            "011",
+            "012",
+            "013",
+            "014",
+            "015",
+            "022",
+            "037",
+            "111",
+            "114",
+            "115",
+            "121"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "code": "038",
+    "title": "Hand-wrist radiograph for skeletal age assessment",
+    "category": "Diag",
+    "symbols": [
+      "#"
+    ],
+    "notes": "Taking and interpreting a radiograph of the wrist bones, used to assess the degree of skeletal development and maturity.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "039",
+    "title": "Computed tomography of the skull or parts thereof",
+    "category": "Diag",
+    "symbols": [
+      "#"
+    ],
+    "notes": "A radiograph is made of a region using tomographic X-ray equipment that may produce a series of diagnostic images. A cephalostat may be used to standardise the conditions of imaging (for interpretation and/or analysis, see 083). This procedure describes multiple images and should be itemised once only per CT scan. Other Diagnostic Services",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "041",
+    "title": "Bacteriological examination",
+    "category": "Diag",
+    "symbols": [],
+    "notes": "An examination for bacteria or other microorganisms in samples obtained from the patient.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "042",
+    "title": "Culture examination and identification",
+    "category": "Diag",
+    "symbols": [],
+    "notes": "A sample is taken from oral material and is cultured for examination and identification of the microorganisms present.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "043",
+    "title": "Antibiotic sensitivity test",
+    "category": "Diag",
+    "symbols": [],
+    "notes": "A laboratory procedure where a live culture of a suspected pathogen is challenged with antibiotic samples to determine the sensitivity or resistance of the microorganisms to the antibiotics tested.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "044",
+    "title": "Collection of specimen for pathology examination",
+    "category": "Diag",
+    "symbols": [],
+    "notes": "The non-surgical collection and preparation for transport of a specimen for examination at a pathology laboratory.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "047",
+    "title": "Saliva screening test",
+    "category": "Diag",
+    "symbols": [],
+    "notes": "Testing a saliva sample to assess its physiological properties.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "048",
+    "title": "Microbiological screening test",
+    "category": "Diag",
+    "symbols": [],
+    "notes": "Microbiological assessment of a sample.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "051",
+    "title": "Biopsy of tissue",
+    "category": "Diag",
+    "symbols": [],
+    "notes": "A surgical procedure to obtain a sample of tissue for pathological examination.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "052",
+    "title": "Histopathological examination of tissue",
+    "category": "Diag",
+    "symbols": [],
+    "notes": "A histopathological examination to determine the disease status of a section of tissue.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "053",
+    "title": "Cytological investigation",
+    "category": "Diag",
+    "symbols": [],
+    "notes": "A microscopic examination of cells obtained from a smear or in situ staining of a suspected lesion to determine any aberrant characteristics that may suggest that the lesion is malignant or related to some other condition.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "055",
+    "title": "Blood collection",
+    "category": "Diag",
+    "symbols": [],
+    "notes": "The collection of blood for diagnostic and/or treatment purposes.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "056",
+    "title": "Haematological examination",
+    "category": "Diag",
+    "symbols": [],
+    "notes": "The haematological examination of a blood sample.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "057",
+    "title": "Procedures to derive biologically active components from a collection of blood",
+    "category": "Diag",
+    "symbols": [],
+    "notes": "Deriving biologically active components for patient treatment by processing blood collected from the patient.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "059",
+    "title": "Comprehensive head and neck cancer examination and risk assessment",
+    "category": "Diag",
+    "symbols": [],
+    "notes": "A specific comprehensive examination that consists of visual inspection and manual palpation of extraoral head and neck structures and intraoral soft tissues, and may involve indirect laryngoscopy or fibre-optic pharyngolaryngoscopy. This includes a detailed patient risk assessment.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "061",
+    "title": "Pulp testing – per appointment",
+    "category": "Diag",
+    "symbols": [],
+    "notes": "A non-invasive test used to determine the clinical status of the pulp. It involves the application of external stimulation to the pulp to determine its response. Other teeth are generally tested for comparison. This procedure should be itemised only once for each appointment when pulp testing is performed. Diagnostic Services",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "071",
+    "title": "Diagnostic model – per model",
+    "category": "Diag",
+    "symbols": [
+      "#"
+    ],
+    "notes": "The production of a physical model from an impression or digital data. The model is used for examination and treatment planning procedures. This item is not to be used to describe a working model.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "072",
+    "title": "Photographic records – intraoral – per appointment",
+    "category": "Diag",
+    "symbols": [
+      "#"
+    ],
+    "notes": "Photographic images inside the mouth.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "073",
+    "title": "Photographic records – extraoral – per appointment",
+    "category": "Diag",
+    "symbols": [
+      "#"
+    ],
+    "notes": "Photographic images showing the face or a region of the head and neck outside the mouth.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "074",
+    "title": "Diagnostic modelling – physical – per tooth",
+    "category": "Diag",
+    "symbols": [
+      "#"
+    ],
+    "notes": "Physical modelling (e.g. using wax or other material) to facilitate the development of treatment plan.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "075",
+    "title": "Diagnostic modelling – digital – per tooth",
+    "category": "Diag",
+    "symbols": [
+      "#"
+    ],
+    "notes": "Digital modelling to facilitate the development of treatment plan.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "076",
+    "title": "Intraoral evaluation of diagnostic modelling – per tooth or tooth replacement",
+    "category": "Diag",
+    "symbols": [
+      "#"
+    ],
+    "notes": "A procedure utilising data from 074 or 075 to create an intraoral simulation of proposed treatment to evaluate function, aesthetics and other characteristics.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "081",
+    "title": "Cephalometric analysis – excluding radiographs",
+    "category": "Diag",
+    "symbols": [
+      "#"
+    ],
+    "notes": "The analysis of a cephalometric radiograph (item 036) by measurement of specific biological landmarks in order to determine and predict patterns of development of the cranio-maxillofacial growth complex. The procedure is often employed in orthodontic diagnosis.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "082",
+    "title": "Tooth-jaw size prediction analysis",
+    "category": "Diag",
+    "symbols": [
+      "#"
+    ],
+    "notes": "The analysis of records, including radiographs and casts, to predict the relationship between the anticipated size of the mandible, the maxilla and the teeth that these bones have to accommodate.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "083",
+    "title": "Tomographic analysis",
+    "category": "Diag",
+    "symbols": [
+      "#"
+    ],
+    "notes": "The analysis of a tomograph (item 039) by measurement of specific biological landmarks. The procedure is often employed in treatment planning for implant and other surgical procedures.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "087",
+    "title": "Cone Beam Computed Tomography analysis and/or interpretation – small field of view",
+    "category": "Diag",
+    "symbols": [],
+    "notes": "(less than one complete dental arch) # The analysis and/or interpretation of a cone beam computed scan (refer to item 026) with a limited field of view. The procedure is often employed in diagnosis, treatment planning and analysis for dental procedures. CBCT is also referred to as 'CBVT'.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "088",
+    "title": "Cone Beam Computed Tomography analysis and/or interpretation – maxillary or mandibular",
+    "category": "Diag",
+    "symbols": [],
+    "notes": "dentition (single arch) # The analysis and/or interpretation of a cone beam computed scan (refer to item 026) of the maxillary or mandibular dentition and supporting alveolar structures. The procedure is often employed in diagnosis, treatment planning and analysis for dental procedures. CBCT is also referred to as 'CBVT'. Diagnostic Services Diagnostic Services",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "089",
+    "title": "Cone Beam Computed Tomography analysis and/or interpretation – maxillary and mandibular",
+    "category": "Diag",
+    "symbols": [],
+    "notes": "dentition (both arches) # The analysis and/or interpretation of a cone beam computed scan (refer to item 026) of the maxillary and mandibular dentition and supporting alveolar structures. The procedure is often employed in diagnosis, treatment planning and analysis for dental procedures. CBCT is also referred to as 'CBVT'.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "090",
+    "title": "Cone Beam Computed Tomography analysis and/or interpretation",
+    "category": "Diag",
+    "symbols": [],
+    "notes": "– temporomandibular joints only # The analysis and/or interpretation of a cone beam computed scan (refer to item 026) of the temporomandibular joints only, including an open mouth scan if required. The procedure is often employed in diagnosis, treatment planning and analysis for dental procedures. CBCT is also referred to as 'CBVT'.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "091",
+    "title": "Cone Beam Computed Tomography analysis and/or interpretation – orofacial structures",
+    "category": "Diag",
+    "symbols": [
+      "#"
+    ],
+    "notes": "The analysis and/or interpretation of a cone beam computed scan (refer to item 026) of the entire dentition and supporting alveolar structures, also including any or all of the following: temporomandibular joints, paranasal sinuses and airway, cranial base, cervical spine. The procedure is often employed in diagnosis, treatment planning and analysis for dental procedures. CBCT is also referred to as 'CBVT'. Diagnostic Services Preventive, Prophylactic and Bleaching Services Dental Prophylaxis and Bleaching",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "111",
+    "title": "Removal of plaque and/or stain",
+    "category": "Prev",
+    "symbols": [
+      "#"
+    ],
+    "notes": "Removal of dental plaque and/or stain from the surfaces of all teeth and/or implants. This item is included in procedures described by items 114, 115, 250 and 251.",
+    "warnings": [],
+    "fund_rules": {
+      "bupa": [
+        {
+          "frequency": "once every 6 months",
+          "network": "Members First Ultimate providers",
+          "url": "https://www.bupadental.com.au/no-gap-dental",
+          "scope_label": "Commonly includes",
+          "scope_codes": [
+            "011",
+            "012",
+            "013",
+            "014",
+            "015",
+            "022",
+            "037",
+            "111",
+            "114",
+            "115",
+            "121"
+          ]
+        }
+      ],
+      "medibank": [
+        {
+          "frequency": "up to 2 per year",
+          "network": "Members’ Choice Advantage dentists",
+          "url": "https://www.medibank.com.au/health-insurance/why-medibank/members-choice/dentists-network/",
+          "scope_label": "Commonly includes",
+          "scope_codes": [
+            "011",
+            "012",
+            "013",
+            "014",
+            "015",
+            "022",
+            "037",
+            "111",
+            "114",
+            "115",
+            "121"
+          ]
+        }
+      ],
+      "hcf": [
+        {
+          "frequency": "1–2 per year (selected covers)",
+          "network": "HCF Dental Centres / No-Gap services",
+          "url": "https://www.hcf.com.au/members/no-gap-services",
+          "scope_label": "Commonly includes",
+          "scope_codes": [
+            "011",
+            "012",
+            "013",
+            "014",
+            "015",
+            "022",
+            "037",
+            "111",
+            "114",
+            "115",
+            "121"
+          ]
+        }
+      ],
+      "nib": [
+        {
+          "frequency": "service limits apply",
+          "network": "nib Dental Care Centres",
+          "url": "https://www.nib.com.au/health-information/member-information/nib-dental-care-centres",
+          "scope_label": "Includes",
+          "scope_codes": [
+            "011",
+            "012",
+            "013",
+            "014",
+            "015",
+            "022",
+            "037",
+            "111",
+            "114",
+            "115",
+            "121"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "code": "113",
+    "title": "Recontouring and polishing of pre-existing restoration(s) – per tooth",
+    "category": "Prev",
+    "symbols": [],
+    "notes": "The reshaping and polishing of pre-existing restorations.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "114",
+    "title": "Removal of calculus – first appointment",
+    "category": "Prev",
+    "symbols": [],
+    "notes": "Removal of calculus from the surfaces of teeth and/or implants.",
+    "warnings": [],
+    "fund_rules": {
+      "bupa": [
+        {
+          "frequency": "once every 6 months",
+          "network": "Members First Ultimate providers",
+          "url": "https://www.bupadental.com.au/no-gap-dental",
+          "scope_label": "Commonly includes",
+          "scope_codes": [
+            "011",
+            "012",
+            "013",
+            "014",
+            "015",
+            "022",
+            "037",
+            "111",
+            "114",
+            "115",
+            "121"
+          ]
+        }
+      ],
+      "medibank": [
+        {
+          "frequency": "up to 2 per year",
+          "network": "Members’ Choice Advantage dentists",
+          "url": "https://www.medibank.com.au/health-insurance/why-medibank/members-choice/dentists-network/",
+          "scope_label": "Commonly includes",
+          "scope_codes": [
+            "011",
+            "012",
+            "013",
+            "014",
+            "015",
+            "022",
+            "037",
+            "111",
+            "114",
+            "115",
+            "121"
+          ]
+        }
+      ],
+      "hcf": [
+        {
+          "frequency": "1–2 per year (selected covers)",
+          "network": "HCF Dental Centres / No-Gap services",
+          "url": "https://www.hcf.com.au/members/no-gap-services",
+          "scope_label": "Commonly includes",
+          "scope_codes": [
+            "011",
+            "012",
+            "013",
+            "014",
+            "015",
+            "022",
+            "037",
+            "111",
+            "114",
+            "115",
+            "121"
+          ]
+        }
+      ],
+      "nib": [
+        {
+          "frequency": "service limits apply",
+          "network": "nib Dental Care Centres",
+          "url": "https://www.nib.com.au/health-information/member-information/nib-dental-care-centres",
+          "scope_label": "Includes",
+          "scope_codes": [
+            "011",
+            "012",
+            "013",
+            "014",
+            "015",
+            "022",
+            "037",
+            "111",
+            "114",
+            "115",
+            "121"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "code": "115",
+    "title": "Removal of calculus – subsequent appointment",
+    "category": "Prev",
+    "symbols": [],
+    "notes": "This item describes procedures in item 114 when, because of the extent or degree of calculus, an additional appointment(s) is required to remove deposits from the teeth and/or implants.",
+    "warnings": [],
+    "fund_rules": {
+      "bupa": [
+        {
+          "frequency": "once every 6 months",
+          "network": "Members First Ultimate providers",
+          "url": "https://www.bupadental.com.au/no-gap-dental",
+          "scope_label": "Commonly includes",
+          "scope_codes": [
+            "011",
+            "012",
+            "013",
+            "014",
+            "015",
+            "022",
+            "037",
+            "111",
+            "114",
+            "115",
+            "121"
+          ]
+        }
+      ],
+      "medibank": [
+        {
+          "frequency": "up to 2 per year",
+          "network": "Members’ Choice Advantage dentists",
+          "url": "https://www.medibank.com.au/health-insurance/why-medibank/members-choice/dentists-network/",
+          "scope_label": "Commonly includes",
+          "scope_codes": [
+            "011",
+            "012",
+            "013",
+            "014",
+            "015",
+            "022",
+            "037",
+            "111",
+            "114",
+            "115",
+            "121"
+          ]
+        }
+      ],
+      "hcf": [
+        {
+          "frequency": "1–2 per year (selected covers)",
+          "network": "HCF Dental Centres / No-Gap services",
+          "url": "https://www.hcf.com.au/members/no-gap-services",
+          "scope_label": "Commonly includes",
+          "scope_codes": [
+            "011",
+            "012",
+            "013",
+            "014",
+            "015",
+            "022",
+            "037",
+            "111",
+            "114",
+            "115",
+            "121"
+          ]
+        }
+      ],
+      "nib": [
+        {
+          "frequency": "service limits apply",
+          "network": "nib Dental Care Centres",
+          "url": "https://www.nib.com.au/health-information/member-information/nib-dental-care-centres",
+          "scope_label": "Includes",
+          "scope_codes": [
+            "011",
+            "012",
+            "013",
+            "014",
+            "015",
+            "022",
+            "037",
+            "111",
+            "114",
+            "115",
+            "121"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "code": "116",
+    "title": "Enamel micro-abrasion – per tooth",
+    "category": "Prev",
+    "symbols": [],
+    "notes": "The chemo-physical removal of discoloured and/or other surface enamel defects resulting from developmental defects, altered mineralisation or decalcification of the superficial enamel layer.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "117",
+    "title": "Bleaching, internal – per application",
+    "category": "Prev",
+    "symbols": [],
+    "notes": "The modification of the colour of the discoloured crown of an endodontically treated tooth using chemical and/or physical methods applied internally. This is a treatment carried out exclusively in the surgery.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "118",
+    "title": "Bleaching, external – per tooth",
+    "category": "Prev",
+    "symbols": [
+      "#"
+    ],
+    "notes": "The modification of the colour of a tooth using chemical and/or physical methods applied externally. This is a clinical course of treatment carried out exclusively in the surgery.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "119",
+    "title": "Bleaching, home application",
+    "category": "Prev",
+    "symbols": [
+      "#"
+    ],
+    "notes": "Provision of clinical advice, risk advice, use instructions and necessary professional supervision, for application by a patient at home, of bleaching medicaments to the patient’s dentition. For provision of required tray(s) and medicaments, see items 926 (where custom trays constructed) and 927. Remineralisation Agents",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "121",
+    "title": "Topical application of remineralisation agents, one treatment",
+    "category": "Prev",
+    "symbols": [],
+    "notes": "Application of remineralisation agents to the surfaces of the teeth. This may include activation of the agent. Not to be used as an intrinsic part of the restoration.",
+    "warnings": [],
+    "fund_rules": {
+      "bupa": [
+        {
+          "frequency": "once every 6 months",
+          "network": "Members First Ultimate providers",
+          "url": "https://www.bupadental.com.au/no-gap-dental",
+          "scope_label": "Commonly includes",
+          "scope_codes": [
+            "011",
+            "012",
+            "013",
+            "014",
+            "015",
+            "022",
+            "037",
+            "111",
+            "114",
+            "115",
+            "121"
+          ]
+        }
+      ],
+      "medibank": [
+        {
+          "frequency": "up to 2 per year",
+          "network": "Members’ Choice Advantage dentists",
+          "url": "https://www.medibank.com.au/health-insurance/why-medibank/members-choice/dentists-network/",
+          "scope_label": "Commonly includes",
+          "scope_codes": [
+            "011",
+            "012",
+            "013",
+            "014",
+            "015",
+            "022",
+            "037",
+            "111",
+            "114",
+            "115",
+            "121"
+          ]
+        }
+      ],
+      "hcf": [
+        {
+          "frequency": "1–2 per year (selected covers)",
+          "network": "HCF Dental Centres / No-Gap services",
+          "url": "https://www.hcf.com.au/members/no-gap-services",
+          "scope_label": "Commonly includes",
+          "scope_codes": [
+            "011",
+            "012",
+            "013",
+            "014",
+            "015",
+            "022",
+            "037",
+            "111",
+            "114",
+            "115",
+            "121"
+          ]
+        }
+      ],
+      "nib": [
+        {
+          "frequency": "service limits apply",
+          "network": "nib Dental Care Centres",
+          "url": "https://www.nib.com.au/health-information/member-information/nib-dental-care-centres",
+          "scope_label": "Includes",
+          "scope_codes": [
+            "011",
+            "012",
+            "013",
+            "014",
+            "015",
+            "022",
+            "037",
+            "111",
+            "114",
+            "115",
+            "121"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "code": "122",
+    "title": "Topical remineralisation agents, home application – per arch",
+    "category": "Prev",
+    "symbols": [],
+    "notes": "The prescribed use, by a patient at home, of a custom-made tray for the application of remineralisation agents to the patient’s dentition. This procedure describes the complete course of treatment per arch. For provision of the tray and medicaments or other remineralisation agents, see items 926 and 927.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "123",
+    "title": "Application of a cariostatic agent – per tooth",
+    "category": "Prev",
+    "symbols": [],
+    "notes": "Application of a concentrated fluoride or remineralisation and/or cariostatic agent, such as preparations containing silver fluoride. This includes necessary activation of the agent. Not to be used as an intrinsic part of the restoration. Other Preventive Services",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "131",
+    "title": "Dietary analysis and advice",
+    "category": "Prev",
+    "symbols": [],
+    "notes": "Analysis of and advice on a patient’s diet, including alcohol consumption, to correct any dietary imbalances or deficiencies that may contribute to oral diseases.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "141",
+    "title": "Oral hygiene instruction",
+    "category": "Prev",
+    "symbols": [],
+    "notes": "Instruction in techniques for the removal of bacterial plaque. Advice on appropriate toothpaste and medicaments may be included.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "142",
+    "title": "Tobacco counselling",
+    "category": "Prev",
+    "symbols": [],
+    "notes": "The analysis and assessment of a patient’s tobacco use and advice on the prevention and cessation of the use of tobacco aimed at reducing the patient’s risks of developing tobacco-related oral diseases and conditions. Preventive, Prophylactic and Bleaching Services",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "151",
+    "title": "Provision of a mouthguard – indirect",
+    "category": "Prev",
+    "symbols": [
+      "T"
+    ],
+    "notes": "Construction, provision and delivery of a mouthguard, using a model(s). The mouthguard is intended to prevent or mitigate sports injuries or soft tissue injuries that could occur from parafunction.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "153",
+    "title": "Bi-maxillary mouthguard – indirect",
+    "category": "Prev",
+    "symbols": [
+      "T"
+    ],
+    "notes": "Construction, provision and delivery of a bi-maxillary mouthguard using models. The mouthguard is intended to prevent or mitigate sports injuries.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "161",
+    "title": "Fissure and/or tooth surface sealing – per tooth",
+    "category": "Prev",
+    "symbols": [],
+    "notes": "Sealing of non-carious pits, fissures, smooth surfaces or cracks in a tooth with an adhesive material. Any preparation prior to application of the sealant is included in this item number.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "163",
+    "title": "Resin infiltration – per tooth",
+    "category": "Prev",
+    "symbols": [
+      "#"
+    ],
+    "notes": "Treatment of enamel lesions on smooth enamel surfaces by infiltration with a resin material. Any preparation prior to application of the resin infiltration is included in this item number.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "165",
+    "title": "Desensitising procedure – per appointment",
+    "category": "Prev",
+    "symbols": [],
+    "notes": "This item describes all desensitising undertaken at a single appointment and may include a procedure to diminish or abolish the painful sensitivity and discomfort that can occur in exposed dentine.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "171",
+    "title": "Odontoplasty – per tooth",
+    "category": "Prev",
+    "symbols": [],
+    "notes": "A procedure to modify the contour of the crown of a tooth or the anatomy of the fissure of a tooth. Preventive, Prophylactic and Bleaching Services Periodontics Procedures described in this section include the insertion of sutures, normal post-operative care and suture removal.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "213",
+    "title": "Treatment of acute periodontal infection – per appointment",
+    "category": "Perio",
+    "symbols": [],
+    "notes": "This item describes the treatment of acute periodontal infection(s). It may include establishing drainage and the removal of calculus from the affected tooth (teeth) or implant.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "221",
+    "title": "Clinical periodontal analysis and recording",
+    "category": "Perio",
+    "symbols": [],
+    "notes": "This is a special examination performed as part of the diagnosis and management of periodontal disease. The procedure consists of assessing and recording a patient’s periodontal condition.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "222",
+    "title": "Periodontal debridement – per tooth",
+    "category": "Perio",
+    "symbols": [],
+    "notes": "The mechanical removal of biofilm and calculus from a periodontally diseased tooth to a level consistent with periodontal health. Where calculus removal is undertaken for other teeth at the same or a subsequent appointment that do not require debridement, it is appropriate to itemise 114/115 for these teeth in conjunction with but separate from the teeth that have undergone periodontal debridement.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "223",
+    "title": "Non-surgical treatment of peri-implant disease – per implant",
+    "category": "Perio",
+    "symbols": [],
+    "notes": "The process of debridement using specialised instrumentation to remove the microbial biofilm from the implant and/or abutment surface, which may include localised application of medicaments.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "231",
+    "title": "Index",
+    "category": "Perio",
+    "symbols": [],
+    "notes": "Glass ionomer cement: adhesive restorations – anterior teeth 521–526 adhesive restorations – posterior teeth 531–536 Gold: see also Metallic restorations attachments 644, 645 bonded retainer",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "232",
+    "title": "Periodontal flap surgery – per tooth",
+    "category": "Perio",
+    "symbols": [],
+    "notes": "Incision and raising of a flap of gingival tissue to enable removal of inflammatory or granulation tissue. The procedure includes periodontal debridement of the tooth.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "233",
+    "title": "Surgical treatment of peri-implant disease – per implant",
+    "category": "Perio",
+    "symbols": [],
+    "notes": "Surgical access and flap elevation of the peri-implant soft tissues to access the implant surface for decontamination. The procedure includes the removal of inflammatory tissue. Grafting or regenerative materials where placed should be itemised separately.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "234",
+    "title": "Application of biologically active material",
+    "category": "Perio",
+    "symbols": [],
+    "notes": "The application of a biologically active material in conjunction with periodontal surgery to enhance reattachment or regeneration. This includes materials such as porcine collagen and enamel matrix derivative materials.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "235",
+    "title": "Gingival graft – per tooth, implant or extraction socket",
+    "category": "Perio",
+    "symbols": [],
+    "notes": "Transference or transplanting gingival or other soft tissue from a donor area in the patient’s mouth to an area around a tooth, implant or extraction socket to remedy a gingival deficiency.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "236",
+    "title": "Guided tissue regeneration – per tooth or implant",
+    "category": "Perio",
+    "symbols": [],
+    "notes": "A surgical technique in which a membrane is adapted over a bony defect, the tooth root or an implant.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "237",
+    "title": "Guided tissue regeneration – membrane removal",
+    "category": "Perio",
+    "symbols": [],
+    "notes": "Surgical procedure to remove a previously positioned membrane.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "238",
+    "title": "Periodontal surgery for crown lengthening – per tooth",
+    "category": "Perio",
+    "symbols": [],
+    "notes": "A procedure to establish a more apical gingival margin for greater exposure of tooth structure, including reshaping of alveolar bone where required.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "239",
+    "title": "Gingival xenograft – per tooth",
+    "category": "Perio",
+    "symbols": [],
+    "notes": "The insertion of a xenograft to remedy a gingival deficiency.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "241",
+    "title": "Root resection – per root",
+    "category": "Perio",
+    "symbols": [],
+    "notes": "Removal or amputation of one or more roots of a multi-rooted tooth with or without a portion of the crown.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "242",
+    "title": "Osseous surgery – per tooth or implant",
+    "category": "Perio",
+    "symbols": [],
+    "notes": "Reshaping and modifying defects and deformities in the bone supporting and surrounding the tooth or implant. This includes procedures described in items 232 and 233. The procedure includes periodontal debridement of the tooth or implant.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "243",
+    "title": "Osseous graft – per tooth or implant",
+    "category": "Perio",
+    "symbols": [],
+    "notes": "A surgical procedure in which particulate bone, a synthetic substitute or other matrix is used to replace, repair or augment alveolar bone. It may be used to repair a bony defect around a tooth or dental implant. This is in addition to item numbers such as 232, 233, 245 and 684.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "244",
+    "title": "Osseous graft – block",
+    "category": "Perio",
+    "symbols": [],
+    "notes": "A surgical procedure in which a block of bone is used for augmentation of a bony ridge, secured by screws or similar devices. Periodontics Periodontics",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "245",
+    "title": "Periodontal surgery involving one tooth",
+    "category": "Perio",
+    "symbols": [],
+    "notes": "Surgical intervention to aid the resolution of a localised periodontal inflammatory condition involving one tooth. The item is also used to describe pericision.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "246",
+    "title": "Maxillary sinus augmentation – trans-alveolar technique – per sinus",
+    "category": "Perio",
+    "symbols": [],
+    "notes": "Surgical access to the maxillary sinus via the implant osteotomy site. May involve simultaneous placement of dental implants. Grafting or regenerative materials where used should be itemised separately.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "247",
+    "title": "Maxillary sinus augmentation – lateral wall approach – per sinus",
+    "category": "Perio",
+    "symbols": [],
+    "notes": "Surgical access in the maxillary sinus via a lateral wall approach with bone grafting. May involve simultaneous placement of dental implants. Grafting or regenerative materials where used should be itemised separately.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "250",
+    "title": "Active non-surgical periodontal therapy – per quadrant",
+    "category": "Perio",
+    "symbols": [],
+    "notes": "Non-surgical management of uncontrolled periodontal disease in a quadrant with at least three teeth with clinical attachment loss of at least 3 mm or pocketing of at least 4 mm. This includes procedures described in items 111, 114, 115 and 222 for the quadrant. Items such as 113, 131 and 142 may be itemised separately.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "251",
+    "title": "Supportive periodontal therapy – per appointment",
+    "category": "Perio",
+    "symbols": [],
+    "notes": "Maintenance of periodontal health subsequent to active, non-surgical or surgical periodontal therapy. This includes procedures described in items 111, 114, 115 and 222. Items such as 113, 131 and 142 may be itemised separately. Oral Surgery The procedures described by the item numbers in the Extractions and Surgical Extractions sections below include any associated procedures such as the removal of any soft-tissue lesion associated with the tooth root or socket curettage to debride the area of infected or granulomatous tissue. Itemisation of a procedure described in this section includes the insertion of sutures, normal post-operative care, suture removal and the treatment of alveolar osteitis should it arise. If treatment for alveolar osteitis by a practitioner other than the practitioner involved in the extraction is required it should be itemised as 986. Some procedures in this section may attract a medicare rebate for approved dental practitioners. It is not appropriate practice to use both ADA and medicare item numbers to describe the same procedure. Only one item number should be used to describe each oral surgery procedure on the same day by the same operator. Extractions",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "311",
+    "title": "Removal of a tooth or part(s) thereof",
+    "category": "Surg",
+    "symbols": [],
+    "notes": "A procedure consisting of the removal of a tooth or part(s) thereof.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "314",
+    "title": "Sectional removal of a tooth or part(s) thereof",
+    "category": "Surg",
+    "symbols": [],
+    "notes": "The removal of a tooth or part(s) thereof in sections. Bone removal may be necessary. Surgical Extractions",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "322",
+    "title": "Surgical removal of a tooth or tooth fragment not requiring removal of bone or tooth division",
+    "category": "Surg",
+    "symbols": [],
+    "notes": "Removal of a tooth or tooth fragment where an incision and the raising of a mucoperiosteal flap are required, but where removal of bone or sectioning of the tooth is not necessary to remove the tooth.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "324",
+    "title": "Surgical removal of a tooth or tooth fragment requiring bone removal and/or tooth division",
+    "category": "Surg",
+    "symbols": [],
+    "notes": "Removal of a tooth or tooth fragment with removal of bone and/or sectioning of the tooth after an incision and the raising of a mucoperiosteal flap. The tooth may be removed in sections. Surgery for Prostheses",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "331",
+    "title": "Alveoloplasty – per segment",
+    "category": "Surg",
+    "symbols": [],
+    "notes": "The surgical modification of the shape of a segment of the alveolar bone.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "332",
+    "title": "Ostectomy – per jaw",
+    "category": "Surg",
+    "symbols": [],
+    "notes": "The surgical modification of the bony architecture of the maxilla or mandible.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "337",
+    "title": "Reduction of fibrous tuberosity",
+    "category": "Surg",
+    "symbols": [],
+    "notes": "A surgical procedure involving removal of fibrous tissue from the posterior maxillary alveolar ridge in order to modify the ridge contour.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "338",
+    "title": "Reduction of flabby ridge – per segment",
+    "category": "Surg",
+    "symbols": [],
+    "notes": "A surgical procedure involving removal of unsupported soft tissue from a segment or quadrant of the maxillary or mandibular alveolar ridge.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "341",
+    "title": "Removal of hyperplastic tissue",
+    "category": "Surg",
+    "symbols": [],
+    "notes": "The surgical removal of an area of hyperplastic tissue from the maxillary or mandibular alveolar ridge or adjacent mucosa.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "343",
+    "title": "Repositioning of muscle attachment",
+    "category": "Surg",
+    "symbols": [],
+    "notes": "The surgical repositioning of a muscle attachment to place it in a more favourable position.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "344",
+    "title": "Vestibuloplasty",
+    "category": "Surg",
+    "symbols": [],
+    "notes": "The surgical deepening of the buccal or labial vestibule in the mucosa.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "345",
+    "title": "Skin or mucosal graft",
+    "category": "Surg",
+    "symbols": [],
+    "notes": "A surgical procedure involving a skin or mucosal graft. Oral Surgery Treatment of Maxillofacial Injuries",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "351",
+    "title": "Repair of skin and subcutaneous tissue or mucous membrane",
+    "category": "Surg",
+    "symbols": [],
+    "notes": "The surgical cleaning and repair of a facial skin wound in the region of the mouth or jaws, or the repair of oral mucous membrane, where the wounds involve subcutaneous tissues.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "352",
+    "title": "Fracture of maxilla or mandible – not requiring fixation",
+    "category": "Surg",
+    "symbols": [],
+    "notes": "Conservative treatment of a fracture of the maxilla or mandible where there is no marked displacement or mobility of the fragments. No physical reduction or fixation is required.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "353",
+    "title": "Fracture of maxilla or mandible – with wiring of teeth or intraoral fixation",
+    "category": "Surg",
+    "symbols": [],
+    "notes": "Treatment of a fracture of the maxilla or mandible where interdental wiring or the application of a dental splint is indicated to provide reduction and fixation of the fragments. Where a splint is required, it should be itemised.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "354",
+    "title": "Fracture of maxilla or mandible – with external fixation",
+    "category": "Surg",
+    "symbols": [],
+    "notes": "Treatment of a fracture of the maxilla or mandible using sets of pins inserted through the skin and into the maxillary or mandibular bone to reduce and fix the fracture. The pins are locked into a firm relationship using clamps and a supporting apparatus.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "355",
+    "title": "Index",
+    "category": "Surg",
+    "symbols": [],
+    "notes": "Notes Notes Notes Phone: (02) 8815 3333 Email: contact@ada.org.au ada.org.au",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "359",
+    "title": "Fracture of the maxilla or mandible requiring open reduction",
+    "category": "Surg",
+    "symbols": [],
+    "notes": "Surgical treatment of a fracture of the maxilla or mandible where the fracture is exposed and reduction and fixation of the fragments are performed directly. The fragments, when reduced, may be fixed in position with wires or plates and screws. Dislocations",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "361",
+    "title": "Mandible – relocation following dislocation",
+    "category": "Surg",
+    "symbols": [],
+    "notes": "Relocation of the condylar head of the mandible within the temporomandibular joint fossa following its dislocation. The procedure is usually performed by manipulation.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "363",
+    "title": "Mandible – relocation requiring open operation",
+    "category": "Surg",
+    "symbols": [],
+    "notes": "Surgical exposure of a dislocated temporomandibular joint and its correct repositioning. Oral Surgery Osteotomies",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "365",
+    "title": "Osteotomy – maxilla",
+    "category": "Surg",
+    "symbols": [],
+    "notes": "Surgical exposure and fracturing of the maxilla in predetermined planes in order to modify its form or position.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "366",
+    "title": "Osteotomy – mandible",
+    "category": "Surg",
+    "symbols": [],
+    "notes": "Surgical exposure and fracturing of the mandible in predetermined planes in order to modify its form or position. General Surgical",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "371",
+    "title": "Removal of tumour, cyst or scar – cutaneous, subcutaneous or in mucous membrane",
+    "category": "Surg",
+    "symbols": [],
+    "notes": "The surgical removal of a tumour, cyst or scar from cutaneous or subcutaneous tissues or from mucous membrane. Pathological review may be necessary.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "373",
+    "title": "Removal of tumour, cyst or scar involving muscle, bone or other deep tissue",
+    "category": "Surg",
+    "symbols": [],
+    "notes": "The surgical removal of a tumour, cyst or scar involving muscle, bone or other deep tissue. Pathological review may be necessary.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "375",
+    "title": "Surgery to salivary duct",
+    "category": "Surg",
+    "symbols": [],
+    "notes": "A general item to describe any surgery to salivary ducts. It includes removal of stones and plastic surgery. Details of the procedure should be specified.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "376",
+    "title": "Surgery to salivary gland",
+    "category": "Surg",
+    "symbols": [],
+    "notes": "A general item to describe any surgery to the salivary gland that cannot be described by another item. Details of the procedure should be specified.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "377",
+    "title": "Repair of soft tissue",
+    "category": "Surg",
+    "symbols": [],
+    "notes": "An item to describe surgical procedures (including suturing) for the repair of soft tissues.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "378",
+    "title": "Surgical removal of foreign body",
+    "category": "Surg",
+    "symbols": [],
+    "notes": "The surgical removal of a foreign body impacted in tissues.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "379",
+    "title": "Marsupialisation of cyst",
+    "category": "Surg",
+    "symbols": [],
+    "notes": "The treatment of a cyst by surgically opening it to convert it from an enclosed sac to a partially open pouch. Oral Surgery Other Surgical Procedures",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "381",
+    "title": "Surgical exposure of an unerupted tooth – per tooth",
+    "category": "Surg",
+    "symbols": [],
+    "notes": "The surgical exposure of an unerupted tooth to facilitate its eruption.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "382",
+    "title": "Surgical exposure and attachment of device for orthodontic traction",
+    "category": "Surg",
+    "symbols": [],
+    "notes": "Surgical exposure of an unerupted tooth and attachment of a device so that orthodontic traction may be applied.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "384",
+    "title": "Repositioning of displaced tooth/teeth – per tooth",
+    "category": "Surg",
+    "symbols": [],
+    "notes": "A procedure following trauma where the position of the displaced tooth/teeth is corrected by manipulation. Stabilising procedures are itemised separately.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "385",
+    "title": "Surgical repositioning of unerupted tooth – per tooth",
+    "category": "Surg",
+    "symbols": [],
+    "notes": "Surgical exposure and manipulation of an unerupted tooth to correct its position but not to detach the tooth from its supporting tissues.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "386",
+    "title": "Splinting of displaced tooth/teeth – per displaced tooth",
+    "category": "Surg",
+    "symbols": [],
+    "notes": "A procedure following trauma where the position of the displaced tooth/teeth may be stabilised by splinting. For removal of splint, see item 656.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "387",
+    "title": "Replantation and splinting of a tooth – per avulsed or intentionally removed tooth",
+    "category": "Surg",
+    "symbols": [],
+    "notes": "Replantation of a tooth that has been avulsed or intentionally removed. It may be held in the correct position by splinting. For removal of splint, see item 656.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "388",
+    "title": "Transplantation of tooth or tooth bud",
+    "category": "Surg",
+    "symbols": [],
+    "notes": "Surgical access to and transplantation of an unerupted tooth or tooth bud to a new position prepared in the maxilla or mandible to receive it. Oral Surgery",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "389",
+    "title": "Surgery to isolate and preserve neurovascular tissue",
+    "category": "Surg",
+    "symbols": [],
+    "notes": "Additional surgery performed at the time of dento-alveolar surgery where damage to the neurovascular bundle may occur. The object of the additional surgery is to isolate and protect the neurovascular bundle from injury.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "391",
+    "title": "Surgical intervention of a frenum",
+    "category": "Surg",
+    "symbols": [],
+    "notes": "This item includes frenotomy, frenuloplasty or frenectomy. For appropriate usage, reference should be made to the ADA 2020 Ankyloglossia and Oral Frena Consensus Statement.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "392",
+    "title": "Drainage of abscess",
+    "category": "Surg",
+    "symbols": [],
+    "notes": "Drainage and/or irrigation of an abscess other than through a root canal or at the time of extraction. The drainage may be through an incision or inserted tube.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "393",
+    "title": "Surgery involving the maxillary antrum",
+    "category": "Surg",
+    "symbols": [],
+    "notes": "A general item to describe any surgery of the maxillary antrum, including lavage, antrostomy, recovery of a foreign body or closure of an oro-antral communication. Details of the procedure should be specified.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "394",
+    "title": "Surgery for osteomyelitis",
+    "category": "Surg",
+    "symbols": [],
+    "notes": "A general item to describe any surgery for the treatment of osteomyelitis. Details of the procedure should be specified.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "395",
+    "title": "Repair of nerve trunk",
+    "category": "Surg",
+    "symbols": [],
+    "notes": "A surgical procedure to repair a nerve trunk.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "399",
+    "title": "Control of reactionary or secondary post-operative haemorrhage",
+    "category": "Surg",
+    "symbols": [],
+    "notes": "This procedure describes the control of reactionary or secondary post-operative haemorrhage. Oral Surgery Pulp and Root Canal Treatments",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "411",
+    "title": "Direct pulp capping",
+    "category": "Endo",
+    "symbols": [],
+    "notes": "A procedure where an exposed pulp is directly covered with a protective dressing or cement.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "412",
+    "title": "Incomplete endodontic therapy (tooth not suitable for further treatment)",
+    "category": "Endo",
+    "symbols": [],
+    "notes": "A procedure where in assessing the suitability of a tooth for endodontic treatment a decision is made that the tooth is not suitable for restoration. Temporisation is itemised separately.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "414",
+    "title": "Pulpotomy",
+    "category": "Endo",
+    "symbols": [],
+    "notes": "Amputation of part of the pulp. The pulp remaining is then covered with a protective dressing or cement.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "415",
+    "title": "Complete chemo-mechanical preparation of root canal – one canal",
+    "category": "Endo",
+    "symbols": [],
+    "notes": "Complete chemo-mechanical preparation, including removal of pulp or necrotic debris from a canal.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "416",
+    "title": "Complete chemo-mechanical preparation of root canal – each additional canal",
+    "category": "Endo",
+    "symbols": [],
+    "notes": "Complete chemo-mechanical preparation, including removal of pulp or necrotic debris from each additional canal of a tooth with multiple canals.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "417",
+    "title": "Root canal obturation – one canal",
+    "category": "Endo",
+    "symbols": [],
+    "notes": "The filling of a root canal, following chemo-mechanical preparation.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "418",
+    "title": "Root canal obturation – each additional canal",
+    "category": "Endo",
+    "symbols": [],
+    "notes": "The filling, following chemo-mechanical preparation, of each additional canal in a tooth with multiple canals.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "419",
+    "title": "Extirpation of pulp or debridement of root canal(s)",
+    "category": "Endo",
+    "symbols": [],
+    "notes": "The partial removal of a tooth pulp for one or more of the following reasons:  to relieve pain;  to perform an assessment of root integrity; or  to carry out an assessment of the tooth's suitability for restoration. Item numbers 415 and/or 416 should not be used at the same appointment as 419.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "421",
+    "title": "Resorbable root canal filling – primary tooth",
+    "category": "Endo",
+    "symbols": [],
+    "notes": "The placement of resorbable root canal filling material in a primary tooth. Endodontics Periradicular Surgery Procedures described in this section include normal post-operative care. Item 434 – Apical seal – per canal has been modified to clearly delineate its application solely to the procedure described. Other procedures which may also be completed at the same appointment, such as apicectomy and periapical curettage, are itemised separately.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "431",
+    "title": "Periapical curettage – per root",
+    "category": "Endo",
+    "symbols": [],
+    "notes": "Surgical exposure of the apical section of the root of a pulpless or endodontically treated tooth to remove associated pathological tissue.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "432",
+    "title": "Apicectomy – per root",
+    "category": "Endo",
+    "symbols": [],
+    "notes": "Surgical exposure of the apical section of the root of a pulpless or endodontically treated tooth to remove the apical portion of the root, including curettage of the region.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "433",
+    "title": "Exploratory periradicular surgery",
+    "category": "Endo",
+    "symbols": [],
+    "notes": "Surgery to investigate the integrity of the root and surrounding structures.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "434",
+    "title": "Apical seal – per canal",
+    "category": "Endo",
+    "symbols": [],
+    "notes": "A surgical method of debriding and filling the apical end of the root canal of a tooth. Periapical curettage and apicectomy should be itemised separately.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "436",
+    "title": "Sealing of perforation",
+    "category": "Endo",
+    "symbols": [],
+    "notes": "A surgical method of sealing a communication between the pulp canal/chamber and the periradicular tissues.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "437",
+    "title": "Extirpation of pulp: see also Chemo-mechanical",
+    "category": "Endo",
+    "symbols": [],
+    "notes": "preparation of root canal(s) emergency treatment",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "438",
+    "title": "Hemisection",
+    "category": "Endo",
+    "symbols": [],
+    "notes": "Separation of a multi-rooted tooth into two parts. Endodontics Other Endodontic Services",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "445",
+    "title": "Exploration and/or negotiation of a calcified canal – per canal, per appointment",
+    "category": "Endo",
+    "symbols": [],
+    "notes": "Chemical and physical procedures to locate and/or negotiate an abnormally calcified root canal where specific time is devoted to this procedure.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "451",
+    "title": "Removal of root filling – per canal",
+    "category": "Endo",
+    "symbols": [],
+    "notes": "Removal of the root filling from a previously obturated canal to enable endodontic retreatment.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "452",
+    "title": "Removal of a cemented root canal post or post crown",
+    "category": "Endo",
+    "symbols": [],
+    "notes": "Removal of a cemented root canal post or post crown.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "453",
+    "title": "Removal or bypassing fractured endodontic instrument",
+    "category": "Endo",
+    "symbols": [],
+    "notes": "The removal or bypassing of an instrument lodged in the root canal.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "455",
+    "title": "Additional appointment for irrigation and/or dressing of the root canal system – per tooth",
+    "category": "Endo",
+    "symbols": [],
+    "notes": "Separate appointment for additional irrigation of the root canal system and replacement of the intracanal dressing/medicament with therapeutic properties that facilitates healing/development of the root and periradicular tissues over time. This item is not to be used in conjunction with items 411–421 or 451–453 or 457.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "457",
+    "title": "Obturation of resorption defect or perforation (non-surgical)",
+    "category": "Endo",
+    "symbols": [],
+    "notes": "Conservative treatment of a root perforation or resorption defect to repair the defect from within the root canal.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "459",
+    "title": "Guided endodontic repair – per tooth",
+    "category": "Endo",
+    "symbols": [],
+    "notes": "The stimulation of an ingrowth of tissue to occupy the root canal space by means of a guided repair process, in one or multiple appointments. This item is not to be used in conjunction with item 417. Item 415 should be itemised separately. Endodontics Restorative Services Itemisation of a restorative service includes the preparation of the tooth, placement of a lining, contouring of the adjacent and opposing teeth, placement of the restoration and normal post-operative care. Pins, cusp capping and restoration of an incisor corner replacement are to be itemised separately. Direct Restorations Metallic Restorations – Direct",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "511",
+    "title": "Metallic restoration – one surface – direct",
+    "category": "Rest",
+    "symbols": [],
+    "notes": "Direct metallic restoration involving one surface of a tooth.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "512",
+    "title": "Metallic restoration – two surfaces – direct",
+    "category": "Rest",
+    "symbols": [],
+    "notes": "Direct metallic restoration involving two surfaces of a tooth.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "513",
+    "title": "Metallic restoration – three surfaces – direct",
+    "category": "Rest",
+    "symbols": [],
+    "notes": "Direct metallic restoration involving three surfaces of a tooth.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "514",
+    "title": "Metallic restoration – four surfaces – direct",
+    "category": "Rest",
+    "symbols": [],
+    "notes": "Direct metallic restoration involving four surfaces of a tooth.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "515",
+    "title": "Metallic restoration – five surfaces – direct",
+    "category": "Rest",
+    "symbols": [],
+    "notes": "Direct metallic restoration involving five surfaces of a tooth. Adhesive Restorations – Anterior Teeth – Direct",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "521",
+    "title": "Adhesive restoration – one surface – anterior tooth – direct",
+    "category": "Rest",
+    "symbols": [],
+    "notes": "Direct restoration, using an adhesive technique and a tooth-coloured material, involving one surface of an anterior tooth.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "522",
+    "title": "Adhesive restoration – two surfaces – anterior tooth – direct",
+    "category": "Rest",
+    "symbols": [],
+    "notes": "Direct restoration, using an adhesive technique and a tooth-coloured material, involving two surfaces of an anterior tooth.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "523",
+    "title": "Adhesive restoration – three surfaces – anterior tooth – direct",
+    "category": "Rest",
+    "symbols": [],
+    "notes": "Direct restoration, using an adhesive technique and a tooth-coloured material, involving three surfaces of an anterior tooth.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "524",
+    "title": "Adhesive restoration – four surfaces – anterior tooth – direct",
+    "category": "Rest",
+    "symbols": [],
+    "notes": "Direct restoration, using an adhesive technique and a tooth-coloured material, involving four surfaces of an anterior tooth.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "525",
+    "title": "Adhesive restoration – five surfaces – anterior tooth – direct",
+    "category": "Rest",
+    "symbols": [],
+    "notes": "Direct restoration, using an adhesive technique and a tooth-coloured material, involving five surfaces of an anterior tooth.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "526",
+    "title": "Adhesive restoration – veneer – anterior tooth – direct",
+    "category": "Rest",
+    "symbols": [
+      "#"
+    ],
+    "notes": "Direct bonding of a veneer of adhesive tooth-coloured material to the surface of an anterior tooth. Adhesive Restorations – Posterior Teeth – Direct",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "531",
+    "title": "Adhesive restoration – one surface – posterior tooth – direct",
+    "category": "Rest",
+    "symbols": [],
+    "notes": "Direct restoration, using an adhesive technique and a tooth-coloured material, involving one surface of a posterior tooth.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "532",
+    "title": "Adhesive restoration – two surfaces – posterior tooth – direct",
+    "category": "Rest",
+    "symbols": [],
+    "notes": "Direct restoration, using an adhesive technique and a tooth-coloured material, involving two surfaces of a posterior tooth.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "533",
+    "title": "Adhesive restoration – three surfaces – posterior tooth – direct",
+    "category": "Rest",
+    "symbols": [],
+    "notes": "Direct restoration, using an adhesive technique and a tooth-coloured material, involving three surfaces of a posterior tooth.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "534",
+    "title": "Adhesive restoration – four surfaces – posterior tooth – direct",
+    "category": "Rest",
+    "symbols": [],
+    "notes": "Direct restoration, using an adhesive technique and a tooth-coloured material, involving four surfaces of a posterior tooth.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "535",
+    "title": "Adhesive restoration – five surfaces – posterior tooth – direct",
+    "category": "Rest",
+    "symbols": [],
+    "notes": "Direct restoration, using an adhesive technique and a tooth-coloured material, involving five surfaces of a posterior tooth.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "536",
+    "title": "Adhesive restoration – veneer – posterior tooth – direct",
+    "category": "Rest",
+    "symbols": [
+      "#"
+    ],
+    "notes": "Direct bonding of a veneer of adhesive tooth-coloured material to the surface of a posterior tooth. Restorative Services Indirect Restorations Metallic Restorations – Indirect",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "541",
+    "title": "Metallic restoration – one surface – indirect",
+    "category": "Rest",
+    "symbols": [],
+    "notes": "Indirect metallic restoration, involving one surface of a tooth.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "542",
+    "title": "Metallic restoration – two surfaces – indirect",
+    "category": "Rest",
+    "symbols": [],
+    "notes": "Indirect metallic restoration, involving two surfaces of a tooth.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "543",
+    "title": "Metallic restoration – three surfaces – indirect",
+    "category": "Rest",
+    "symbols": [],
+    "notes": "Indirect metallic restoration, involving three surfaces of a tooth.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "544",
+    "title": "Metallic restoration – four surfaces – indirect",
+    "category": "Rest",
+    "symbols": [],
+    "notes": "Indirect metallic restoration, involving four surfaces of a tooth.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "545",
+    "title": "Metallic restoration – five surfaces – indirect",
+    "category": "Rest",
+    "symbols": [],
+    "notes": "Indirect metallic restoration, involving five surfaces of a tooth. Tooth-coloured Restorations – Indirect",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "551",
+    "title": "Tooth-coloured restoration – one surface – indirect",
+    "category": "Rest",
+    "symbols": [],
+    "notes": "Indirect tooth-coloured restoration, involving one surface of a tooth.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "552",
+    "title": "Tooth-coloured restoration – two surfaces – indirect",
+    "category": "Rest",
+    "symbols": [],
+    "notes": "Indirect tooth-coloured restoration, involving two surfaces of a tooth.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "553",
+    "title": "Tooth-coloured restoration – three surfaces – indirect",
+    "category": "Rest",
+    "symbols": [],
+    "notes": "Indirect tooth-coloured restoration, involving three surfaces of a tooth.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "554",
+    "title": "Tooth-coloured restoration – four surfaces – indirect",
+    "category": "Rest",
+    "symbols": [],
+    "notes": "Indirect tooth-coloured restoration, involving four surfaces of a tooth. Restorative Services",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "555",
+    "title": "Tooth-coloured restoration – five surfaces – indirect",
+    "category": "Rest",
+    "symbols": [],
+    "notes": "Indirect tooth-coloured restoration, involving five surfaces of a tooth.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "556",
+    "title": "Tooth-coloured restoration – veneer – indirect",
+    "category": "Rest",
+    "symbols": [
+      "#"
+    ],
+    "notes": "The attachment of a tooth-coloured veneer to the surface of a tooth. The veneer is constructed indirectly. Other Restorative Services",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "571",
+    "title": "Adaptation of new restoration to existing removable prosthesis – per tooth",
+    "category": "Rest",
+    "symbols": [],
+    "notes": "Used in conjunction with restorative services where adaptation of the new restoration is required to accommodate the seating and/or retention of an existing removable prosthesis.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "572",
+    "title": "Provisional/interim restoration – per tooth",
+    "category": "Rest",
+    "symbols": [],
+    "notes": "The provisional (interim) restoration of a tooth designed to last until the definitive restoration can be constructed or the tooth is removed. This item should be used only where the provisional (interim) restoration is not an intrinsic part of treatment. This item is not to be used for provisional (interim) sealing of the access cavity during endodontic treatment or for provisional (interim) restoration during construction of indirect restorations.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "574",
+    "title": "Metal band",
+    "category": "Rest",
+    "symbols": [],
+    "notes": "The cementation of a metal band for diagnostic or protective purposes or for the placement of a provisional (intermediate) restoration. Where a provisional (intermediate) restoration is placed, item 572 may also be used.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "575",
+    "title": "Pin retention – per pin",
+    "category": "Rest",
+    "symbols": [],
+    "notes": "Use of a pin to aid the retention and support of direct or indirect restorations in a tooth.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "577",
+    "title": "Cusp capping – per cusp",
+    "category": "Rest",
+    "symbols": [],
+    "notes": "This item is to be used in conjunction with items describing direct or indirect restorations of posterior teeth that are formed in such a manner as to restore the anatomical or functional height of a cusp. Restorative Services",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "578",
+    "title": "Restoration of an incisal corner – per corner",
+    "category": "Rest",
+    "symbols": [],
+    "notes": "This item is to be used in conjunction with items describing direct or indirect restorations of anterior teeth that are formed in such a way as to restore the anatomical or functional shape of an incisal corner.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "579",
+    "title": "Bonding of tooth fragment",
+    "category": "Rest",
+    "symbols": [],
+    "notes": "The direct bonding of a tooth fragment as an alternative to placing a restoration.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "586",
+    "title": "Preformed Full Crown – metallic – significant tooth preparation",
+    "category": "Rest",
+    "symbols": [],
+    "notes": "Placing a preformed metallic crown as a coronal restoration for a tooth where significant tooth preparation is required. Where the restoration of the tooth at the same appointment is required prior to placement of the crown, the use of item 627 is applicable.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "587",
+    "title": "Preformed Full Crown – metallic – minimal tooth preparation",
+    "category": "Rest",
+    "symbols": [],
+    "notes": "Placing a preformed metallic crown as a coronal restoration for a tooth where minimal or no preparation of the tooth is required, referred to as the 'Hall' technique.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "588",
+    "title": "Preformed Full Crown – tooth-coloured",
+    "category": "Rest",
+    "symbols": [],
+    "notes": "Placing a preformed tooth-coloured crown as a coronal restoration for a tooth. Where the restoration of the tooth at the same appointment is required prior to placement of the crown, the use of item 627 is applicable.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "595",
+    "title": "Removal of indirect restoration",
+    "category": "Rest",
+    "symbols": [],
+    "notes": "The removal of a currently cemented definitive indirect restoration, which may be subsequently reinserted.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "596",
+    "title": "Recementing of indirect restoration",
+    "category": "Rest",
+    "symbols": [],
+    "notes": "Recementing a previously cemented indirect restoration.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "597",
+    "title": "Post – direct",
+    "category": "Rest",
+    "symbols": [],
+    "notes": "Insertion of a post into a prepared root canal to provide an anchor for an artificial crown or other restoration.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "598",
+    "title": "Restoration root capping – direct",
+    "category": "Rest",
+    "symbols": [],
+    "notes": "A direct restoration of the root of a decoronated tooth. Not to be used with 577. Restorative Services Crowns Itemisation of a crown includes management of the soft and hard tissues associated with the crown during impression taking and insertion appointments.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "611",
+    "title": "Full crown – polymeric material – indirect",
+    "category": "Pros",
+    "symbols": [],
+    "notes": "An artificial crown constructed with a polymeric material, restoring a natural tooth.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "613",
+    "title": "Full crown – ceramic – indirect",
+    "category": "Pros",
+    "symbols": [],
+    "notes": "An artificial crown constructed with a ceramic material, manufactured to precisely adapt to a pre-prepared natural tooth.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "615",
+    "title": "Full crown – veneered – indirect",
+    "category": "Pros",
+    "symbols": [],
+    "notes": "An artificial crown constructed with a metallic base veneered with a tooth-coloured material, manufactured to precisely adapt to a pre-prepared natural tooth.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "618",
+    "title": "Full crown – metallic – indirect",
+    "category": "Pros",
+    "symbols": [],
+    "notes": "An artificial crown constructed with custom fabricated metal, manufactured to precisely adapt to a pre- prepared natural tooth.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "625",
+    "title": "Post and core for crown – indirect",
+    "category": "Pros",
+    "symbols": [],
+    "notes": "A post and core fabricated accurately to the dimension of the prepared root canal(s) and the desired coronal anatomy to provide an anchor foundation for an artificial crown.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "627",
+    "title": "Preliminary restoration for crown – direct",
+    "category": "Pros",
+    "symbols": [],
+    "notes": "A direct restoration of the remains of a tooth to provide a base for an intended indirect crown, placed at the same appointment as the crown preparation. Pins and/or posts used should be itemised separately.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "629",
+    "title": "Post and root cap – indirect",
+    "category": "Pros",
+    "symbols": [],
+    "notes": "A post and capping fitted to the root of a tooth. The post provides an anchor in the root canal of the tooth and the capping may provide support for an overdenture. It may incorporate a precision or magnetic attachment that should be separately itemised.  Prosthodontics Provisional Crowns and Bridges",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "631",
+    "title": "Provisional crown – per tooth",
+    "category": "Pros",
+    "symbols": [],
+    "notes": "Provisional restoration of a tooth with a crown that is designed to last until the definitive crown can be constructed or the tooth is removed. This item should be used only where a provisional crown is not an intrinsic part of another service. It should not be used for a provisional restoration between appointments during crown construction.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "632",
+    "title": "Provisional bridge pontic – per pontic",
+    "category": "Pros",
+    "symbols": [],
+    "notes": "Placement of a fixed provisional bridge pontic supported by teeth or implants designed to last until the definitive bridge can be constructed and inserted. The provisional restorations of the abutments are itemised separately as 631. The provisional implant abutments are itemised separately as 633. This item should be used only where a provisional bridge is not an intrinsic part of the treatment being provided. It should not be used for a provisional bridge between appointments during bridge construction.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "633",
+    "title": "Provisional implant abutment – per abutment",
+    "category": "Pros",
+    "symbols": [],
+    "notes": "Placement of a specific provisional abutment to an implant designed to last until the definitive abutment(s) are fitted. These are generally fitted to accommodate a provisional prosthesis.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "634",
+    "title": "Provisional implant restoration – per implant abutment",
+    "category": "Pros",
+    "symbols": [],
+    "notes": "The provisional (intermediate) restoration of an implant designed to last until the definitive restoration can be placed. This item should be used only where the provisional (intermediate) restoration is not an intrinsic part of treatment. Prosthodontics Bridges For examples of correct itemisation of bridges, see Notes for Guidance.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "642",
+    "title": "Bridge pontic – direct – per pontic",
+    "category": "Pros",
+    "symbols": [],
+    "notes": "The direct attachment of a replacement tooth to the adjoining abutment tooth/teeth. The pontic and attachment may utilise reinforcing materials. The number of pontics should be indicated and the attaching restorations should be appropriately itemised.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "643",
+    "title": "Bridge pontic – indirect – per pontic",
+    "category": "Pros",
+    "symbols": [],
+    "notes": "The indirect provision of an artificial replacement tooth joined to a retainer(s) on an abutment tooth or osseointegrated implant. The number of pontics should be indicated and the retainer should be appropriately itemised.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "644",
+    "title": "Semi-fixed attachment",
+    "category": "Pros",
+    "symbols": [],
+    "notes": "The preparation within a restoration of a mechanical lock or keyway matched by a complementary portion on a bridge or prosthetic appliance. The other components of the bridge or prosthetic appliance should be appropriately itemised.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "645",
+    "title": "Precision or magnetic attachment",
+    "category": "Pros",
+    "symbols": [],
+    "notes": "Incorporated as part of a restoration, or a magnetic or precision retention device matched by a complementary attachment on a bridge or other prosthetic appliance. The other components of the bridge or prosthetic appliance should be appropriately itemised. For the prosthesis component, see item 735.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "648",
+    "title": "Bonded retainer – direct – per tooth",
+    "category": "Pros",
+    "symbols": [],
+    "notes": "A retainer directly bonded to the abutment tooth/teeth for support of the bridge pontic(s). The pontic(s) should be itemised separately.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "649",
+    "title": "Bonded retainer – indirect – per tooth",
+    "category": "Pros",
+    "symbols": [],
+    "notes": "A retainer and framework to be bonded to the abutment tooth/teeth for support of the bridge pontic(s) or a precision attachment. In the case of a bonded bridge, the number of pontics should be itemised separately. Prosthodontics Crown and Bridge Repairs and Other Services",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "651",
+    "title": "Recementing crown or veneer",
+    "category": "Pros",
+    "symbols": [],
+    "notes": "Recementing a previously cemented crown/veneer.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "652",
+    "title": "Recementing bridge or splint – per abutment",
+    "category": "Pros",
+    "symbols": [],
+    "notes": "Recementing a previously cemented bridge or splint.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "653",
+    "title": "Rebonding of bridge or splint where retreatment of bridge surface is required",
+    "category": "Pros",
+    "symbols": [],
+    "notes": "The rebonding of an enamel bonded bridge or splint that requires retreatment of the fitting surface.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "655",
+    "title": "Removal of crown",
+    "category": "Pros",
+    "symbols": [],
+    "notes": "The removal of a currently cemented definitive crown that may subsequently be reinserted.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "656",
+    "title": "Removal of bridge or splint",
+    "category": "Pros",
+    "symbols": [],
+    "notes": "The removal of all, or part, of a bridge or splint.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "658",
+    "title": "denture tooth replacement",
+    "category": "Pros",
+    "symbols": [],
+    "notes": "765, 768 dentures 761–766, 768, 769 external root resorption",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "659",
+    "title": "Repair of crown, bridge or veneer – direct – per crown, pontic or veneer",
+    "category": "Pros",
+    "symbols": [],
+    "notes": "The intraoral repair of a cemented crown, bridge or veneer. Prosthodontics Procedures for Implant Prostheses Items in this section refer to the provision of implant prostheses. Implants are in most cases used to support and retain superimposed prosthetic replacements ranging from single crowns to complete dentures. The prosthesis should be appropriately itemised.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "661",
+    "title": "Fitting of implant abutment – per abutment",
+    "category": "Pros",
+    "symbols": [],
+    "notes": "Fitting of the final implant abutment or the replacement of an existing abutment. This includes abutments with attachments designed to retain an overdenture.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "663",
+    "title": "Removal of implant and/or retention device",
+    "category": "Pros",
+    "symbols": [],
+    "notes": "The surgical removal of an implant and/or retention device.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "664",
+    "title": "Fitting of bar for denture – per tooth or implant",
+    "category": "Pros",
+    "symbols": [],
+    "notes": "A rigid bar affixed to a natural tooth or osseointegrated implant abutment to provide support and retention for a dental prosthesis. The bar may incorporate retention devices and each of these should be itemised as 645. The retention components within the prosthesis are itemised as 735. Prosthodontics",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "665",
+    "title": "Prosthesis with resin base attached to implants – removable – per arch",
+    "category": "Pros",
+    "symbols": [],
+    "notes": "A removable prosthesis carrying artificial teeth on a resin base supported by the implants to which it is attached. This prosthesis is designed for self-removal. Abutments attached to implants should be itemised as 661; retention components within prosthesis should be itemised as 735.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "666",
+    "title": "Prosthesis with metal frame attached to implants – fixed – per arch",
+    "category": "Pros",
+    "symbols": [],
+    "notes": "A fixed prosthesis carrying prosthetic teeth on a custom fabricated metal frame, supported by the implants to which it is attached and not designed for self-removal. This is inclusive of the sealing of the access to the abutment screws. Abutments attached to implants itemised as 661.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "667",
+    "title": "Prosthesis with metal frame attached to implants – removable – per arch",
+    "category": "Pros",
+    "symbols": [],
+    "notes": "A removable prosthesis carrying prosthetic teeth on a custom fabricated metal frame. This prosthesis is attached to the implants and is designed for self-removal. Abutments attached to implants itemised as 661; retention components within prosthesis should be itemised as 735.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "668",
+    "title": "Implant prosthetic screw replacement",
+    "category": "Pros",
+    "symbols": [],
+    "notes": "Replacement of an existing implant prosthetic screw.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "669",
+    "title": "Removal and reattachment of prosthesis fixed to implant(s) – per implant",
+    "category": "Pros",
+    "symbols": [],
+    "notes": "Removal for maintenance of a prosthesis that is fixed to an osseointegrated implant(s) and not designed for self-removal. Access to attaching screws and subsequent replacement is required. Repairs effected should be appropriately itemised.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "671",
+    "title": "veneered – indirect",
+    "category": "Pros",
+    "symbols": [],
+    "notes": "615, 672 Full dentures 711, 712, 719 see also Denture maintenance; Dentures Functional orthopaedic appliances: custom fabrication",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "672",
+    "title": "Full crown attached to osseointegrated implant – veneered – indirect",
+    "category": "Pros",
+    "symbols": [],
+    "notes": "An artificial crown constructed with a metallic base veneered with a tooth-coloured material attached to an osseointegrated implant.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "673",
+    "title": "Full crown attached to osseointegrated implant – metallic – indirect",
+    "category": "Pros",
+    "symbols": [],
+    "notes": "An artificial crown constructed with custom fabricated metal attached to an osseointegrated implant.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "678",
+    "title": "Diagnostic template",
+    "category": "Pros",
+    "symbols": [],
+    "notes": "A diagnostic radiographic template that facilitates oral and/or maxillofacial surgical planning.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "679",
+    "title": "Surgical implant guide",
+    "category": "Pros",
+    "symbols": [],
+    "notes": "Provision of an appliance that indicates the ideal location and angulation for insertion of implants.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "684",
+    "title": "Insertion of the first stage of two-stage endosseous implant – per implant",
+    "category": "Pros",
+    "symbols": [],
+    "notes": "Surgical insertion of an implant, made of a biocompatible material. The soft tissues are closed over the implant until osseointegration is achieved. The number of implants should be indicated.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "685",
+    "title": "Insertion of the first stage of two-stage maxillofacial endosseous implant – per implant",
+    "category": "Pros",
+    "symbols": [],
+    "notes": "Surgical insertion of an implant made of a biocompatible material. The soft tissues are closed over the implant until osseointegration is achieved. The implant is used to retain a maxillofacial prosthesis. Item number 691 should be used for the second-stage procedure.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "686",
+    "title": "Insertion of a one-stage maxillofacial endosseous implant – per implant",
+    "category": "Pros",
+    "symbols": [],
+    "notes": "Surgical insertion of an implant made of a biocompatible material. The implant is used to retain a maxillofacial prosthesis. Prosthodontics",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "687",
+    "title": "Insertion of a mini-implant – per implant",
+    "category": "Pros",
+    "symbols": [],
+    "notes": "Surgical insertion of a small diameter implant (< 3.0 mm), made of biocompatible material, where the abutment is an integral component of the implant.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "688",
+    "title": "Insertion of a one-stage endosseous implant – per implant",
+    "category": "Pros",
+    "symbols": [],
+    "notes": "Surgical insertion of an implant, made of biocompatible material.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "689",
+    "title": "Provisional implant",
+    "category": "Pros",
+    "symbols": [],
+    "notes": "Special purpose implant designed with the intention of being removed at a later stage.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "690",
+    "title": "Provisional retention or anchorage device",
+    "category": "Pros",
+    "symbols": [],
+    "notes": "Special purpose retention or anchorage device attached to the jaws by screws or provisional implants, to reinforce anchorage and assist with orthodontic movements, and intended for removal when no longer required for orthodontic treatment. Other orthodontic treatment is to be itemised separately.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "691",
+    "title": "Second-stage surgery of two-stage endosseous implant – per implant",
+    "category": "Pros",
+    "symbols": [],
+    "notes": "Surgical access to the previously osseointegrated implant to attach a transmucosal component, usually a healing abutment. The number of implants should be indicated. Other items listed in the prosthodontics section may be directly applied in the description of implant prostheses, if appropriate. Implant Prostheses Repairs and Maintenance",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "692",
+    "title": "Closure of the screw access chamber",
+    "category": "Pros",
+    "symbols": [],
+    "notes": "Subsequent sealing of the access chamber or screw channel of a screw-retained implant prosthesis, per implant. The sealing of the access chamber when delivering a new prosthesis is intrinsic to the provision of the prosthesis.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "693",
+    "title": "Remodelling of a fixed implant prosthesis",
+    "category": "Pros",
+    "symbols": [],
+    "notes": "Remodelling of a screw-retained, metal-resin, implant supported fixed prosthesis attached to implants including replacement of veneering materials. The prosthetic teeth should be itemised separately as 765 per tooth replaced.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "694",
+    "title": "Repair or replacement of the ceramic component of an implant metal-ceramic or all ceramic crown",
+    "category": "Pros",
+    "symbols": [],
+    "notes": "or bridge – per prosthetic tooth $ The extraoral repair or replacement of the ceramic component of an implant crown or bridge – per prosthetic tooth.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "695",
+    "title": "Cleaning and polishing of an implant prosthesis @",
+    "category": "Pros",
+    "symbols": [],
+    "notes": "The extraoral cleaning of an implant prosthesis. This can include removal of calculus and plaque, polishing and disinfection. Screw replacement and closure of the screw access chamber should be itemised separately.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "696",
+    "title": "Removal of fractured abutment screw",
+    "category": "Pros",
+    "symbols": [],
+    "notes": "Removal of the apical threaded part of a fractured abutment screw. Prosthodontics Dentures and Maxillofacial Prosthetics and Services The provision of dentures requires multiple appointments that are included in the itemisations. Reasonable care and adjustment following the insertion of the denture are included in the itemisations.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "711",
+    "title": "Complete maxillary denture",
+    "category": "Pros",
+    "symbols": [],
+    "notes": "Provision of a patient-removable dental prosthesis replacing the natural teeth and adjacent tissues in the maxilla.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "712",
+    "title": "Complete mandibular denture",
+    "category": "Pros",
+    "symbols": [],
+    "notes": "Provision of a patient-removable dental prosthesis replacing the natural teeth and adjacent tissues in the mandible.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "713",
+    "title": "Provisional complete maxillary denture",
+    "category": "Pros",
+    "symbols": [],
+    "notes": "Provision of a patient-removable dental prosthesis replacing the natural teeth and adjacent tissues in the maxilla that is designed to last until the definitive denture can be constructed. This item should be used only where a provisional denture is not an intrinsic part of items 711 or 719. Tissue conditioning may be required and should be itemised separately (see item 771). Prosthodontics",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "714",
+    "title": "Provisional complete mandibular denture",
+    "category": "Pros",
+    "symbols": [],
+    "notes": "Provision of a patient-removable dental prosthesis replacing the natural teeth and adjacent tissues in the mandible that is designed to last until the definitive prosthesis can be constructed. This item should be used only where a provisional denture is not an intrinsic part of items 712 or 719. Tissue conditioning may be required and should be itemised separately (see item 771).",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "715",
+    "title": "Provisional complete maxillary and mandibular dentures",
+    "category": "Pros",
+    "symbols": [],
+    "notes": "Provision of a patient-removable dental prosthesis replacing the natural teeth and adjacent tissues in both the maxilla and the mandible that is designed to last until the definitive prosthesis can be constructed. This item should be used only where a provisional denture is not an intrinsic part of items 711, 712 or 719. Tissue conditioning may be required and should be itemised separately (see item 771).",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "716",
+    "title": "Metal palate or plate",
+    "category": "Pros",
+    "symbols": [],
+    "notes": "A reinforcing custom fabricated metal section added to a resin denture base. The other denture components should be appropriately itemised.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "719",
+    "title": "Complete maxillary and mandibular dentures",
+    "category": "Pros",
+    "symbols": [],
+    "notes": "Provision of patient-removable dental prostheses for the natural teeth and adjacent tissues in both the maxilla and the mandible.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "721",
+    "title": "Partial maxillary denture – resin base",
+    "category": "Pros",
+    "symbols": [],
+    "notes": "Provision of a resin base for a patient-removable dental prosthesis for the maxilla where some natural teeth remain. Other components of the denture such as teeth, rests, retainers and immediate tooth replacements should be appropriately itemised.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "722",
+    "title": "Partial mandibular denture – resin base",
+    "category": "Pros",
+    "symbols": [],
+    "notes": "Provision of a resin base for a patient-removable dental prosthesis for the mandible where some natural teeth remain. Other components of the denture such as teeth, rests, retainers and immediate tooth replacements should be appropriately itemised.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "723",
+    "title": "Provisional partial maxillary denture",
+    "category": "Pros",
+    "symbols": [],
+    "notes": "Provision of a patient-removable partial dental prosthesis replacing the natural teeth and adjacent tissues in the maxilla that is designed to last until the definitive prosthesis can be constructed. This item should be used only where a provisional denture is not an intrinsic part of item 721. Other components of the denture such as teeth, rests, retainers and immediate tooth replacements should be appropriately itemised. This includes a provisional, clear, pressure or vacuum formed appliance with incorporated denture teeth.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "724",
+    "title": "Provisional partial mandibular denture",
+    "category": "Pros",
+    "symbols": [],
+    "notes": "Provision of a patient-removable partial dental prosthesis replacing the natural teeth and adjacent tissues in the mandible that is designed to last until the definitive prosthesis can be constructed. This item should be used only where a provisional denture is not an intrinsic part of item 722. Other components of the denture such as teeth, rests, retainers and immediate tooth replacements should be appropriately itemised. This includes a provisional, clear, pressure or vacuum formed appliance with incorporated denture teeth.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "727",
+    "title": "Partial maxillary denture – custom fabricated metal framework",
+    "category": "Pros",
+    "symbols": [],
+    "notes": "Provision of the framework for a patient-removable dental prosthesis made with a custom fabricated metal on which to replace teeth from the maxilla where some natural teeth remain. Other components of the denture such as teeth, rests, retainers and immediate tooth replacements should be appropriately itemised.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "728",
+    "title": "Partial mandibular denture – custom fabricated metal framework",
+    "category": "Pros",
+    "symbols": [],
+    "notes": "Provision of the framework for a patient removable dental prosthesis made with a custom fabricated metal on which to replace teeth from the mandible where some natural teeth remain. Other components of the denture such as teeth, rests, retainers and immediate tooth replacements should be appropriately itemised. Prosthodontics",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "731",
+    "title": "Retainer (clasp) – per tooth",
+    "category": "Pros",
+    "symbols": [],
+    "notes": "A retainer or clasp that is attached to a partial denture that is adapted to an undercut in a tooth to aid retention. The number of retainers should be indicated.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "732",
+    "title": "Occlusal rest – per rest",
+    "category": "Pros",
+    "symbols": [],
+    "notes": "A unit of a partial denture that rests upon a tooth surface to provide support for the denture. The number of rests used should be indicated.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "733",
+    "title": "Tooth/teeth (partial denture)",
+    "category": "Pros",
+    "symbols": [],
+    "notes": "An item to describe each denture tooth added to the base of a new partial denture. The number of denture teeth should be indicated.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "734",
+    "title": "Overlays – per tooth",
+    "category": "Pros",
+    "symbols": [],
+    "notes": "An extension of a denture covering the occlusal surface of remaining teeth or deliberately retained roots. The number of overlays should be indicated.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "735",
+    "title": "Precision or magnetic denture attachment",
+    "category": "Pros",
+    "symbols": [],
+    "notes": "A preformed device within a prosthesis that connects to a precision or magnetic component on a tooth or implant. For the tooth component, see item 645. For the implant component, see item 661.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "736",
+    "title": "Immediate tooth replacement – per tooth",
+    "category": "Pros",
+    "symbols": [],
+    "notes": "Provision within a denture to allow immediate replacement of an extracted tooth. The number of teeth replaced should be indicated.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "737",
+    "title": "Resilient lining",
+    "category": "Pros",
+    "symbols": [],
+    "notes": "Provision of a resilient tissue-bearing surface for a removable prosthesis. This item may be used with the provision of a new, or the maintenance of pre-existing, prostheses. Associated services should be itemised separately.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "738",
+    "title": "Wrought bar",
+    "category": "Pros",
+    "symbols": [],
+    "notes": "A wrought bar joining sections of a partial prosthesis.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "739",
+    "title": "Metal backing of denture teeth – per backing",
+    "category": "Pros",
+    "symbols": [],
+    "notes": "A metallic extension of the metal partial denture framework to provide a backing. The number of backings should be indicated. Prosthodontics Denture Maintenance",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "741",
+    "title": "Adjustment of a denture",
+    "category": "Pros",
+    "symbols": [],
+    "notes": "Adjustment of a denture to improve comfort, function or aesthetics. This item does not apply to routine adjustments following the insertion of a new denture or the maintenance or repair of an existing denture.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "743",
+    "title": "Relining – complete denture – processed",
+    "category": "Pros",
+    "symbols": [],
+    "notes": "Replacement of the tissue fitting surface of a complete denture to improve its accuracy and fit. The procedure requires multiple appointments.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "744",
+    "title": "Relining – partial denture – processed",
+    "category": "Pros",
+    "symbols": [],
+    "notes": "Replacement of the tissue fitting surface of a partial denture to improve its accuracy and fit. The procedure requires multiple appointments.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "745",
+    "title": "Remodelling – complete denture",
+    "category": "Pros",
+    "symbols": [],
+    "notes": "Replacement of the resin base of a complete denture, with or without rearrangement of the teeth, to improve its accuracy and fit. The procedure requires multiple appointments.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "746",
+    "title": "Remodelling – partial denture",
+    "category": "Pros",
+    "symbols": [],
+    "notes": "Replacement of the resin base of a partial denture, with or without rearrangement of the teeth, to improve its accuracy and fit. The procedure requires multiple appointments.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "751",
+    "title": "Relining – complete denture – direct",
+    "category": "Pros",
+    "symbols": [],
+    "notes": "Addition to the tissue fitting surface of a complete denture to improve its accuracy and fit, using a self- or light-cured material.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "752",
+    "title": "Relining – partial denture – direct",
+    "category": "Pros",
+    "symbols": [],
+    "notes": "Addition to the tissue fitting surface of a partial denture to improve its accuracy and fit, using a self- or light-cured material.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "753",
+    "title": "Cleaning and polishing of pre-existing denture @",
+    "category": "Pros",
+    "symbols": [],
+    "notes": "The cleaning and polishing of a pre-existing denture not associated with any other item of maintenance or repair of the denture.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "754",
+    "title": "Denture base modification",
+    "category": "Pros",
+    "symbols": [],
+    "notes": "Modification to a denture base to enhance aesthetics, function or to facilitate the retention of denture teeth. Prosthodontics",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "755",
+    "title": "relining – direct",
+    "category": "Pros",
+    "symbols": [],
+    "notes": "751, 752 relining – processed 743, 744 remodelling 745, 746 repairs 761–766, 768, 769 Dentures: see also Denture maintenance; partial dentures bar for overlay",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "761",
+    "title": "Reattaching pre-existing retainer (clasp) to denture @",
+    "category": "Pros",
+    "symbols": [],
+    "notes": "Repair, insertion and adjustment of a denture involving reattachment of a pre-existing retainer (clasp).",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "762",
+    "title": "Replacing/adding retainer (clasp) to denture – per retainer (clasp)",
+    "category": "Pros",
+    "symbols": [],
+    "notes": "Repair, insertion and adjustment of a denture involving replacement or addition of a new retainer (clasp).",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "763",
+    "title": "Repairing broken base of a complete denture @",
+    "category": "Pros",
+    "symbols": [],
+    "notes": "Repair, insertion and adjustment of a broken resin complete denture base.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "764",
+    "title": "Repairing broken base of a partial denture @",
+    "category": "Pros",
+    "symbols": [],
+    "notes": "Repair, insertion and adjustment of a broken resin partial denture base.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "765",
+    "title": "Replacing and/or adding a new tooth to a denture or implant prosthesis – per tooth",
+    "category": "Pros",
+    "symbols": [],
+    "notes": "Repair, insertion and adjustment of a denture or implant prosthesis involving replacement with or addition of a new tooth or teeth to a previously existing denture or implant prosthesis.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "766",
+    "title": "Reattaching an existing tooth to a denture – per denture tooth $",
+    "category": "Pros",
+    "symbols": [],
+    "notes": "Repair, insertion and adjustment of a denture involving reattachment of a pre-existing denture tooth or teeth.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "768",
+    "title": "Adding a denture tooth to a partial denture to replace an extracted or decoronated tooth",
+    "category": "Pros",
+    "symbols": [],
+    "notes": "– per denture tooth Provision of a denture tooth on an existing partial denture to replace a natural tooth that has been removed or decoronated prior to or at the time of issue of the modified denture. If the denture tooth is an immediate replacement, item 736 can be used as well.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "769",
+    "title": "Repair or addition to metal frame $",
+    "category": "Pros",
+    "symbols": [],
+    "notes": "Repair of or addition to the metal frame of a denture. This is a complex procedure requiring the dismantling of the denture. Associated services should be itemised separately. Prosthodontics Other Prosthodontic Services",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "771",
+    "title": "Tissue conditioning – per application",
+    "category": "Pros",
+    "symbols": [],
+    "notes": "The provisional (temporary) lining of the tissue fitting surface of a denture with a conditioning material, to improve the health of the denture-supporting mucosa.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "772",
+    "title": "Splint – resin",
+    "category": "Pros",
+    "symbols": [],
+    "notes": "A resin appliance attached to the teeth for stabilising mobile or displaced teeth.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "773",
+    "title": "Splint – metal – indirect",
+    "category": "Pros",
+    "symbols": [],
+    "notes": "A custom fabricated metal appliance bonded to the teeth to stabilise mobile or displaced teeth.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "775",
+    "title": "Characterisation of denture base",
+    "category": "Pros",
+    "symbols": [],
+    "notes": "Stippling, staining, festooning or shaping rugae on the appropriate surface(s) of a denture.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "776",
+    "title": "Impression – dental appliance repair/modification $",
+    "category": "Pros",
+    "symbols": [],
+    "notes": "An item to describe taking an impression where required for the repair or modification of a dental appliance.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "777",
+    "title": "Identification $",
+    "category": "Pros",
+    "symbols": [],
+    "notes": "Marking a dental appliance with a patient’s name or other form of enduring patient identification.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "778",
+    "title": "Inlays/onlays – indirect:",
+    "category": "Pros",
+    "symbols": [],
+    "notes": "metallic 541–545 tooth-coloured 551–556 Insertion of suture",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "779",
+    "title": "Surgical guide for an immediate denture",
+    "category": "Pros",
+    "symbols": [],
+    "notes": "Provision of an appliance that indicates the final ridge contours following extraction of teeth prior to immediate denture insertion. Prosthodontics Maxillofacial Prosthetics",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "781",
+    "title": "Obturator",
+    "category": "Pros",
+    "symbols": [],
+    "notes": "That component of a maxillofacial prosthesis used to close or maintain the integrity of the oral and nasal compartments resulting from a congenital or acquired defect. For a surgical/interim obturator see item 782.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "782",
+    "title": "Surgical/interim obturator",
+    "category": "Pros",
+    "symbols": [],
+    "notes": "A temporary maxillofacial prosthesis inserted during or immediately following surgical or traumatic loss of a portion or all of the maxilla and contiguous alveolar structures.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "783",
+    "title": "Revision of surgical/interim obturator",
+    "category": "Pros",
+    "symbols": [],
+    "notes": "Revision of a surgical/interim obturator during the ensuing post-surgical healing phase.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "785",
+    "title": "Interim or diagnostic maxillofacial prosthesis",
+    "category": "Pros",
+    "symbols": [],
+    "notes": "A provisional maxillofacial prosthesis delivered either at the time of surgery or soon after or during the rehabilitation phase of care to facilitate the design of the definitive prosthesis.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "786",
+    "title": "Mandibular resection prosthesis",
+    "category": "Pros",
+    "symbols": [],
+    "notes": "A maxillofacial prosthesis used to maintain a functional position for the jaws, improve speech and deglutition following trauma and/or surgery to the mandible and/or adjacent structures.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "787",
+    "title": "Extraoral prosthesis – ear",
+    "category": "Pros",
+    "symbols": [],
+    "notes": "An extraoral prosthesis that replaces an ear, retained by spectacles, adhesive or implants. The implants and attachments should be itemised separately.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "788",
+    "title": "Extraoral prosthesis – nose",
+    "category": "Pros",
+    "symbols": [],
+    "notes": "An extraoral prosthesis that replaces the nose and/or parts of the midface, retained by spectacles, adhesive or implants. The implants and attachments should be itemised separately.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "789",
+    "title": "Extraoral prosthesis – eye",
+    "category": "Pros",
+    "symbols": [],
+    "notes": "An extraoral prosthesis that replaces an eye, retained by spectacles, adhesive or implants. The implants and attachments should be itemised separately.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "790",
+    "title": "Adjustment of a maxillofacial prosthesis",
+    "category": "Pros",
+    "symbols": [],
+    "notes": "Adjustment of a maxillofacial prosthesis to improve comfort, function or aesthetics. This item does not apply to routine adjustments following the insertion of the prosthesis. Prosthodontics The provision of orthodontic appliances includes the anticipated adjustments. For temporary anchorage devices (TADs) and attachments see items 689 and 690. Removable Appliances",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "811",
+    "title": "Passive removable appliance – per arch",
+    "category": "Ortho",
+    "symbols": [],
+    "notes": "A removable, one-arch appliance that may be attached to the dentition by clasps or similar device designed to maintain the position of the teeth in the dentition. The appliance does not provide pressure directed at tooth movement. Passive removable appliances are sometimes used following active orthodontic treatment to maintain a correction.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "821",
+    "title": "Active removable appliance – per arch",
+    "category": "Ortho",
+    "symbols": [],
+    "notes": "A removable, one-arch appliance attached to the dentition by clasps or similar device that contains some elements capable of exerting pressure on either individual teeth or parts of the arch to achieve tooth or dental arch movement.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "823",
+    "title": "Functional orthopaedic appliance – custom fabrication",
+    "category": "Ortho",
+    "symbols": [],
+    "notes": "The custom fabrication on models of an appliance whose primary action involves orthopaedic change of jaw shape or relationship utilising and modifying the effect of the environmental tissues. Many are bi-maxillary appliances involving upper and lower arches. Bi-maxillary appliances are regarded as a single appliance.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "824",
+    "title": "Functional orthopaedic appliance – prefabricated",
+    "category": "Ortho",
+    "symbols": [],
+    "notes": "A prefabricated elastomeric appliance whose primary action is to maintain or guide the positioning of teeth during eruption, and/or to influence muscle activity of the mouth and lower face. It can also be used to maintain tooth position following orthodontic alignment. Many are bi-maxillary appliances involving upper and lower arches. Bi-maxillary appliances are regarded as a single appliance.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "825",
+    "title": "Sequential plastic aligners – per arch",
+    "category": "Ortho",
+    "symbols": [],
+    "notes": "The provision and periodic direct clinical review by a dentist or orthodontist of a series of custom-made plastic aligners to move teeth gradually. This item number includes additional procedures that may be required to facilitate the movement of teeth, such as composite buttons. For retention appliances see 811 and 845. Orthodontics Fixed Appliances",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "829",
+    "title": "Partial banding – per arch",
+    "category": "Ortho",
+    "symbols": [],
+    "notes": "Application of bands and/or brackets to six teeth or fewer in the maxillary or mandibular arch, which can be attached to a resilient arch wire. The appliance is designed to correct either tooth position or arch form.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "831",
+    "title": "Full arch banding – per arch",
+    "category": "Ortho",
+    "symbols": [],
+    "notes": "Application of bands and brackets for attachment of resilient arch wires to most of the teeth of the maxillary or mandibular arch to correct the position of teeth or to correct the arch form. This procedure includes ongoing adjustments and replacement of arch wires. For removal of banding, see item 833. For retention appliances, see items 811 and 845. Additional orthodontic services may be necessary prior to or following full arch banding and should be itemised separately.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "833",
+    "title": "Removal of banding – per arch",
+    "category": "Ortho",
+    "symbols": [],
+    "notes": "The removal of bands and/or brackets from the teeth.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "841",
+    "title": "Fixed palatal or lingual arch appliance",
+    "category": "Ortho",
+    "symbols": [],
+    "notes": "Insertion of an appliance, fixed to the palatal or lingual aspect of the dentition by bands, frequently applied in the molar region. It is aimed at either changing or maintaining the arch form and can also be designed to straighten individual teeth.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "842",
+    "title": "Partial banding for inter-maxillary elastics (vertical and/or cross elastics)",
+    "category": "Ortho",
+    "symbols": [],
+    "notes": "Application of bands and brackets to two or more teeth in maxillary and mandibular arches. Resilient arch wires may be attached to the brackets and inter-maxillary elastics between the two arches. The resulting appliances are designed to correct the position of teeth or arch form.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "843",
+    "title": "Expansion appliance – fixed – per arch",
+    "category": "Ortho",
+    "symbols": [],
+    "notes": "Insertion of an appliance fixed to the maxillary or mandibular dentition by partial banding that exerts a force to expand or widen the maxillary or mandibular arch and/or teeth.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "844",
+    "title": "Sagittal movement appliance",
+    "category": "Ortho",
+    "symbols": [],
+    "notes": "Insertion of an appliance fixed to the maxilla or mandible by temporary anchorage device/s. The appliance exerts force to move teeth sagittally. It may also have some orthopaedic effect. Orthodontics",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "845",
+    "title": "Passive appliance – fixed",
+    "category": "Ortho",
+    "symbols": [],
+    "notes": "A passive appliance fixed to one or more teeth, designed to prevent movement of the teeth relative to each other or to the segment of the arch. The appliance can be used to maintain a space from the loss of a tooth. Fixed passive appliances may be used following active orthodontic treatment.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "846",
+    "title": "Minor tooth guidance – fixed",
+    "category": "Ortho",
+    "symbols": [],
+    "notes": "A procedure using an appliance attached directly to teeth that provides movement or guidance to correct the position of a tooth. Extraoral Appliances",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "851",
+    "title": "\u0007Extraoral appliance",
+    "category": "Ortho",
+    "symbols": [],
+    "notes": "This item describes a number of appliances worn extraorally. Some appliances are worn to correct mandibular protrusion and are not attached directly to the dentition. Other appliances in this category are attached to the dentition by either full or partial banding. Most of these appliances have a harness that is passed behind the head or to the front of the face to provide stabilisation for the forces applied. They are usually worn for a limited time each day. Attachments",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "862",
+    "title": "Bonding of attachment for application of orthodontic force",
+    "category": "Ortho",
+    "symbols": [],
+    "notes": "The bonding of a prefabricated attachment on a malpositioned tooth to facilitate orthodontic force application. The force application may utilise either fixed or removable appliances. This item should not be used to describe bracket attachment required by partial or full arch banding (items 829 or 831). Nor does it apply in conjunction with surgical exposure. The appropriate item in this case is item 382. Other Orthodontic Services",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "871",
+    "title": "Orthodontic adjustment",
+    "category": "Ortho",
+    "symbols": [],
+    "notes": "Adjustment of an orthodontic appliance, either fixed or removable, that is not associated with ongoing treatment anticipated at the time of insertion of the appliance. This item should not be used with item numbers 811, 821, 823, 824, 825, 829, 831, 841, 842, 843, 844, 845, 846, 851, 862, 881 or 882.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "872",
+    "title": "Reattachment of passive appliance – fixed",
+    "category": "Ortho",
+    "symbols": [],
+    "notes": "The reattachment of a passive fixed appliance that may include any necessary cleaning or polishing of the appliance and/or teeth to which it is attached or bonded.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "873",
+    "title": "Repair of passive appliance – fixed $",
+    "category": "Ortho",
+    "symbols": [],
+    "notes": "The repair of a fixed passive appliance. This includes the removal and subsequent re-fitting of the appliance. Where an impression is required, it should be itemised appropriately.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "874",
+    "title": "Removal of passive appliance – fixed",
+    "category": "Ortho",
+    "symbols": [],
+    "notes": "The removal of a passive fixed appliance and the necessary cleaning of the teeth to which it was attached.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "875",
+    "title": "Repair of removable appliance – resin base",
+    "category": "Ortho",
+    "symbols": [
+      "T"
+    ],
+    "notes": "Repair of the resin base of a removable appliance. Where an impression is required, it should be itemised appropriately.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "876",
+    "title": "Repair of removable appliance – clasp, spring or tooth $",
+    "category": "Ortho",
+    "symbols": [],
+    "notes": "Repair or replacement of a clasp, spring or tooth on a removable appliance. Where an impression is required, it should be itemised appropriately.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "877",
+    "title": "Addition to removable appliance – clasp, spring or tooth",
+    "category": "Ortho",
+    "symbols": [],
+    "notes": "Addition of a clasp, spring or tooth to a removable appliance. Where an impression is required, it should be itemised appropriately.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "878",
+    "title": "Relining – removable appliance – processed",
+    "category": "Ortho",
+    "symbols": [],
+    "notes": "Replacement of the tissue fitting surface of a removable appliance to improve its accuracy and fit. Complete Courses of Orthodontic Treatment",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "881",
+    "title": "Course of orthodontic treatment",
+    "category": "Ortho",
+    "symbols": [],
+    "notes": "This is an alternative system of coding encompassing all appointments subsequent to orthodontic diagnosis and treatment planning. The item refers to a complex course of treatment of active fixed appliance therapy in both arches and retention as required. If removable and/or fixed retention, functional appliances, sequential clear plastic aligner therapy, headgear, or any other complementary auxiliary appliances are utilised, they are an intrinsic part of this item number.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "882",
+    "title": "Course of orthodontic treatment with orthognathic surgery",
+    "category": "Ortho",
+    "symbols": [],
+    "notes": "This is an alternative system of coding encompassing all appointments subsequent to orthodontic diagnosis and treatment planning of an orthodontic case requiring adjunctive orthognathic surgery. The item refers to a treatment program of pre-surgical and post-surgical orthodontics utilising active fixed appliance therapy or sequential clear plastic aligner therapy, a combination of both, in both arches plus collaborative surgical planning and retention as required. If removable and/or fixed retention, functional appliances, headgear, surgical splints or any other complementary auxiliary appliances are utilised, they are an intrinsic part of this item number. Orthodontics Emergencies",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "911",
+    "title": "Palliative care – per appointment",
+    "category": "Gen",
+    "symbols": [],
+    "notes": "An item to describe interim care to relieve pain, infection, bleeding or other problems not associated with other treatment, per appointment.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "915",
+    "title": "After-hours callout",
+    "category": "Gen",
+    "symbols": [],
+    "notes": "An additional item to describe provision of treatment required after hours. Treatment provided should be itemised.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "916",
+    "title": "Travel to provide services",
+    "category": "Gen",
+    "symbols": [],
+    "notes": "An additional item to describe travel from the usual place of practice to provide treatment. Not applicable to mobile dental services, branch practices or outreach services. Treatment provided should be itemised separately. Teledentistry Teledentistry is not suitable for procedural dental treatment.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "919",
+    "title": "Teleconsultation",
+    "category": "Gen",
+    "symbols": [
+      "#"
+    ],
+    "notes": "The remote provision of consultation and support to a patient by a dental practitioner. Items 131, 141 and 142 should be itemised separately.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "920",
+    "title": "Extended teleconsultation – 30 minutes or more",
+    "category": "Gen",
+    "symbols": [
+      "#"
+    ],
+    "notes": "The remote provision of an extended consultation and support to a patient by a dental practitioner. Items 131,",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "921",
+    "title": "Teleconsultation by referral",
+    "category": "Gen",
+    "symbols": [
+      "#"
+    ],
+    "notes": "The remote provision by referral of a consultation and support to a patient by a dental practitioner. Items 131,",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "926",
+    "title": "Individually made tray – medicament(s)",
+    "category": "Gen",
+    "symbols": [
+      "#"
+    ],
+    "notes": "A tray made for the application of medicaments to the teeth or supporting tissues.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "927",
+    "title": "Provision of medication/medicament",
+    "category": "Gen",
+    "symbols": [
+      "#"
+    ],
+    "notes": "The supply, or administration under professional supervision, of appropriate medications and medicaments required for dental treatments.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "928",
+    "title": "Intravenous cannulation and establishment of infusion",
+    "category": "Gen",
+    "symbols": [],
+    "notes": "The procedure of performing venepuncture, insertion of a cannula within the lumen of a vein and the establishment of infusion.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "929",
+    "title": "Provision of neuromodulator therapy",
+    "category": "Gen",
+    "symbols": [
+      "#"
+    ],
+    "notes": "Injection of neuromodulators for the treatment of oral and maxillofacial diseases and disorders. Anaesthesia, Sedation and Relaxation Therapy",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "941",
+    "title": "Local anaesthesia",
+    "category": "Gen",
+    "symbols": [],
+    "notes": "A procedure where local anaesthetic is used as a specific treatment for diagnosis or relief of pain and is not associated with other treatments.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "942",
+    "title": "Sedation – intravenous – per 30 minutes or part thereof",
+    "category": "Gen",
+    "symbols": [],
+    "notes": "Sedative drug(s) administered intravenously, usually in increments. The incremental administration may continue while dental treatment is being provided.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "943",
+    "title": "Relative analgesia – inhalation of nitrous oxide and oxygen mixture – per 30 minutes or part thereof",
+    "category": "Gen",
+    "symbols": [],
+    "notes": "The use of nitrous oxide and oxygen mixture inhalation to provide anxiolysis and analgesia while dental treatment is being provided. General Services",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "944",
+    "title": "Relaxation therapy",
+    "category": "Gen",
+    "symbols": [],
+    "notes": "Therapy that does not involve the use of drugs but that induces a lowered state of mental or autonomic arousal.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "945",
+    "title": "Low level laser therapy – per appointment",
+    "category": "Gen",
+    "symbols": [],
+    "notes": "Low level laser therapy (LLLT), also known as biostimulation or photobiomodulation, may be used for various dental applications.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "948",
+    "title": "Dental acupuncture – per appointment",
+    "category": "Gen",
+    "symbols": [],
+    "notes": "Treatment by acupuncture needle insertion and/or laser, pressure or heat at specific and non-specific points where the same effect is achieved without a puncture.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "949",
+    "title": "Treatment under general anaesthesia/sedation",
+    "category": "Gen",
+    "symbols": [],
+    "notes": "The treatment of a patient under a general anaesthetic/sedation administered by another registered practitioner. This may require the provision of additional equipment, instruments, materials and staff by the practitioner(s) providing the dental service(s). The dental treatment provided should be itemised separately. Occlusal Therapy",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "961",
+    "title": "Minor occlusal adjustment – per appointment",
+    "category": "Gen",
+    "symbols": [],
+    "notes": "The detection and correction of minor irregularities and traumatic tooth contacts.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "963",
+    "title": "Clinical occlusal analysis, including muscle and joint palpation",
+    "category": "Gen",
+    "symbols": [
+      "#"
+    ],
+    "notes": "This item consists of the recording of three separate assessments: (a) Occlusal assessment An assessment of tooth contacts in various jaw positions, parafunctional activity, vertical dimensions, tongue posture and speech. (b) Muscle assessment Assessment by intraoral and extraoral palpation of jaw muscles; cervical muscle palpation; and measurement of jaw and cervical mobility. (c) Joint assessment Includes palpation and auscultation of the temporomandibular joints, together with assessment of joint play. This item may be used in conjunction with other services. General Services",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "964",
+    "title": "Registration and mounting of dental models for occlusal analysis",
+    "category": "Gen",
+    "symbols": [
+      "#"
+    ],
+    "notes": "This item describes the clinical procedures for accurate mounting of dental models or prostheses on an adjustable articulator or digital equivalent.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "965",
+    "title": "Occlusal appliance",
+    "category": "Gen",
+    "symbols": [],
+    "notes": "An indirectly made custom occlusal appliance that fits over the functional surfaces of either the upper or the lower teeth used for diagnosis or therapy. It can be utilised in the following ways:  for treatment of temporomandibular disorders; or  as a diagnostic overlay prior to extensive rehabilitation; or  to assist in preventing parafunctional wear or damage of teeth or restorations; or  as an appliance made to locate the dentition and the jaws in predetermined positions when orthognathic jaw surgery is performed.",
+    "warnings": [],
+    "fund_rules": {
+      "medibank": [
+        {
+          "frequency": "1 per year (up to annual limits)",
+          "network": "Members’ Choice Advantage dentists",
+          "url": "https://www.medibank.com.au/health-insurance/why-medibank/members-choice/dentists-network/",
+          "scope_label": "Commonly includes",
+          "scope_codes": [
+            "011",
+            "012",
+            "013",
+            "014",
+            "015",
+            "022",
+            "037",
+            "111",
+            "114",
+            "115",
+            "121"
+          ]
+        }
+      ],
+      "hcf": [
+        {
+          "frequency": "subject to limits",
+          "network": "More for Teeth provider",
+          "url": "https://www.hcf.com.au/members/no-gap-services",
+          "scope_label": "Commonly includes",
+          "scope_codes": [
+            "011",
+            "012",
+            "013",
+            "014",
+            "015",
+            "022",
+            "037",
+            "111",
+            "114",
+            "115",
+            "121"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "code": "966",
+    "title": "Adjustment of pre-existing occlusal appliance – per appointment",
+    "category": "Gen",
+    "symbols": [],
+    "notes": "Alteration of a pre-existing occlusal appliance.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "967",
+    "title": "Pantographic tracing",
+    "category": "Gen",
+    "symbols": [],
+    "notes": "The clinical procedure of attaching and using a specifically designed recording apparatus to record graphically the movements of the jaw.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "968",
+    "title": "Occlusal adjustment following occlusal analysis – per appointment",
+    "category": "Gen",
+    "symbols": [],
+    "notes": "The adjustment of the occlusion involving either natural or artificial teeth following occlusal analysis. The use of this item implies that procedures described as items 963 and/or 964 have been performed as preparation for the occlusal adjustment.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "971",
+    "title": "Physical therapy for temporomandibular joint and associated structures – per appointment",
+    "category": "Gen",
+    "symbols": [],
+    "notes": "Application of adjunctive therapy such as heat, other radiation or ultrasonic therapy, as part of overall therapy of the temporomandibular joint and associated structures.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "972",
+    "title": "Repair/addition – occlusal appliance $",
+    "category": "Gen",
+    "symbols": [],
+    "notes": "The repair/addition, reinsertion and adjustment of an occlusal appliance. An impression(s), if required, should be itemised. General Services",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "981",
+    "title": "Splinting and stabilisation – direct – per tooth",
+    "category": "Gen",
+    "symbols": [],
+    "notes": "The joining of adjacent teeth to provide mutual support (where not covered by item 386 or 387).",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "982",
+    "title": "Endodontics: see Chemo-mechanical preparation of root",
+    "category": "Gen",
+    "symbols": [],
+    "notes": "canal(s); Extirpation of pulp; Root canal filling Endosseous implants: see Implants ePTFE 236, 237, 243 Examinations: see also Consultations bacteriological",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "984",
+    "title": "Mandibular advancement appliance for diagnosed snoring and obstructive sleep apnoea",
+    "category": "Gen",
+    "symbols": [],
+    "notes": "On request from an appropriately qualified medical practitioner, the provision and appropriate dental supervision of a custom, titratable, removable oral appliance for the treatment of diagnosed snoring and obstructive sleep apnoea disorders. Reference should be made to the report published by the American Academy of Sleep Medicine entitled Clinical Practice Guideline for the Treatment of Obstructive Sleep Apnoea and Snoring with Oral Appliance Therapy: An Update for 2015 as endorsed by the ADA.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "985",
+    "title": "Repair/addition – snoring or sleep apnoea device $",
+    "category": "Gen",
+    "symbols": [],
+    "notes": "The repair/addition, reinsertion and adjustment of a snoring or sleep apnoea device. Any impression(s), if required, should be itemised. See item 776.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "986",
+    "title": "Post-operative care not otherwise included",
+    "category": "Gen",
+    "symbols": [],
+    "notes": "The provision of post-operative care by a dental practitioner who did not provide the initial treatment.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "987",
+    "title": "Recontour tissue – per appointment",
+    "category": "Gen",
+    "symbols": [
+      "#"
+    ],
+    "notes": "Recontour of oral and associated tissue not described elsewhere in the Thirteenth Edition of the Australian Schedule of Dental Services and Glossary, such as injection of dermal fillers.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "990",
+    "title": "Treatment not otherwise included (specify)",
+    "category": "Gen",
+    "symbols": [
+      "#"
+    ],
+    "notes": "An item number used to identify dental treatment not elsewhere described. Adequate written description of the service is required.",
+    "warnings": [],
+    "fund_rules": {}
+  },
+  {
+    "code": "999",
+    "title": "GS",
+    "category": "Gen",
+    "symbols": [
+      "T"
+    ],
+    "notes": "This item number is for use where practice accounting systems cannot accommodate GST applicable to nonclinical components. Miscellaneous A Abrasion – enamel micro-abrasion",
+    "warnings": [],
+    "fund_rules": {}
+  }
+]
