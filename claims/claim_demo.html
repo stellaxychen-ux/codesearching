@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Patient Claim Eligibility Demo</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; background:#f2f2f7; padding:20px; }
+.card { background:#fff; border-radius:14px; padding:20px; max-width:800px; margin:auto; box-shadow:0 10px 30px rgba(0,0,0,.1); }
+select, input { padding:10px; font-size:1rem; width:100%; margin-top:10px; }
+button { margin-top:15px; padding:12px; width:100%; border:none; border-radius:10px; background:#007aff; color:white; font-size:1rem; }
+.result { margin-top:20px; }
+.ok { color:#2e7d32; }
+.warn { color:#ef6c00; }
+.bad { color:#c62828; }
+</style>
+</head>
+<body>
+<div class="card">
+<h2>Patient Claim Check (Demo)</h2>
+<label>Patient</label>
+<select id="patient"></select>
+<label style="margin-top:10px;">Planned item codes (comma separated)</label>
+<input id="codes" placeholder="e.g. 114, 251">
+<button onclick="check()">Check eligibility</button>
+<div class="result" id="result"></div>
+</div>
+<script>
+let claims = {};
+fetch('./patient_claims.json')
+  .then(r => r.json())
+  .then(d => {
+    claims = d;
+    const sel = document.getElementById('patient');
+    Object.keys(d).forEach(p => {
+      const o = document.createElement('option');
+      o.value = p;
+      o.textContent = p;
+      sel.appendChild(o);
+    });
+  });
+
+function monthsBetween(a, b){
+  return (b.getFullYear()-a.getFullYear())*12 + (b.getMonth()-a.getMonth());
+}
+
+function check(){
+  const p = document.getElementById('patient').value;
+  const codes = document.getElementById('codes').value.split(',').map(x=>x.trim()).filter(Boolean);
+  const history = claims[p] || [];
+  const today = new Date();
+  let out = [];
+
+  codes.forEach(code => {
+    if(code==='114' && codes.includes('251')){
+      out.push(`<div class="bad">❌ ${code}: ADA rule – cannot be claimed with 251 on same day</div>`);
+      return;
+    }
+    if(code==='114'){
+      const last = history.filter(x=>x.code==='114').slice(-1)[0];
+      if(last){
+        const m = monthsBetween(new Date(last.date), today);
+        if(m < 6){
+          out.push(`<div class="warn">⚠️ 114: last claimed ${m} months ago (usually 6 months)</div>`);
+          return;
+        }
+      }
+    }
+    out.push(`<div class="ok">✅ ${code}: no blocking rules detected</div>`);
+  });
+
+  document.getElementById('result').innerHTML = out.join('');
+}
+</script>
+</body>
+</html>
