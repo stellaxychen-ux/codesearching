@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Codes + Fund Rules</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+<style>
+:root{
+  --primary:#007aff; --secondary:#5856d6; --bg:#f2f2f7; --card:#fff; --text:#1c1c1e; --muted:#8e8e93;
+  --border:rgba(60,60,67,.12); --shadow:0 6px 24px rgba(0,0,0,.08); --soft:0 2px 12px rgba(0,0,0,.05);
+  --warnbg:#fff3e0; --warn:#e65100; --noteBg:#eef7ff; --note:#0b62b4;
+  --bupaBg:#e7f1ff; --bupa:#0b62b4;
+  --medBg:#e8f5e9; --med:#1b5e20;
+  --hcfBg:#f3e5f5; --hcf:#4a148c;
+  --nibBg:#fff3e0; --nib:#e65100;
+}
+*{box-sizing:border-box}
+body{margin:0;padding:18px;background:var(--bg);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,Helvetica,sans-serif;color:var(--text);display:flex;justify-content:center}
+.app{width:100%;max-width:1040px;display:flex;flex-direction:column;gap:14px}
+.header{background:var(--card);border:1px solid var(--border);border-radius:16px;box-shadow:var(--soft);padding:14px 16px;display:flex;justify-content:space-between;align-items:center;gap:12px;position:sticky;top:12px;z-index:20;backdrop-filter:blur(8px)}
+.brand{display:flex;gap:10px;align-items:center}
+.logo{width:34px;height:34px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--primary),var(--secondary));color:#fff;box-shadow:0 10px 25px rgba(0,122,255,.25)}
+.h1{font-weight:950;letter-spacing:-.2px}
+.sub{font-size:.82rem;color:var(--muted);margin-top:2px}
+.pills{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}
+.pill{font-size:.78rem;background:#eef1f4;border:1px solid rgba(0,0,0,.04);padding:7px 10px;border-radius:999px;color:var(--muted);font-weight:900;display:flex;gap:8px;align-items:center;white-space:nowrap}
+.pill strong{color:#111}
+.hero{border-radius:16px;background:linear-gradient(135deg,var(--primary),var(--secondary));box-shadow:var(--shadow);padding:18px;color:#fff}
+.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.search{flex:1;min-width:260px;position:relative}
+.search i{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:#aab2c0}
+.search input{width:100%;padding:14px 14px 14px 42px;border:none;border-radius:999px;outline:none;font-size:1.02rem;box-shadow:0 10px 30px rgba(0,0,0,.22)}
+.btn{border:none;border-radius:999px;padding:10px 12px;font-weight:900;font-size:.86rem;cursor:pointer;display:flex;gap:8px;align-items:center;background:rgba(255,255,255,.18);color:#fff;border:1px solid rgba(255,255,255,.22)}
+.btn.active{background:#fff;color:#111}
+.results{display:grid;gap:12px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:14px;box-shadow:var(--soft);overflow:hidden}
+.head{padding:14px;border-left:6px solid #ddd;display:flex;gap:12px;justify-content:space-between;align-items:flex-start}
+.left{flex:1;min-width:0}
+.code{font-weight:950;font-size:1.35rem;letter-spacing:-.6px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.badge{display:inline-flex;align-items:center;gap:6px;font-size:.78rem;font-weight:950;padding:6px 10px;border-radius:999px;border:1px solid rgba(0,0,0,.06);background:#f3f4f6;color:#59606a;cursor:pointer;user-select:none}
+.badge.warn{background:var(--warnbg);color:var(--warn);border-color:rgba(230,81,0,.18)}
+.title{margin-top:6px;color:#2f2f33;line-height:1.35}
+.tags{margin-top:10px;display:flex;gap:8px;flex-wrap:wrap}
+.tag{display:inline-flex;gap:6px;align-items:center;font-size:.78rem;font-weight:950;padding:6px 10px;border-radius:999px;border:1px solid rgba(0,0,0,.06);background:#f3f4f6;color:#59606a}
+.tag.cat{background:#eef7ff;color:#0b62b4}
+.actions{display:flex;flex-direction:column;gap:8px;align-items:flex-end}
+.abtn{border:none;background:#eef1f4;color:#111;font-weight:950;padding:9px 10px;border-radius:12px;cursor:pointer;display:flex;gap:8px;align-items:center}
+details{border-top:1px solid var(--border);background:#fafafa}
+summary{list-style:none;cursor:pointer;padding:12px 14px;display:flex;justify-content:space-between;gap:10px;font-weight:950}
+summary::-webkit-details-marker{display:none}
+.body{padding:0 14px 14px;font-size:.92rem;line-height:1.5;color:#404047}
+.callout{margin-top:10px;border-radius:12px;padding:10px 12px;border:1px solid rgba(0,0,0,.06);display:flex;gap:10px;align-items:flex-start}
+.callout.warn{background:var(--warnbg);color:var(--warn)}
+.callout.note{background:var(--noteBg);color:var(--note)}
+.funds{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.fchip{display:inline-flex;gap:8px;align-items:center;padding:6px 10px;border-radius:999px;font-weight:950;font-size:.78rem;border:1px solid rgba(0,0,0,.06);cursor:pointer;user-select:none}
+.fchip i{opacity:.9}
+.fchip.bupa{background:var(--bupaBg);color:var(--bupa)}
+.fchip.medibank{background:var(--medBg);color:var(--med)}
+.fchip.hcf{background:var(--hcfBg);color:var(--hcf)}
+.fchip.nib{background:var(--nibBg);color:var(--nib)}
+.callout.f-bupa{background:var(--bupaBg);color:var(--bupa)}
+.callout.f-medibank{background:var(--medBg);color:var(--med)}
+.callout.f-hcf{background:var(--hcfBg);color:var(--hcf)}
+.callout.f-nib{background:var(--nibBg);color:var(--nib)}
+.small{color:var(--muted);font-size:.85rem;margin-top:8px}
+.cat-Diag .head{border-left-color:#4caf50}
+.cat-Prev .head{border-left-color:#8bc34a}
+.cat-Perio .head{border-left-color:#ff9800}
+.cat-Surg .head{border-left-color:#f44336}
+.cat-Endo .head{border-left-color:#ff2d55}
+.cat-Rest .head{border-left-color:#2196f3}
+.cat-Pros .head{border-left-color:#00bcd4}
+.cat-Ortho .head{border-left-color:#9c27b0}
+.cat-Gen .head{border-left-color:#607d8b}
+.tooltip{position:fixed;z-index:9999;max-width:340px;background:#111;color:#fff;border-radius:14px;padding:12px 12px;box-shadow:0 18px 40px rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.08);display:none;}
+.tooltip .t-title{font-weight:950;margin-bottom:6px;display:flex;gap:8px;align-items:center}
+.tooltip .t-body{font-size:.88rem;line-height:1.35;opacity:.95}
+.tooltip a{color:#a7d3ff;text-decoration:none;font-weight:900}
+.tooltip .t-actions{margin-top:10px;display:flex;justify-content:flex-end}
+.tooltip button{border:none;background:rgba(255,255,255,.12);color:#fff;font-weight:950;padding:8px 10px;border-radius:10px;cursor:pointer}
+.toast{position:fixed;right:16px;top:16px;z-index:9998;background:#111;color:#fff;border-radius:999px;padding:10px 12px;box-shadow:0 18px 40px rgba(0,0,0,.35);display:none;align-items:center;gap:10px;font-weight:950;font-size:.86rem;cursor:pointer;user-select:none;}
+.toast .dot{width:8px;height:8px;border-radius:50%;background:#ffb020;box-shadow:0 0 0 4px rgba(255,176,32,.2)}
+
+.tag[data-jump]{transition:transform .12s ease, opacity .12s ease}
+.tag[data-jump]:hover{transform:translateY(-1px);opacity:.92}
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="header">
+    <div class="brand">
+      <div class="logo"><i class="fa-solid fa-tooth"></i></div>
+      <div>
+        <div class="h1">Codes + Fund Rules</div>
+        <div class="sub">点击彩色 fund tag：弹出规则（更短 + 带 More details link）</div>
+      </div>
+    </div>
+    <div class="pills">
+      <div class="pill" id="dbStatus"><i class="fa-solid fa-database"></i> Loading…
+  <a href="./claims/claim_demo.html" class="pill" style="text-decoration:none;">
+    🧑‍⚕️ Check patient eligibility
+  </a>
+</div>
+      <div class="pill" id="hitStatus"><i class="fa-solid fa-magnifying-glass"></i> <strong>0</strong> hits</div>
+    </div>
+  </div>
+
+  <div class="hero">
+    <div class="row" style="justify-content:space-between">
+      <div>
+        <div style="font-weight:950;font-size:1.18rem;letter-spacing:-.3px">Search</div>
+        <div style="opacity:.9;margin-top:4px">输入 code 或关键词；Warnings 会自动提示（toast + badge）</div>
+      </div>
+      <div class="row">
+        <button class="btn" id="warnOnly"><i class="fa-solid fa-triangle-exclamation"></i>Warnings only</button>
+        <button class="btn" id="fundOnly"><i class="fa-solid fa-shield-heart"></i>Fund rules only</button>
+        <button class="btn" id="clear"><i class="fa-solid fa-xmark"></i>Clear</button>
+      </div>
+    </div>
+    <div class="row" style="margin-top:12px">
+      <div class="search">
+        <i class="fa-solid fa-search"></i>
+        <input id="q" placeholder="Try: 114 / 251 / check-up / crown / radiograph…" autocomplete="off"/>
+      </div>
+    </div>
+  </div>
+
+  <div id="results" class="results"></div>
+</div>
+
+<div class="toast" id="toast"><span class="dot"></span><span id="toastText">Warnings found</span></div>
+
+<div class="tooltip" id="tooltip" role="dialog" aria-hidden="true">
+  <div class="t-title" id="ttTitle"><i class="fa-solid fa-circle-info"></i> Info</div>
+  <div class="t-body" id="ttBody"></div>
+  <div class="t-actions"><button id="ttClose">Close</button></div>
+</div>
+
+<script>
+let DB=[], WARN=false, FUND=false;
+const q=document.getElementById('q'), res=document.getElementById('results');
+const dbStatus=document.getElementById('dbStatus'), hitStatus=document.getElementById('hitStatus');
+const warnOnly=document.getElementById('warnOnly'), fundOnly=document.getElementById('fundOnly'), clearBtn=document.getElementById('clear');
+const toast=document.getElementById('toast'), toastText=document.getElementById('toastText');
+const tooltip=document.getElementById('tooltip'), ttTitle=document.getElementById('ttTitle'), ttBody=document.getElementById('ttBody'), ttClose=document.getElementById('ttClose');
+
+function esc(s=''){return String(s).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))}
+
+function renderWarnText(raw){
+  let text = '';
+  if(raw && typeof raw === 'object'){
+    // Try common shapes: {title, text, related_codes}
+    const title = raw.title ? (raw.title + (raw.text ? ': ' : '')) : '';
+    const rel = (raw.related_codes && raw.related_codes.length) ? ` Related: ${raw.related_codes.join(', ')}` : '';
+    text = (title + (raw.text||'') + rel) || JSON.stringify(raw);
+  }else{
+    text = String(raw||'');
+  }
+  const escaped = esc(text);
+  return escaped.replace(/\b(\d{3})\b/g, (m, code)=>{
+    return `<span class="tag" data-jump="${code}" style="cursor:pointer;background:#111;color:#fff;border-color:rgba(255,255,255,.12)"><i class="fa-solid fa-arrow-up-right-from-square"></i>${code}</span>`;
+  });
+}
+
+function jumpToCode(code){
+  q.value = code;
+  doSearch();
+  const card = document.querySelector(`.card[data-code="${code}"]`);
+  if(card){
+    card.scrollIntoView({behavior:'smooth', block:'start'});
+    card.style.boxShadow = '0 0 0 3px rgba(255,176,32,.35), var(--soft)';
+    setTimeout(()=>{ card.style.boxShadow=''; }, 1200);
+  }
+  q.focus();
+}
+async function copyText(text, btn){try{await navigator.clipboard.writeText(text); const old=btn.innerHTML; btn.innerHTML='<i class="fa-solid fa-check"></i> Copied'; setTimeout(()=>btn.innerHTML=old,1100);}catch(e){}}
+function fundChip(f){
+  const map={bupa:['bupa','Bupa'],medibank:['medibank','Medibank'],hcf:['hcf','HCF'],nib:['nib','nib']};
+  if(!map[f]) return '';
+  return `<span class="fchip ${map[f][0]}" data-fund="${map[f][0]}"><i class="fa-solid fa-shield-heart"></i>${map[f][1]}</span>`;
+}
+function renderEmpty(msg){
+  res.innerHTML=`<div class="card"><div class="head" style="border-left-color:#ddd"><div class="left"><div class="title" style="color:#888">${esc(msg)}</div></div></div></div>`;
+  hitStatus.innerHTML=`<i class="fa-solid fa-magnifying-glass"></i> <strong>0</strong> hits`;
+  hideToast();
+}
+function showToast(text){ toastText.textContent = text; toast.style.display = 'flex'; }
+function hideToast(){ toast.style.display='none'; }
+function showTooltip(anchorEl, titleHtml, bodyHtml){
+  ttTitle.innerHTML = titleHtml;
+  ttBody.innerHTML = bodyHtml;
+  tooltip.style.display = 'block';
+  const rect = anchorEl.getBoundingClientRect();
+  const pad = 10;
+  const maxW = 340;
+  let left = Math.min(window.innerWidth - maxW - pad, Math.max(pad, rect.left));
+  let top = rect.bottom + 10;
+  const estH = 190;
+  if (top + estH > window.innerHeight) top = rect.top - estH - 10;
+  tooltip.style.left = left + 'px';
+  tooltip.style.top = Math.max(pad, top) + 'px';
+  tooltip.setAttribute('aria-hidden', 'false');
+}
+function hideTooltip(){ tooltip.style.display = 'none'; tooltip.setAttribute('aria-hidden', 'true'); }
+ttClose.addEventListener('click', hideTooltip);
+document.addEventListener('click', (e)=>{
+  if(tooltip.style.display==='block'){
+    const inside = tooltip.contains(e.target);
+    const isChip = e.target.closest && (e.target.closest('.fchip') || e.target.closest('.badge.warn'));
+    if(!inside && !isChip) hideTooltip();
+  }
+});
+
+function render(list, total){
+  hitStatus.innerHTML=`<i class="fa-solid fa-magnifying-glass"></i> <strong>${total}</strong> hits`;
+  const warnCount = list.filter(x => ((x.symbols&&x.symbols.length)||(x.warnings&&x.warnings.length))).length;
+  if(warnCount>0){ showToast(`⚠️ ${warnCount} items have warnings — click to filter`); } else { hideToast(); }
+
+  res.innerHTML=list.map(item=>{
+    const hasWarn=(item.symbols&&item.symbols.length)||(item.warnings&&item.warnings.length);
+    const hasFund=item.fund_rules && Object.keys(item.fund_rules).length;
+
+    const tags=[
+      `<span class="tag cat"><i class="fa-solid fa-tag"></i>${esc(item.category)}</span>`,
+      (item.symbols&&item.symbols.length)?`<span class="tag"><i class="fa-solid fa-hashtag"></i>${esc(item.symbols.join(' '))}</span>`:''
+    ].filter(Boolean).join('');
+
+    const warnBadge = hasWarn ? `<span class="badge warn" data-warn="1"><i class="fa-solid fa-triangle-exclamation"></i>Warning</span>` : ``;
+    const funds=hasFund?`<div class="funds">${Object.keys(item.fund_rules).map(fundChip).join('')}</div>`:'';
+
+    const warnBlock=(item.warnings||[]).map(w=>`<div class="callout warn"><i class="fa-solid fa-triangle-exclamation"></i><div>${renderWarnText(w)}</div></div>`).join('');
+
+    const fundBlock=hasFund?Object.entries(item.fund_rules).map(([f, rules])=> (rules||[]).map(r=>{
+      const cls = f==='bupa'?'f-bupa':f==='medibank'?'f-medibank':f==='hcf'?'f-hcf':'f-nib';
+      const more = r.url ? `<a href="${esc(r.url)}" target="_blank" rel="noopener">More details</a>` : '';
+      const net = r.network ? ` · <b>Network:</b> ${esc(r.network)}` : '';
+      return `
+      <div class="callout ${cls}">
+        <i class="fa-solid fa-shield-heart"></i>
+        <div>
+          <div style="font-weight:950">${esc(f.toUpperCase())}: ${esc(r.frequency || 'limits apply')}</div>
+          <div style="margin-top:6px">${more}${net}</div>
+        </div>
+      </div>`;
+    }).join('')).join('') : '';
+
+    const notes=item.notes?`<div class="callout note"><i class="fa-solid fa-file-lines"></i><div><div style="font-weight:950;margin-bottom:3px">ADA Notes</div><div>${esc(item.notes)}</div></div></div>`:'';
+
+    return `
+      <div class="card cat-${esc(item.category)}" data-code="${esc(item.code)}">
+        <div class="head">
+          <div class="left">
+            <div class="code">#${esc(item.code)} ${warnBadge}</div>
+            <div class="title">${esc(item.title)}</div>
+            <div class="tags">${tags}</div>
+            ${funds}
+          </div>
+          <div class="actions">
+            <button class="abtn" data-copy="${esc(item.code)}"><i class="fa-regular fa-copy"></i>Copy code</button>
+            <button class="abtn" data-ask="${esc(item.code)}"><i class="fa-solid fa-wand-magic-sparkles"></i>Ask AI</button>
+          </div>
+        </div>
+        <details>
+          <summary><span><i class="fa-solid fa-circle-info"></i> Details</span><span style="color:#8e8e93;font-weight:950">${hasWarn?'Warnings':'No warnings'} · ${hasFund?'Fund rules':'No fund rules'} <i class="fa-solid fa-chevron-down"></i></span></summary>
+          <div class="body">
+            ${warnBlock}
+            ${fundBlock}
+            ${notes}
+            <div class="small">Fund rules shown are public network benefits / general guidance and can vary by product. Always confirm in the member’s fund/product details.</div>
+          </div>
+        </details>
+      </div>`;
+  }).join('');
+
+  
+  // Clickable codes inside warnings
+  document.querySelectorAll('[data-jump]').forEach(el=>{
+    el.addEventListener('click', (e)=>{
+      jumpToCode(el.dataset.jump);
+      e.stopPropagation();
+    });
+  });
+
+document.querySelectorAll('[data-copy]').forEach(b=>b.addEventListener('click',()=>copyText(b.dataset.copy,b)));
+
+  document.querySelectorAll('.badge.warn').forEach(b=>{
+    b.addEventListener('click', (e)=>{
+      const card = e.target.closest('.card');
+      const code = card.dataset.code;
+      const item = DB.find(x=>x.code===code);
+      const ws = (item.warnings||[]);
+      const body = ws.length ? `<div>${ws.map(w=>`• ${esc(w)}`).join('<br>')}</div>` : `<div>No extracted warnings.</div>`;
+      showTooltip(b, `<i class="fa-solid fa-triangle-exclamation"></i> Warning · #${esc(code)}`, body);
+      e.stopPropagation();
+    });
+  });
+
+  document.querySelectorAll('.fchip').forEach(chip=>{
+    chip.addEventListener('click', (e)=>{
+      const card = chip.closest('.card');
+      const code = card.dataset.code;
+      const item = DB.find(x=>x.code===code);
+      const fund = chip.dataset.fund;
+      const rules = (item.fund_rules && item.fund_rules[fund]) ? item.fund_rules[fund] : [];
+      if(!rules.length){
+        showTooltip(chip, `<i class="fa-solid fa-shield-heart"></i> ${fund.toUpperCase()}`, `<div>No rule available.</div>`);
+        return;
+      }
+      const r = rules[0];
+      const more = r.url ? `<div style="margin-top:10px"><a href="${esc(r.url)}" target="_blank" rel="noopener">More details</a></div>` : '';
+      const net = r.network ? `<div style="margin-top:6px;opacity:.9"><b>Network:</b> ${esc(r.network)}</div>` : '';
+      showTooltip(chip, `<i class="fa-solid fa-shield-heart"></i> ${fund.toUpperCase()} · #${esc(code)}`, `<div><b>${esc(r.frequency)}</b></div>${net}${more}`);
+      e.stopPropagation();
+    });
+  });
+
+  document.querySelectorAll('[data-ask]').forEach(b=>b.addEventListener('click', async ()=>{
+    const code=b.dataset.ask;
+    const item=DB.find(x=>x.code===code);
+    const fundLines = item.fund_rules ? Object.entries(item.fund_rules).map(([f,rs])=>{
+      const r=(rs||[])[0]||{};
+      return `${f}: ${r.frequency||'limits apply'}${r.network?` (network: ${r.network})`:''}${r.url?` | details: ${r.url}`:''}`;
+    }).join('\n') : '(none)';
+    const prompt = `You are an Australian dental billing assistant. For ADA item ${item.code} (${item.title}), explain claim risks and how to avoid rejections.\n\nADA notes:\n${item.notes||'(none)'}\n\nExtracted warnings:\n${(item.warnings||[]).join('\n')||'(none)'}\n\nFund network benefit guidance (may vary by cover):\n${fundLines}\n\nAnswer in a clinic-usable way: what to check, what combinations to avoid, and what to say to patient if claim may not be payable.`;
+    await navigator.clipboard.writeText(prompt);
+    const old=b.innerHTML; b.innerHTML='<i class="fa-solid fa-check"></i> Prompt copied';
+    setTimeout(()=>b.innerHTML=old,1200);
+    window.open('https://chat.openai.com/', '_blank');
+  }));
+}
+
+function doSearch(){
+  const s=q.value.toLowerCase().trim();
+  if(!s){renderEmpty('Ready to search database');return;}
+  const tokens=s.split(/\s+/).filter(Boolean);
+  let hits=DB.filter(x=> String(x.code).startsWith(s) || tokens.every(t=>String(x.title||'').toLowerCase().includes(t)));
+  if(WARN) hits=hits.filter(x=> (x.symbols&&x.symbols.length) || (x.warnings&&x.warnings.length));
+  if(FUND) hits=hits.filter(x=> x.fund_rules && Object.keys(x.fund_rules).length);
+  hits.sort((a,b)=>a.code.localeCompare(b.code));
+  render(hits.slice(0,80), hits.length);
+}
+
+toast.addEventListener('click', ()=>{ WARN = true; warnOnly.classList.add('active'); doSearch(); });
+warnOnly.addEventListener('click',()=>{WARN=!WARN; warnOnly.classList.toggle('active',WARN); doSearch();});
+fundOnly.addEventListener('click',()=>{FUND=!FUND; fundOnly.classList.toggle('active',FUND); doSearch();});
+clearBtn.addEventListener('click',()=>{ q.value=''; WARN=false; FUND=false; warnOnly.classList.remove('active'); fundOnly.classList.remove('active'); renderEmpty('Ready to search database'); q.focus(); });
+q.addEventListener('input', ()=>{window.clearTimeout(window.__t); window.__t=setTimeout(doSearch,120)});
+
+(async function init(){
+  try{
+    const r=await fetch('./db.json', {cache:'no-store'});
+    if(!r.ok) throw new Error('HTTP '+r.status);
+    DB=await r.json();
+    dbStatus.innerHTML=`<i class="fa-solid fa-database"></i> Loaded <strong>${DB.length}</strong>`;
+    renderEmpty('Ready to search database');
+  }catch(e){
+    dbStatus.innerHTML=`<i class="fa-solid fa-database"></i> Failed`;
+    renderEmpty('db.json load failed — check file name/path');
+  }
+})();
+</script>
+</body>
+</html>
