@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>Patient Claim Eligibility</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+:root{
+  --bg:#f2f2f7; --card:#fff; --text:#111; --muted:#6b7280;
+  --ok:#1b5e20; --warn:#b45309; --bad:#b91c1c; --blue:#007aff;
+  --shadow:0 10px 28px rgba(0,0,0,.10); --r:16px;
+}
+*{box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:var(--bg);margin:0;padding:16px;color:var(--text);}
+.wrap{max-width:1050px;margin:0 auto;}
+.hdr{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:12px;}
+.hdr a{color:var(--blue);text-decoration:none;font-weight:800}
+.titlePill{display:inline-flex;gap:8px;align-items:center;background:#eef1f4;border:1px solid #e2e6ea;color:#111;border-radius:999px;padding:8px 10px;font-weight:900;font-size:.9rem}
+.card{background:var(--card);border-radius:var(--r);padding:16px;box-shadow:var(--shadow);}
+.grid{display:grid;gap:12px}
+@media(min-width:900px){.grid{grid-template-columns:1.2fr .8fr}}
+label{font-size:.82rem;color:var(--muted);font-weight:900}
+select,input{width:100%;padding:12px;border-radius:12px;border:1px solid #e6e6ee;font-size:1rem;background:#fff}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+button{padding:12px 14px;border:none;border-radius:12px;background:var(--blue);color:#fff;font-weight:900;font-size:1rem;cursor:pointer}
+button.secondary{background:#eef1f4;color:#111;border:1px solid #e2e6ea}
+.msg{padding:10px 12px;border-radius:12px;margin:8px 0;font-weight:900}
+.ok{background:#e8f5e9;color:var(--ok)}
+.warn{background:#fff3e0;color:var(--warn)}
+.bad{background:#ffebee;color:var(--bad)}
+.small{font-size:.9rem;font-weight:800}
+.kicker{font-size:.78rem;font-weight:900;color:var(--muted);text-transform:uppercase;letter-spacing:.6px;margin-bottom:6px}
+.table{width:100%;border-collapse:separate;border-spacing:0 8px;margin-top:10px}
+.table td{background:#f7f7fb;padding:10px 12px}
+.table tr td:first-child{border-top-left-radius:12px;border-bottom-left-radius:12px;width:120px}
+.table tr td:last-child{border-top-right-radius:12px;border-bottom-right-radius:12px}
+.codeTag{display:inline-flex;gap:6px;align-items:center;background:#111;color:#fff;border-radius:999px;padding:4px 8px;font-weight:950;font-size:.85rem}
+.toothTag{display:inline-flex;gap:6px;align-items:center;background:#ff9500;color:#111;border-radius:999px;padding:4px 8px;font-weight:950;font-size:.85rem}
+.fundTag{display:inline-flex;gap:6px;align-items:center;border-radius:999px;padding:6px 10px;font-weight:950;font-size:.85rem;border:1px solid transparent}
+.fund-bupa{background:rgba(0,122,255,.10);color:#0b4aa6;border-color:rgba(0,122,255,.22)}
+.fund-medibank{background:rgba(120,84,255,.10);color:#4c33c2;border-color:rgba(120,84,255,.20)}
+.fund-hcf{background:rgba(52,199,89,.12);color:#1f7a3b;border-color:rgba(52,199,89,.22)}
+.fund-nib{background:rgba(255,149,0,.16);color:#8a4b00;border-color:rgba(255,149,0,.28)}
+hr{border:none;border-top:1px solid #eee;margin:14px 0}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="hdr">
+    <div class="titlePill">🧑‍⚕️ Patient eligibility</div>
+    <a href="../index.html">← Back to codes</a>
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <div class="row">
+        <div style="flex:1;min-width:220px">
+          <label>Patient</label>
+          <select id="patient"></select>
+        </div>
+        <div style="width:220px;min-width:200px">
+          <label>Fund (for rules)</label>
+          <select id="fund">
+            <option value="bupa">Bupa</option>
+            <option value="medibank">Medibank</option>
+            <option value="hcf">HCF</option>
+            <option value="nib">nib</option>
+          </select>
+        </div>
+      </div>
+
+      <div style="height:10px"></div>
+      <label>Planned item codes (comma separated). Tooth optional: 613:T16 or 613 T16</label>
+      <input id="codes" placeholder="e.g. 114, 251  |  965  |  613:T16" />
+
+      <div style="height:12px"></div>
+      <div class="row">
+        <button onclick="check()">Check + Recommend</button>
+        <button class="secondary" onclick="quickSuggest()">Suggest from history</button>
+      </div>
+
+      <div id="result" style="margin-top:12px"></div>
+
+      <hr>
+      <div class="kicker">Claim history</div>
+      <div class="row" style="margin-bottom:10px">
+        <input id="histQ" placeholder="Search history: 613 / 2024-02 / 114" oninput="renderHistory()" />
+      </div>
+      <div id="history"></div>
+    </div>
+
+    <div class="card">
+      <div class="kicker">Rule logic used (demo)</div>
+      <div class="small" style="color:var(--muted);line-height:1.45">
+        • ADA warnings from <code>db.json</code> will always show for the code.<br>
+        • Eligibility timing is fund-specific for a few key codes you mentioned (extendable).<br>
+        • If a fund rule is unknown for a code, we fall back to general demo rules (e.g. 114 = 6 months).<br><br>
+        <b>Examples implemented now:</b><br>
+        • <span class="codeTag">#965</span> Medibank: every 1 day; Bupa: every 24 months (2 years)<br>
+        • <span class="codeTag">#114</span> every 6 months (so 2024 claimed → 2025/2026 eligible)<br>
+        • <span class="codeTag">#613</span>/<span class="codeTag">#615</span> 60 months (5 years) per tooth (demo baseline)
+      </div>
+      <div style="height:12px"></div>
+      <div class="kicker">Next upgrades (when you add data)</div>
+      <div class="small" style="color:var(--muted);line-height:1.45">
+        • Save each patient's fund in <code>patient_claims.json</code> so you don't need to select it.<br>
+        • Add per-fund links + waiting periods by item group from fund policy pages.<br>
+        • Tooth-level matching improves once your history always includes tooth for relevant codes.
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+let claims = {};
+let db = {};
+
+const FUND_RULES = {
+  bupa: {
+    "965": { everyMonths: 24, note: "Bupa: typically limited by replacement period (demo = 2 years)." }
+  },
+  medibank: {
+    "965": { everyDays: 1, note: "Medibank: can be claimed once per day (demo)." }
+  },
+  hcf: {},
+  nib: {}
+};
+
+const GENERAL_RULES = {
+  "114": { everyMonths: 6, note: "General: 114 is usually limited by time interval (demo = 6 months)." },
+  "613": { everyMonths: 60, perTooth: true, note: "General: crown replacement period (demo = 5 years per tooth)." },
+  "615": { everyMonths: 60, perTooth: true, note: "General: crown replacement period (demo = 5 years per tooth)." }
+};
+
+Promise.all([
+  fetch('./patient_claims.json').then(r=>r.json()),
+  fetch('../db.json').then(r=>r.json())
+]).then(([c, d])=>{
+  claims = c || {};
+  db = {};
+  (d||[]).forEach(it=>{
+    const code = String(it.code||it.c||'').padStart(3,'0');
+    db[code] = it;
+  });
+
+  const sel = document.getElementById('patient');
+  Object.keys(claims).forEach(p=>{
+    const o = document.createElement('option');
+    o.value=p; o.textContent=p;
+    sel.appendChild(o);
+  });
+
+  const fundSel = document.getElementById('fund');
+  const p0 = sel.value;
+  const saved = localStorage.getItem('fund:'+p0);
+  if(saved) fundSel.value = saved;
+
+  renderHistory();
+});
+
+document.getElementById('patient').addEventListener('change', ()=>{
+  const p = document.getElementById('patient').value;
+  const fundSel = document.getElementById('fund');
+  const saved = localStorage.getItem('fund:'+p);
+  if(saved) fundSel.value = saved;
+  renderHistory();
+});
+document.getElementById('fund').addEventListener('change', ()=>{
+  const p = document.getElementById('patient').value;
+  localStorage.setItem('fund:'+p, document.getElementById('fund').value);
+});
+
+function parsePlanned(input){
+  const tokens = input.split(',').map(s=>s.trim()).filter(Boolean);
+  let out = [];
+  tokens.forEach(t=>{
+    let m = t.match(/(\d{3})\s*[:@]\s*T?(\d{2})/i);
+    if(m){ out.push({code:m[1], tooth:m[2]}); return; }
+    m = t.match(/(\d{3})\s+T(\d{2})/i);
+    if(m){ out.push({code:m[1], tooth:m[2]}); return; }
+    m = t.match(/\b(\d{3})\b/);
+    if(m){ out.push({code:m[1], tooth:null}); return; }
+  });
+  return out;
+}
+function monthsBetween(a, b){
+  return (b.getFullYear()-a.getFullYear())*12 + (b.getMonth()-a.getMonth());
+}
+function daysBetween(a,b){ return Math.floor((b-a)/(1000*60*60*24)); }
+
+function lastClaim(history, code, tooth){
+  const list = history.filter(x=>x.code===code);
+  if(!tooth) return list.slice(-1)[0] || null;
+  const match = list.filter(x=>Array.isArray(x.tooth) && x.tooth.includes(tooth)).slice(-1)[0];
+  return match || list.slice(-1)[0] || null;
+}
+
+function getRule(fund, code){
+  return (FUND_RULES[fund] && FUND_RULES[fund][code]) || GENERAL_RULES[code] || null;
+}
+
+function fmtNextEligible(lastDateStr, rule){
+  const last = new Date(lastDateStr);
+  if(rule.everyDays){
+    const next = new Date(last.getTime() + rule.everyDays*24*3600*1000);
+    return next.toISOString().slice(0,10);
+  }
+  if(rule.everyMonths){
+    const d = new Date(last);
+    d.setMonth(d.getMonth() + rule.everyMonths);
+    return d.toISOString().slice(0,10);
+  }
+  return null;
+}
+
+function adaHardBlocks(planned){
+  const codes = planned.map(x=>x.code);
+  let blocks = [];
+  if(codes.includes('251') && (codes.includes('114') || codes.includes('222'))){
+    blocks.push('ADA rule: 251 cannot be claimed on the same day as 114 or 222.');
+  }
+  if(codes.includes('114') && codes.includes('251')){
+    blocks.push('ADA rule: 114 cannot be claimed on the same day as 251.');
+  }
+  return blocks;
+}
+
+function fundBadge(fund){
+  const map = {bupa:'fund-bupa', medibank:'fund-medibank', hcf:'fund-hcf', nib:'fund-nib'};
+  const name = {bupa:'Bupa', medibank:'Medibank', hcf:'HCF', nib:'nib'};
+  return `<span class="fundTag ${map[fund]||''}">🏷 ${name[fund]||fund}</span>`;
+}
+
+function check(){
+  const p = document.getElementById('patient').value;
+  const fund = document.getElementById('fund').value;
+  const planned = parsePlanned(document.getElementById('codes').value);
+  const history = (claims[p]||[]).slice().sort((a,b)=>a.date.localeCompare(b.date));
+  const today = new Date();
+  let out = [];
+
+  if(planned.length===0){
+    document.getElementById('result').innerHTML = `<div class="msg warn">请输入 planned codes（例如：114, 251 或 965 或 613:T16）</div>`;
+    return;
+  }
+
+  adaHardBlocks(planned).forEach(t=> out.push(`<div class="msg bad">❌ ${t}</div>`));
+
+  planned.forEach(({code,tooth})=>{
+    const item = db[code] || {};
+    const title = item.desc || item.d || item.description || '';
+    const warnList = Array.isArray(item.warnings) ? item.warnings : [];
+    const rule = getRule(fund, code);
+    const last = lastClaim(history, code, rule && rule.perTooth ? tooth : null);
+
+    const head = `<div class="small">${fundBadge(fund)} <span class="codeTag">#${code}</span>${tooth?` <span class="toothTag">T${tooth}</span>`:''} ${title?('— '+title):''}</div>`;
+
+    // Time / frequency check
+    if(rule){
+      if(last){
+        let eligible = true;
+        let why = '';
+        if(rule.everyDays){
+          const d = daysBetween(new Date(last.date), today);
+          if(d < rule.everyDays){ eligible = false; why = `Last claimed ${last.date} (${d} days ago).`; }
+        }
+        if(rule.everyMonths){
+          const m = monthsBetween(new Date(last.date), today);
+          if(m < rule.everyMonths){ eligible = false; why = `Last claimed ${last.date} (${m} months ago).`; }
+        }
+
+        if(!eligible){
+          const next = fmtNextEligible(last.date, rule);
+          out.push(`<div class="msg warn">⚠️ ${head}
+            <div class="small">
+              ${why}<br>
+              Rule: ${rule.everyDays?`every ${rule.everyDays} day(s)`:`every ${rule.everyMonths} month(s)`}${rule.perTooth?` (per tooth)`:''}.<br>
+              Next eligible date (estimate): <b>${next||'—'}</b><br>
+              <span style="color:var(--muted)">${rule.note||''}</span>
+            </div>
+          </div>`);
+        }else{
+          out.push(`<div class="msg ok">✅ ${head}
+            <div class="small">
+              Eligible now. (Last claimed: ${last.date})<br>
+              <span style="color:var(--muted)">${rule.note||''}</span>
+            </div>
+          </div>`);
+        }
+      }else{
+        out.push(`<div class="msg ok">✅ ${head}
+          <div class="small">
+            No previous claim found for this code${rule.perTooth && !tooth ? ' (add tooth for per-tooth rules)' : ''}. Eligible now (based on rule).<br>
+            <span style="color:var(--muted)">${rule.note||''}</span>
+          </div>
+        </div>`);
+      }
+    }else{
+      out.push(`<div class="msg ok">✅ ${head}<div class="small">No fund/general timing rule configured for this code yet.</div></div>`);
+    }
+
+    // ADA warnings from db.json (always show)
+    if(warnList.length){
+      out.push(`<div class="msg warn">⚠️ ${head}
+        <div class="small">${warnList.slice(0,5).map(x=>String(x)).join('<br>')}</div>
+      </div>`);
+    }
+  });
+
+  document.getElementById('result').innerHTML = out.join('');
+}
+
+function quickSuggest(){
+  const p = document.getElementById('patient').value;
+  const fund = document.getElementById('fund').value;
+  const history = (claims[p]||[]).slice().sort((a,b)=>a.date.localeCompare(b.date));
+  const today = new Date();
+
+  const candidateCodes = Array.from(new Set([
+    ...Object.keys(GENERAL_RULES),
+    ...(FUND_RULES[fund]?Object.keys(FUND_RULES[fund]):[])
+  ]));
+
+  let suggestions = [];
+  candidateCodes.forEach(code=>{
+    const rule = getRule(fund, code);
+    if(!rule) return;
+    const last = lastClaim(history, code, null);
+    if(!last){ suggestions.push({code, status:'Eligible', detail:'No previous claim found'}); return; }
+
+    if(rule.everyDays){
+      const d = daysBetween(new Date(last.date), today);
+      if(d >= rule.everyDays) suggestions.push({code, status:'Eligible', detail:`Last ${last.date}`});
+      else suggestions.push({code, status:'Wait', detail:`Next ${fmtNextEligible(last.date, rule)}`});
+    }else if(rule.everyMonths){
+      const m = monthsBetween(new Date(last.date), today);
+      if(m >= rule.everyMonths) suggestions.push({code, status:'Eligible', detail:`Last ${last.date}`});
+      else suggestions.push({code, status:'Wait', detail:`Next ${fmtNextEligible(last.date, rule)}`});
+    }
+  });
+
+  suggestions.sort((a,b)=> (a.status===b.status? a.code.localeCompare(b.code) : (a.status==='Eligible'?-1:1)));
+
+  const rows = suggestions.slice(0,30).map(s=>{
+    const cls = s.status==='Eligible'?'ok':'warn';
+    const icon = s.status==='Eligible'?'✅':'⏳';
+    return `<div class="msg ${cls}">${icon} <span class="codeTag">#${s.code}</span> <span class="small">${s.detail}</span></div>`;
+  }).join('');
+
+  document.getElementById('result').innerHTML = `
+    <div class="kicker">Recommendations (demo)</div>
+    ${rows || '<div class="msg warn">No configured rules to suggest yet.</div>'}
+  `;
+}
+
+function renderHistory(){
+  const p = document.getElementById('patient').value;
+  const q = (document.getElementById('histQ').value||'').trim().toLowerCase();
+  const history = (claims[p]||[]).slice().sort((a,b)=>b.date.localeCompare(a.date));
+
+  const filtered = history.filter(x=>{
+    const t = Array.isArray(x.tooth)?x.tooth.join(', '):(x.tooth||'');
+    const s = `${x.date} ${x.code} ${t}`.toLowerCase();
+    return !q || s.includes(q);
+  });
+
+  const rows = filtered.slice(0,200).map(x=>{
+    const t = Array.isArray(x.tooth) ? x.tooth.join(', ') : (x.tooth||'');
+    return `<tr>
+      <td>${x.date}</td>
+      <td><span class="codeTag">#${x.code}</span></td>
+      <td>${t?`<span class="toothTag">T${t}</span>`:''}</td>
+    </tr>`;
+  }).join('');
+
+  document.getElementById('history').innerHTML = `
+    <div class="small" style="color:var(--muted)">${filtered.length} records (showing up to 200)</div>
+    <table class="table">${rows}</table>
+  `;
+}
+</script>
+</body>
+</html>
