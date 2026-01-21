@@ -1,5 +1,5 @@
-// Vercel Serverless Function (Node.js)
-export default async function handler(req, res) {
+// api/add-claim.js  (CommonJS - safest)
+module.exports = async (req, res) => {
   // CORS
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
@@ -25,8 +25,8 @@ export default async function handler(req, res) {
       headers: {
         Authorization: `Bearer ${token}`,
         "X-GitHub-Api-Version": "2022-11-28",
-        Accept: "application/vnd.github+json"
-      }
+        Accept: "application/vnd.github+json",
+      },
     });
 
     let sha = null;
@@ -48,16 +48,20 @@ export default async function handler(req, res) {
     const patient = String(claim.patient || "").trim();
     const date = String(claim.date || "").trim();
     const code = String(claim.code || "").trim().padStart(3, "0");
-    const tooth = claim.tooth && Array.isArray(claim.tooth) && claim.tooth.length ? claim.tooth.map(String) : null;
+    const tooth =
+      claim.tooth && Array.isArray(claim.tooth) && claim.tooth.length
+        ? claim.tooth.map(String)
+        : null;
     const fund = claim.fund ? String(claim.fund) : null;
     const notes = claim.notes ? String(claim.notes) : "";
 
     if (!patient || !date || !code) return res.status(400).json({ error: "claim.patient/date/code required" });
 
     const entry = { date, code, tooth, fund, notes, enteredAt: new Date().toISOString() };
+
     if (!obj[patient]) obj[patient] = [];
     obj[patient].push(entry);
-    obj[patient].sort((a,b)=>String(a.date).localeCompare(String(b.date)));
+    obj[patient].sort((a, b) => String(a.date).localeCompare(String(b.date)));
 
     const newContent = Buffer.from(JSON.stringify(obj, null, 2), "utf-8").toString("base64");
 
@@ -65,7 +69,7 @@ export default async function handler(req, res) {
     const body = {
       message: `Add claim: ${patient} #${code} ${date}`,
       content: newContent,
-      committer: { name: "ClinicFlow Bot", email: "clinicflow-bot@users.noreply.github.com" }
+      committer: { name: "ClinicFlow Bot", email: "clinicflow-bot@users.noreply.github.com" },
     };
     if (sha) body.sha = sha;
 
@@ -74,9 +78,9 @@ export default async function handler(req, res) {
       headers: {
         Authorization: `Bearer ${token}`,
         "X-GitHub-Api-Version": "2022-11-28",
-        Accept: "application/vnd.github+json"
+        Accept: "application/vnd.github+json",
       },
-      body: JSON.stringify(body)
+      body: JSON.stringify(body),
     });
 
     if (!putResp.ok) {
@@ -89,9 +93,9 @@ export default async function handler(req, res) {
       ok: true,
       commit_sha: putData.commit && putData.commit.sha,
       commit_url: putData.commit && putData.commit.html_url,
-      content_path: putData.content && putData.content.path
+      content_path: putData.content && putData.content.path,
     });
   } catch (err) {
     return res.status(500).json({ error: String(err && err.message ? err.message : err) });
   }
-}
+};
