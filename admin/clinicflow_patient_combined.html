@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ClinicFlow — Patient Claims & Eligibility</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#f2f2f7; --card:#ffffff; --text:#111827; --muted:#6b7280;
+      --blue:#007aff; --purple:#5856d6; --border:rgba(60,60,67,.14);
+      --shadow:0 10px 28px rgba(0,0,0,.10); --r:16px;
+      --ok:#16a34a; --warn:#f59e0b; --bad:#ef4444;
+      --bupa:#0b5fff; --medibank:#e11d48; --hcf:#7c3aed; --nib:#f97316; --hif:#06b6d4; --westfund:#10b981; --guhealth:#111827; --ahm:#84cc16;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;padding:14px;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;}
+    a{color:var(--blue);text-decoration:none;font-weight:900}
+    .wrap{max-width:1180px;margin:0 auto;display:flex;flex-direction:column;gap:12px}
+    .topbar{
+      background:linear-gradient(135deg,var(--blue),var(--purple));
+      color:#fff;border-radius:20px;padding:14px 14px;box-shadow:var(--shadow);
+      display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;
+    }
+    .brand{display:flex;align-items:center;gap:10px;font-weight:1000}
+    .brand .logo{width:40px;height:40px;border-radius:14px;background:rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center}
+    .brand .meta{display:flex;flex-direction:column;line-height:1.15}
+    .brand .meta .t{font-size:1.05rem}
+    .brand .meta .s{font-size:.82rem;opacity:.85;font-weight:800}
+    .top-actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+    .btn{border:none;cursor:pointer;border-radius:999px;padding:10px 12px;font-weight:950;font-size:.9rem;display:inline-flex;gap:8px;align-items:center;user-select:none}
+    .btn:active{transform:scale(.98)}
+    .btn-ghost{background:rgba(255,255,255,.18);color:#fff;border:1px solid rgba(255,255,255,.25)}
+    .btn-solid{background:#fff;color:#0b0b0c;border:1px solid rgba(255,255,255,.5)}
+    .grid{display:grid;gap:12px}
+    @media(min-width:980px){.grid{grid-template-columns:420px 1fr}}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:20px;box-shadow:var(--shadow);padding:14px}
+    .k{font-size:.78rem;color:var(--muted);font-weight:950;text-transform:uppercase;letter-spacing:.6px}
+    label{display:block;margin-top:10px;font-size:.82rem;color:var(--muted);font-weight:950}
+    input,select,textarea{
+      width:100%;padding:12px;border-radius:14px;border:1px solid rgba(0,0,0,.08);font-size:1rem;background:#fff;outline:none;
+    }
+    textarea{min-height:80px;resize:vertical}
+    .row{display:flex;gap:10px;flex-wrap:wrap}
+    .row > *{flex:1;min-width:160px}
+    .pill{display:inline-flex;align-items:center;gap:8px;padding:7px 10px;border-radius:999px;border:1px solid rgba(0,0,0,.08);background:#f7f7fb;font-weight:950;font-size:.85rem}
+    .msg{padding:10px 12px;border-radius:14px;font-weight:950;margin-top:10px}
+    .ok{background:#eafaf0;color:#14532d;border:1px solid rgba(20,83,45,.15)}
+    .warn{background:#fff7ed;color:#7c2d12;border:1px solid rgba(124,45,18,.16)}
+    .bad{background:#ffebee;color:#7f1d1d;border:1px solid rgba(127,29,29,.18)}
+    .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace}
+    .history{margin-top:10px;display:grid;gap:8px;max-height:420px;overflow:auto;padding-right:2px}
+    .hrow{border:1px solid rgba(0,0,0,.08);border-radius:16px;padding:10px 12px;background:#fff}
+    .hrow .top{display:flex;justify-content:space-between;gap:8px;align-items:flex-start}
+    .hrow .sub{color:var(--muted);font-weight:850;font-size:.9rem;margin-top:4px;line-height:1.35}
+    .codechip{display:inline-flex;gap:8px;align-items:center;background:#f7f7fb;border:1px solid rgba(0,0,0,.08);padding:7px 10px;border-radius:999px;font-weight:1000}
+    .codechip b{font-size:1rem}
+    .fundtag{display:inline-flex;align-items:center;gap:6px;padding:6px 10px;border-radius:999px;font-weight:1000;font-size:.85rem;border:1px solid rgba(0,0,0,.08);cursor:pointer}
+    .fundtag[data-fund="bupa"]{background:rgba(11,95,255,.08);color:var(--bupa)}
+    .fundtag[data-fund="medibank"]{background:rgba(225,29,72,.08);color:var(--medibank)}
+    .fundtag[data-fund="hcf"]{background:rgba(124,58,237,.08);color:var(--hcf)}
+    .fundtag[data-fund="nib"]{background:rgba(249,115,22,.10);color:var(--nib)}
+    .fundtag[data-fund="hif"]{background:rgba(6,182,212,.10);color:var(--hif)}
+    .fundtag[data-fund="westfund"]{background:rgba(16,185,129,.10);color:var(--westfund)}
+    .fundtag[data-fund="guhealth"]{background:rgba(17,24,39,.08);color:var(--guhealth)}
+    .fundtag[data-fund="ahm"]{background:rgba(132,204,22,.10);color:var(--ahm)}
+    .split{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+    .rightTop{display:flex;justify-content:space-between;gap:10px;align-items:flex-start;flex-wrap:wrap}
+    .panelTitle{font-size:1.15rem;font-weight:1000}
+    .results{display:grid;gap:10px;margin-top:10px}
+    .item{border:1px solid rgba(0,0,0,.08);border-radius:18px;padding:12px;background:#fff}
+    .item .head{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+    .item .desc{margin-top:6px;color:#374151;font-weight:850;line-height:1.35}
+    .badges{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+    .badge{display:inline-flex;gap:8px;align-items:flex-start;padding:8px 10px;border-radius:14px;font-weight:950;border:1px solid rgba(0,0,0,.08)}
+    .badge i{margin-top:2px}
+    .badge.ada{background:#f8fafc}
+    .badge.rule{background:#fff7ed;border-color:rgba(245,158,11,.25)}
+    .badge.patient{background:#eef2ff;border-color:rgba(88,86,214,.22)}
+    .badge.danger{background:#ffebee;border-color:rgba(239,68,68,.25)}
+    /* Modal */
+    .modal{position:fixed;inset:0;background:rgba(0,0,0,.35);display:none;align-items:center;justify-content:center;padding:16px;z-index:50}
+    .modal.active{display:flex}
+    .modalCard{width:min(680px,100%);background:#fff;border-radius:22px;box-shadow:0 30px 80px rgba(0,0,0,.35);padding:14px;border:1px solid rgba(0,0,0,.12)}
+    .modalHdr{display:flex;justify-content:space-between;align-items:center;gap:10px}
+    .modalHdr .t{font-weight:1000}
+    .x{border:none;background:#f2f2f7;border:1px solid rgba(0,0,0,.08);border-radius:12px;padding:8px 10px;cursor:pointer}
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <div class="topbar">
+    <div class="brand">
+      <div class="logo"><i class="fa-solid fa-user-doctor"></i></div>
+      <div class="meta">
+        <div class="t">ClinicFlow — Patient Eligibility</div>
+        <div class="s">History + fund rules + ADA notes • add new claim (popup)</div>
+      </div>
+    </div>
+    <div class="top-actions">
+      <a class="btn btn-solid" href="../index.html"><i class="fa-solid fa-magnifying-glass"></i> Back to code search</a>
+      <button class="btn btn-ghost" id="btnApi"><i class="fa-solid fa-plug"></i> API Base</button>
+      <button class="btn btn-ghost" id="btnAdd"><i class="fa-solid fa-plus"></i> Add new claim</button>
+    </div>
+  </div>
+
+  <div class="grid">
+    <!-- LEFT: Patient -->
+    <div class="card">
+      <div class="rightTop">
+        <div>
+          <div class="panelTitle">Patient</div>
+          <div class="k">Select a patient to review history and check eligibility</div>
+        </div>
+        <div class="pill" id="loadPill"><i class="fa-solid fa-database"></i> Loading…</div>
+      </div>
+
+      <label>Patient</label>
+      <select id="patientSelect"></select>
+
+      <div class="row">
+        <div>
+          <label>Fund (for eligibility)</label>
+          <select id="fundSelect">
+            <option value="bupa">Bupa</option>
+            <option value="medibank">Medibank</option>
+            <option value="hcf">HCF</option>
+            <option value="nib">nib</option>
+            <option value="hif">HIF</option>
+            <option value="westfund">Westfund</option>
+            <option value="guhealth">GU Health</option>
+            <option value="ahm">ahm</option>
+          </select>
+        </div>
+        <div>
+          <label>Optional: Tooth for eligibility</label>
+          <input id="toothFilter" placeholder="e.g. 16 (blank = any tooth)" />
+        </div>
+      </div>
+
+      <label>Quick search in history</label>
+      <input id="historyQuery" placeholder="Search code/date/tooth/notes…" />
+
+      <div class="history" id="history"></div>
+    </div>
+
+    <!-- RIGHT: Eligibility -->
+    <div class="card">
+      <div class="panelTitle">Eligibility checker</div>
+      <div class="k">Search item code or keywords • click a card to open details</div>
+
+      <div class="row">
+        <div style="flex:2;min-width:220px">
+          <label>Search (code / keywords)</label>
+          <input id="search" placeholder="Try: 114 / 965 / crown / clean…" />
+        </div>
+        <div style="flex:1;min-width:200px">
+          <label>As of date</label>
+          <input id="asOf" type="date" />
+        </div>
+      </div>
+
+      <div class="results" id="results"></div>
+      <div id="status"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal: API Base -->
+<div class="modal" id="apiModal">
+  <div class="modalCard">
+    <div class="modalHdr">
+      <div class="t">API Base (Vercel)</div>
+      <button class="x" onclick="closeApi()"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="k" style="margin-top:6px">Only needed once per browser. Example: https://your-project.vercel.app</div>
+    <label>API Base</label>
+    <input id="apiBase" placeholder="https://..." />
+    <div class="row" style="margin-top:12px">
+      <button class="btn" style="background:var(--blue);color:#fff;border-radius:14px" onclick="saveApi()">Save</button>
+      <button class="btn" style="background:#eef1f4;color:#111;border:1px solid rgba(0,0,0,.08);border-radius:14px" onclick="closeApi()">Close</button>
+    </div>
+    <div id="apiMsg"></div>
+  </div>
+</div>
+
+<!-- Modal: Add Claim -->
+<div class="modal" id="addModal">
+  <div class="modalCard">
+    <div class="modalHdr">
+      <div class="t">Add new claim</div>
+      <button class="x" onclick="closeAdd()"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+
+    <div class="row">
+      <div>
+        <label>Patient</label>
+        <select id="addPatient"></select>
+      </div>
+      <div>
+        <label>Date</label>
+        <input id="addDate" type="date" />
+      </div>
+    </div>
+
+    <div class="row">
+      <div>
+        <label>Fund</label>
+        <select id="addFund">
+          <option value="bupa">Bupa</option>
+          <option value="medibank">Medibank</option>
+          <option value="hcf">HCF</option>
+          <option value="nib">nib</option>
+          <option value="hif">HIF</option>
+          <option value="westfund">Westfund</option>
+          <option value="guhealth">GU Health</option>
+          <option value="ahm">ahm</option>
+        </select>
+      </div>
+      <div>
+        <label>Item code</label>
+        <input id="addCode" placeholder="e.g. 114" inputmode="numeric" />
+      </div>
+    </div>
+
+    <div class="row">
+      <div>
+        <label>Tooth (optional)</label>
+        <input id="addTooth" placeholder="e.g. 16 or 16,26" />
+      </div>
+      <div>
+        <label>Notes (optional)</label>
+        <input id="addNotes" placeholder="Optional note…" />
+      </div>
+    </div>
+
+    <div class="row" style="margin-top:12px">
+      <button class="btn" style="background:var(--blue);color:#fff;border-radius:14px" onclick="submitClaim()">Save → Commit</button>
+      <button class="btn" style="background:#eef1f4;color:#111;border:1px solid rgba(0,0,0,.08);border-radius:14px" onclick="closeAdd()">Cancel</button>
+    </div>
+
+    <div id="addMsg"></div>
+  </div>
+</div>
+
+<script>
+const OWNER_REPO = "stellaxychen-ux/codesearching";
+const CLAIMS_PATH = "../data/patient_claims.json";
+const FUND_RULES_PATH = "../data/fund_rules.json";
+const DB_PATH = "../db.json";
+
+let claims = {};
+let fundRules = {};
+let dbList = [];
+let dbMap = {};
+
+function isoToday(){ return new Date().toISOString().slice(0,10); }
+function pad3(v){
+  const s = String(v||"").replace(/\\D/g,"").slice(0,3);
+  return s ? s.padStart(3,"0") : "";
+}
+function parseTooth(s){
+  const raw = (s||"").trim();
+  if(!raw) return null;
+  const parts = raw.split(",").map(x=>x.trim()).filter(Boolean);
+  const cleaned = parts.map(p=>p.replace(/\\D/g,"")).filter(Boolean);
+  return cleaned.length ? cleaned : null;
+}
+function parseDate(d){ // yyyy-mm-dd
+  const t = Date.parse(d);
+  return isNaN(t) ? null : new Date(t);
+}
+function addMonths(dateObj, months){
+  const d = new Date(dateObj);
+  const day = d.getDate();
+  d.setMonth(d.getMonth()+months);
+  if (d.getDate() !== day) d.setDate(0); // end of prev month fallback
+  return d;
+}
+
+function setPill(text, ok=true){
+  const el = document.getElementById("loadPill");
+  el.innerHTML = `<i class="fa-solid fa-database"></i> ${text}`;
+  el.style.background = ok ? "#f7f7fb" : "#ffebee";
+}
+
+function getApiBase(){
+  return (localStorage.getItem("clinicflow_api_base")||"").replace(/\\/$/,"");
+}
+
+/* Fund rule lookup (tolerant) */
+function getRule(fund, code){
+  const f = (fund||"").toLowerCase();
+  const c = pad3(code);
+  // common shapes:
+  // 1) { fund: { "965": { everyMonths: 12, ... } } }
+  if (fundRules && fundRules[f] && fundRules[f][c]) return fundRules[f][c];
+
+  // 2) { funds: { bupa: { codes: { "965": {...}}}}}
+  if (fundRules.funds && fundRules.funds[f] && fundRules.funds[f].codes && fundRules.funds[f].codes[c]) return fundRules.funds[f].codes[c];
+
+  // 3) flat list: [{fund:"bupa", code:"965", everyMonths:24}]
+  if (Array.isArray(fundRules)){
+    const hit = fundRules.find(x => (x.fund||"").toLowerCase()===f && pad3(x.code)===c);
+    if (hit) return hit;
+  }
+  return null;
+}
+
+function ruleEveryMonths(rule){
+  if(!rule) return null;
+  return rule.everyMonths ?? rule.every_months ?? rule.frequencyMonths ?? rule.freqMonths ?? null;
+}
+function rulePerTooth(rule){
+  if(!rule) return false;
+  return !!(rule.perTooth ?? rule.per_tooth ?? rule.toothSpecific ?? false);
+}
+function ruleCodes(rule, code){
+  // codes impacted by frequency (include itself)
+  const c = pad3(code);
+  if(!rule) return [c];
+  const list = rule.codes || rule.items || rule.appliesTo || rule.relatedCodes || null;
+  if (Array.isArray(list) && list.length) return Array.from(new Set(list.map(pad3).filter(Boolean).concat([c])));
+  return [c];
+}
+function ruleLink(rule){
+  if(!rule) return null;
+  return rule.link || rule.url || null;
+}
+
+/* Load data */
+async function loadAll(){
+  try{
+    const [c, r, d] = await Promise.all([
+      fetch(CLAIMS_PATH + "?v=" + Date.now()).then(x=>x.json()),
+      fetch(FUND_RULES_PATH + "?v=" + Date.now()).then(x=>x.json()),
+      fetch(DB_PATH + "?v=" + Date.now()).then(x=>x.json())
+    ]);
+    claims = c || {};
+    fundRules = r || {};
+    dbList = Array.isArray(d) ? d : (d.items || []);
+    dbMap = {};
+    dbList.forEach(it=>{
+      const code = pad3(it.code || it.c);
+      dbMap[code] = it;
+    });
+
+    populatePatients();
+    setPill(`Loaded ${Object.keys(claims).length} patients`, true);
+    renderHistory();
+    renderResults();
+  }catch(e){
+    console.error(e);
+    setPill("Failed to load JSON (check paths)", false);
+    document.getElementById("status").innerHTML = `<div class="msg bad">❌ Can't load data. Ensure these exist in repo: data/patient_claims.json, data/fund_rules.json, db.json</div>`;
+  }
+}
+
+function populatePatients(){
+  const names = Object.keys(claims).sort();
+  const sel = document.getElementById("patientSelect");
+  const addSel = document.getElementById("addPatient");
+  sel.innerHTML = ""; addSel.innerHTML = "";
+  names.forEach(n=>{
+    const o1 = document.createElement("option"); o1.value=n; o1.textContent=n; sel.appendChild(o1);
+    const o2 = document.createElement("option"); o2.value=n; o2.textContent=n; addSel.appendChild(o2);
+  });
+}
+
+function currentPatient(){
+  const name = document.getElementById("patientSelect").value;
+  return name;
+}
+function currentFund(){
+  return document.getElementById("fundSelect").value;
+}
+
+/* History render */
+function renderHistory(){
+  const name = currentPatient();
+  const q = (document.getElementById("historyQuery").value||"").trim().toLowerCase();
+  const items = (claims[name] || []).slice().sort((a,b)=>String(b.date).localeCompare(String(a.date)));
+
+  const filtered = items.filter(x=>{
+    const t = Array.isArray(x.tooth)?x.tooth.join(","):(x.tooth||"");
+    const s = `${x.date} ${x.code} ${t} ${(x.fund||"")} ${(x.notes||"")}`.toLowerCase();
+    return !q || s.includes(q);
+  }).slice(0,250);
+
+  const el = document.getElementById("history");
+  if(!name){
+    el.innerHTML = `<div class="msg warn">Select a patient.</div>`;
+    return;
+  }
+  if(!filtered.length){
+    el.innerHTML = `<div class="msg warn">No records.</div>`;
+    return;
+  }
+
+  el.innerHTML = filtered.map(x=>{
+    const tooth = Array.isArray(x.tooth)?x.tooth.join(","):(x.tooth||"");
+    const title = (dbMap[pad3(x.code)] && (dbMap[pad3(x.code)].desc || dbMap[pad3(x.code)].d)) || "";
+    return `
+      <div class="hrow">
+        <div class="top">
+          <div class="codechip"><b>#${pad3(x.code)}</b> <span class="mono">${x.date}</span></div>
+          <div class="split">
+            ${x.fund?`<span class="fundtag" data-fund="${String(x.fund).toLowerCase()}"><i class="fa-solid fa-shield-heart"></i> ${x.fund}</span>`:""}
+            ${tooth?`<span class="pill"><i class="fa-solid fa-tooth"></i> T${tooth}</span>`:""}
+          </div>
+        </div>
+        ${title?`<div class="sub">${title}</div>`:""}
+        ${x.notes?`<div class="sub" style="margin-top:6px"><i class="fa-regular fa-note-sticky"></i> ${x.notes}</div>`:""}
+      </div>
+    `;
+  }).join("");
+}
+
+/* Eligibility */
+function lastClaimDateFor(patientName, codes, perTooth=false, tooth=null){
+  const list = (claims[patientName] || []);
+  let last = null;
+  for (const rec of list){
+    const c = pad3(rec.code);
+    if (!codes.includes(c)) continue;
+    if (perTooth && tooth){
+      const recTooth = Array.isArray(rec.tooth) ? rec.tooth : (rec.tooth ? [String(rec.tooth)] : []);
+      if (!recTooth.includes(String(tooth))) continue;
+    }
+    const d = parseDate(rec.date);
+    if (!d) continue;
+    if (!last || d > last) last = d;
+  }
+  return last;
+}
+
+function buildEligibilityBadges(code){
+  const name = currentPatient();
+  const fund = currentFund();
+  const toothFilter = (document.getElementById("toothFilter").value||"").trim();
+  const tooth = toothFilter ? toothFilter.replace(/\\D/g,"") : null;
+  const asOf = parseDate(document.getElementById("asOf").value) || new Date();
+
+  const rule = getRule(fund, code);
+  const every = ruleEveryMonths(rule);
+  const perTooth = rulePerTooth(rule);
+  const codes = ruleCodes(rule, code);
+  const link = ruleLink(rule);
+
+  const badges = [];
+
+  // Fund rule badge
+  if (every){
+    const last = lastClaimDateFor(name, codes, perTooth, tooth);
+    let eligible = true, next = null;
+    if (last){
+      next = addMonths(last, Number(every));
+      eligible = asOf >= next;
+    }
+    badges.push({
+      cls: "rule",
+      icon: "fa-solid fa-shield-heart",
+      html: `<b>${fund.toUpperCase()}</b> rule: every <b>${every} months</b>${perTooth?` • per tooth`:""}${codes.length>1?` • codes: ${codes.map(c=>"#"+c).join(", ")}`:""}${link?` • <a href="${link}" target="_blank">more</a>`:""}<br>
+             ${last?`Last: <span class="mono">${last.toISOString().slice(0,10)}</span> → Next: <span class="mono">${next.toISOString().slice(0,10)}</span>`:`No previous claim found`}
+             ${eligible?`<div style="margin-top:6px;color:var(--ok)"><i class="fa-solid fa-circle-check"></i> Eligible as of ${asOf.toISOString().slice(0,10)}</div>`
+                      :`<div style="margin-top:6px;color:var(--bad)"><i class="fa-solid fa-circle-xmark"></i> Not eligible until ${next.toISOString().slice(0,10)}</div>`}`
+    });
+  } else {
+    badges.push({
+      cls:"rule",
+      icon:"fa-solid fa-shield-heart",
+      html:`<b>${fund.toUpperCase()}</b> rule: <b>not configured</b> for #${pad3(code)} (add it to fund_rules.json)`
+    });
+  }
+
+  // ADA warnings (from db)
+  const it = dbMap[pad3(code)] || {};
+  const warnText = (it.warningText || it.warningsText || it.warning || it.r || "");
+  const warnObjs = it.warnings || it.warningObjects || it.warning_objects || [];
+  const notes = it.notes || it.note || it.n || "";
+
+  const adaLines = [];
+  if (warnText) adaLines.push(warnText);
+  if (Array.isArray(warnObjs) && warnObjs.length){
+    warnObjs.forEach(w=>{
+      const t = w.text || w.note || w.rule || w.message || JSON.stringify(w);
+      if (t) adaLines.push(t);
+    });
+  }
+
+  if (adaLines.length){
+    badges.push({
+      cls:"danger",
+      icon:"fa-solid fa-triangle-exclamation",
+      html:`<b>ADA warning</b><br>${adaLines.map(x=>`• ${x}`).join("<br>")}`
+    });
+  }
+
+  if (notes){
+    badges.push({
+      cls:"ada",
+      icon:"fa-regular fa-note-sticky",
+      html:`<b>Notes</b><br>${String(notes)}`
+    });
+  }
+
+  // Patient recap badge
+  badges.push({
+    cls:"patient",
+    icon:"fa-solid fa-user",
+    html:`<b>Patient</b>: ${name || "—"}${tooth?` • Tooth: <b>${tooth}</b>`:""}`
+  });
+
+  return badges;
+}
+
+function matchDb(q){
+  const s = q.trim().toLowerCase();
+  if(!s) return [];
+  const codeQ = pad3(s);
+  return dbList.filter(it=>{
+    const code = pad3(it.code || it.c);
+    const desc = String(it.desc || it.d || "").toLowerCase();
+    const keys = String(it.keywords || it.k || "").toLowerCase();
+    return (codeQ && code.startsWith(codeQ)) || desc.includes(s) || keys.includes(s);
+  }).slice(0,50);
+}
+
+function renderResults(){
+  const q = (document.getElementById("search").value||"").trim();
+  const out = document.getElementById("results");
+  const status = document.getElementById("status");
+  if(!q){
+    out.innerHTML = `<div class="msg ok">Type a code/keyword to start. Example: <span class="mono">114</span>, <span class="mono">965</span>, crown, clean…</div>`;
+    status.innerHTML = "";
+    return;
+  }
+  const res = matchDb(q);
+  status.innerHTML = `<div class="pill"><i class="fa-solid fa-magnifying-glass"></i> ${res.length} matches</div>`;
+  if(!res.length){
+    out.innerHTML = `<div class="msg warn">No results for "${q}".</div>`;
+    return;
+  }
+
+  out.innerHTML = res.map(it=>{
+    const code = pad3(it.code || it.c);
+    const cat = it.category || it.t || "Gen";
+    const desc = it.desc || it.d || "";
+    const badges = buildEligibilityBadges(code);
+    return `
+      <div class="item" data-code="${code}">
+        <div class="head">
+          <div>
+            <div class="codechip"><b>#${code}</b> <span style="color:var(--muted);font-weight:950">${cat}</span></div>
+            <div class="desc">${desc}</div>
+          </div>
+          <button class="btn" style="background:#eef1f4;color:#111;border:1px solid rgba(0,0,0,.08)" onclick="openAddFrom('${code}')"><i class="fa-solid fa-plus"></i> Add claim</button>
+        </div>
+        <div class="badges">
+          ${badges.map(b=>`<div class="badge ${b.cls}"><i class="${b.icon}"></i><div>${b.html}</div></div>`).join("")}
+        </div>
+      </div>
+    `;
+  }).join("");
+}
+
+/* Modal controls */
+const apiModal = document.getElementById("apiModal");
+const addModal = document.getElementById("addModal");
+
+document.getElementById("btnApi").addEventListener("click", ()=>{
+  document.getElementById("apiBase").value = getApiBase() || "";
+  apiModal.classList.add("active");
+});
+document.getElementById("btnAdd").addEventListener("click", ()=>{
+  openAdd();
+});
+
+function closeApi(){ apiModal.classList.remove("active"); document.getElementById("apiMsg").innerHTML=""; }
+function saveApi(){
+  const v = (document.getElementById("apiBase").value||"").trim().replace(/\\/$/,"");
+  if(!v){ document.getElementById("apiMsg").innerHTML = `<div class="msg warn">Please enter your Vercel base URL.</div>`; return; }
+  localStorage.setItem("clinicflow_api_base", v);
+  document.getElementById("apiMsg").innerHTML = `<div class="msg ok">Saved.</div>`;
+  setTimeout(closeApi, 500);
+}
+
+function openAdd(){
+  // sync selects
+  document.getElementById("addPatient").value = currentPatient();
+  document.getElementById("addFund").value = currentFund();
+  document.getElementById("addDate").value = document.getElementById("asOf").value || isoToday();
+  document.getElementById("addCode").value = "";
+  document.getElementById("addTooth").value = document.getElementById("toothFilter").value || "";
+  document.getElementById("addNotes").value = "";
+  document.getElementById("addMsg").innerHTML = "";
+  addModal.classList.add("active");
+}
+function openAddFrom(code){
+  openAdd();
+  document.getElementById("addCode").value = code;
+}
+function closeAdd(){ addModal.classList.remove("active"); document.getElementById("addMsg").innerHTML=""; }
+
+async function submitClaim(){
+  const apiBase = getApiBase();
+  if(!apiBase){
+    document.getElementById("addMsg").innerHTML = `<div class="msg warn">Set API Base first (top right → API Base).</div>`;
+    return;
+  }
+  const patient = document.getElementById("addPatient").value;
+  const date = document.getElementById("addDate").value;
+  const fund = document.getElementById("addFund").value;
+  const code = pad3(document.getElementById("addCode").value);
+  const tooth = parseTooth(document.getElementById("addTooth").value);
+  const notes = (document.getElementById("addNotes").value||"").trim();
+
+  if(!patient || !date || !code){
+    document.getElementById("addMsg").innerHTML = `<div class="msg warn">Patient / Date / Code are required.</div>`;
+    return;
+  }
+
+  // client-side duplicate guard
+  const toothKey = tooth ? tooth.join(",") : "";
+  const dup = (claims[patient]||[]).some(x => String(x.date)===date && pad3(x.code)===code && ((Array.isArray(x.tooth)?x.tooth.join(","):"")===toothKey));
+  if(dup){
+    document.getElementById("addMsg").innerHTML = `<div class="msg warn">Duplicate record detected (same date/code/tooth).</div>`;
+    return;
+  }
+
+  document.getElementById("addMsg").innerHTML = `<div class="msg warn">Saving…</div>`;
+
+  try{
+    const resp = await fetch(apiBase + "/api/add-claim", {
+      method:"POST",
+      headers: {"Content-Type":"application/json"},
+      body: JSON.stringify({
+        owner_repo: OWNER_REPO,
+        path: "data/patient_claims.json",
+        claim: { patient, date, code, tooth, fund, notes }
+      })
+    });
+
+    const out = await resp.json().catch(()=>({}));
+    if(!resp.ok){
+      document.getElementById("addMsg").innerHTML = `<div class="msg bad">❌ Save failed: ${out.error || ("HTTP " + resp.status)}</div>`;
+      return;
+    }
+
+    document.getElementById("addMsg").innerHTML = `<div class="msg ok">✅ Committed. <a href="${out.commit_url}" target="_blank">Open commit</a></div>`;
+    await loadAll();
+    renderResults();
+    setTimeout(()=>{ closeAdd(); }, 700);
+  }catch(e){
+    console.error(e);
+    document.getElementById("addMsg").innerHTML = `<div class="msg bad">❌ Network error. Check API base.</div>`;
+  }
+}
+
+/* Events */
+document.getElementById("patientSelect").addEventListener("change", ()=>{
+  // keep fund select, but refresh
+  renderHistory();
+  renderResults();
+});
+document.getElementById("fundSelect").addEventListener("change", renderResults);
+document.getElementById("toothFilter").addEventListener("input", renderResults);
+document.getElementById("historyQuery").addEventListener("input", renderHistory);
+document.getElementById("search").addEventListener("input", renderResults);
+
+document.getElementById("asOf").value = isoToday();
+loadAll();
+</script>
+</body>
+</html>
