@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ADA Item Codes (AU) — CodeSearch</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <style>
+    :root{
+      --primary:#007aff;
+      --secondary:#5856d6;
+      --bg:#f2f2f7;
+      --card:#ffffff;
+      --text:#1c1c1e;
+      --muted:#8e8e93;
+      --border:rgba(60,60,67,.12);
+      --shadow-soft:0 2px 12px rgba(0,0,0,.05);
+      --shadow:0 8px 28px rgba(0,0,0,.10);
+
+      --warn-bg:#fff3e0;
+      --warn-text:#e65100;
+
+      --note-bg:#eef7ff;
+      --note-text:#0b62b4;
+
+      --radius:16px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;padding:20px;background:var(--bg);
+      font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,Helvetica,sans-serif;
+      color:var(--text);display:flex;justify-content:center;
+    }
+    .app{width:100%;max-width:1020px;display:flex;flex-direction:column;gap:16px}
+    .header{
+      background:var(--card);border:1px solid var(--border);
+      border-radius:var(--radius);box-shadow:var(--shadow-soft);
+      padding:14px 16px;display:flex;justify-content:space-between;align-items:center;gap:12px;
+      position:sticky;top:12px;z-index:10;backdrop-filter:blur(8px);
+    }
+    .title{display:flex;align-items:center;gap:10px}
+    .logo{
+      width:36px;height:36px;border-radius:12px;display:flex;align-items:center;justify-content:center;
+      background:linear-gradient(135deg,var(--primary),var(--secondary));color:#fff;
+      box-shadow:0 12px 26px rgba(0,122,255,.25);
+    }
+    .title h1{margin:0;font-size:1.06rem;font-weight:950;letter-spacing:-.2px}
+    .title .sub{margin-top:2px;font-size:.82rem;color:var(--muted)}
+    .pills{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}
+    .pill{
+      font-size:.78rem;color:var(--muted);background:#eef1f4;border:1px solid rgba(0,0,0,.04);
+      padding:7px 10px;border-radius:999px;font-weight:800;display:flex;gap:8px;align-items:center;
+    }
+    .pill strong{color:#111}
+    .hero{
+      border-radius:var(--radius);
+      background:linear-gradient(135deg,var(--primary),var(--secondary));
+      box-shadow:var(--shadow);
+      padding:20px 18px;color:#fff;
+    }
+    .hero-top{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+    .hero h2{margin:0;font-size:1.22rem;letter-spacing:-.3px}
+    .hero p{margin:6px 0 0;opacity:.9;font-size:.92rem}
+    .search-row{margin-top:14px;display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+    .search-wrap{flex:1;min-width:260px;position:relative}
+    .search-wrap i{position:absolute;left:16px;top:50%;transform:translateY(-50%);color:#aab2c0}
+    input.search{
+      width:100%;padding:14px 14px 14px 44px;border:none;border-radius:999px;outline:none;
+      font-size:1.02rem;box-shadow:0 10px 30px rgba(0,0,0,.22);
+    }
+    .btn{
+      border:none;cursor:pointer;border-radius:999px;padding:10px 12px;font-weight:900;font-size:.86rem;
+      display:flex;align-items:center;gap:8px;transition:.15s;user-select:none;
+    }
+    .btn:active{transform:scale(.98)}
+    .btn-ghost{background:rgba(255,255,255,.18);color:#fff;border:1px solid rgba(255,255,255,.22)}
+    .btn-ghost.active{background:#fff;color:#0b0b0c;border-color:rgba(255,255,255,.5)}
+    .results{display:grid;gap:12px}
+    .empty{
+      background:var(--card);border:1px solid var(--border);border-radius:var(--radius);
+      padding:38px;text-align:center;color:#9aa0a6;box-shadow:var(--shadow-soft);
+    }
+
+    /* cards */
+    .card{
+      background:var(--card);border:1px solid var(--border);border-radius:14px;box-shadow:var(--shadow-soft);
+      overflow:hidden;
+    }
+    .card-head{
+      display:flex;justify-content:space-between;align-items:flex-start;gap:12px;
+      padding:14px 14px 12px;border-left:6px solid #ddd;
+    }
+    .left{flex:1;min-width:0}
+    .code{font-weight:1000;font-size:1.35rem;letter-spacing:-.6px}
+    .title-line{margin-top:6px;font-size:1.03rem;color:#2f2f33;line-height:1.35;word-break:break-word}
+    .meta{margin-top:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+    .tag{
+      display:inline-flex;align-items:center;gap:6px;font-size:.78rem;font-weight:950;
+      padding:6px 10px;border-radius:999px;border:1px solid rgba(0,0,0,.06);
+      background:#f3f4f6;color:#59606a;
+    }
+    .tag-cat{background:#eef7ff;color:#0b62b4}
+    .tag-warn{background:var(--warn-bg);color:var(--warn-text)}
+    .actions{display:flex;flex-direction:column;gap:8px;align-items:flex-end}
+    .action-btn{
+      border:none;background:#eef1f4;color:#111;font-weight:950;padding:9px 10px;border-radius:12px;
+      cursor:pointer;transition:.15s;display:inline-flex;align-items:center;gap:8px;font-size:.85rem;white-space:nowrap;
+    }
+    .action-btn:hover{transform:translateY(-1px)}
+    .action-btn.ai{background:#111;color:#fff}
+    .action-btn.ai:hover{transform:translateY(-1px);filter:brightness(1.05)}
+    .warn-strip{
+      margin-top:10px;display:grid;gap:8px;
+    }
+    .callout{
+      border-radius:12px;padding:10px 12px;display:flex;gap:10px;align-items:flex-start;
+      border:1px solid rgba(0,0,0,.06);
+    }
+    .callout.warn{background:var(--warn-bg);color:var(--warn-text)}
+    .callout.note{background:var(--note-bg);color:var(--note-text)}
+    .callout .ct{font-weight:1000;margin-bottom:3px}
+    details{border-top:1px solid var(--border);background:#fafafa}
+    summary{
+      list-style:none;cursor:pointer;padding:12px 14px;display:flex;align-items:center;justify-content:space-between;
+      gap:10px;font-weight:950;color:#2f2f33;user-select:none;
+    }
+    summary::-webkit-details-marker{display:none}
+    .detail-body{padding:0 14px 14px;color:#404047;font-size:.92rem;line-height:1.55}
+    .notes-box{
+      margin-top:10px;background:#fff;border:1px solid rgba(0,0,0,.06);border-radius:12px;padding:12px;
+      color:#2f2f33;
+    }
+    .notes-box .nh{font-weight:1000;color:#111;margin-bottom:6px;display:flex;gap:8px;align-items:center}
+    .notes-box .nt{white-space:pre-wrap}
+    .hint{margin-top:10px;color:#7a808a;font-size:.85rem}
+
+    /* category colors */
+    .cat-Diag .card-head{border-left-color:#4caf50}
+    .cat-Prev .card-head{border-left-color:#8bc34a}
+    .cat-Perio .card-head{border-left-color:#ff9800}
+    .cat-Surg .card-head{border-left-color:#f44336}
+    .cat-Endo .card-head{border-left-color:#ff2d55}
+    .cat-Rest .card-head{border-left-color:#2196f3}
+    .cat-Pros .card-head{border-left-color:#00bcd4}
+    .cat-Ortho .card-head{border-left-color:#9c27b0}
+    .cat-Impl .card-head{border-left-color:#795548}
+    .cat-Gen  .card-head{border-left-color:#607d8b}
+
+    mark{background:rgba(255,214,10,.35);padding:0 2px;border-radius:4px}
+
+    /* modal */
+    .modal-backdrop{
+      position:fixed;inset:0;background:rgba(0,0,0,.35);
+      display:none;align-items:center;justify-content:center;z-index:999;
+      padding:18px;
+    }
+    .modal{
+      width:min(900px, 100%);background:#fff;border-radius:16px;box-shadow:var(--shadow);
+      overflow:hidden;border:1px solid rgba(0,0,0,.08);
+    }
+    .modal-head{
+      padding:14px 14px;background:linear-gradient(135deg,#111,#2a2a2a);
+      color:#fff;display:flex;justify-content:space-between;align-items:center;gap:10px;
+    }
+    .modal-head .mh{font-weight:1000}
+    .modal-body{padding:14px}
+    textarea{
+      width:100%;min-height:210px;border-radius:12px;border:1px solid rgba(0,0,0,.12);
+      padding:12px;font-size:.92rem;line-height:1.4;outline:none;
+      font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    }
+    .modal-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px;justify-content:flex-end}
+    .modal-actions .action-btn{border-radius:999px}
+    a.link{color:#fff;text-decoration:underline}
+    @media (max-width: 520px){
+      body{padding:14px}
+      .actions{flex-direction:row;align-items:center;flex-wrap:wrap;justify-content:flex-end}
+      .action-btn{padding:9px 10px}
+    }
+  </style>
+</head>
+<body>
+<div class="app">
+  <div class="header">
+    <div class="title">
+      <div class="logo"><i class="fas fa-tooth"></i></div>
+      <div>
+        <h1>ADA Item Codes (AU)</h1>
+        <div class="sub">Warnings extracted from schedule notes • + “Ask AI” prompt</div>
+      </div>
+    </div>
+    <div class="pills">
+      <div class="pill" id="dbStatus"><i class="fa-solid fa-database"></i> Loading…</div>
+      <div class="pill" id="hitStatus"><i class="fa-solid fa-magnifying-glass"></i> <strong>0</strong> hits</div>
+      <a class="btn" href="admin/" style="background:var(--primary);color:#fff;text-decoration:none;border:1px solid rgba(0,0,0,.06);"><i class="fa-solid fa-user-doctor"></i> Patient eligibility</a>
+
+    </div>
+  </div>
+
+  <div class="hero">
+    <div class="hero-top">
+      <div>
+        <h2>CodeSearch</h2>
+        <p>输入 <b>代码</b>（251）或 <b>关键词</b>（clean / extraction / crown…）</p>
+      </div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;">
+        <button class="btn btn-ghost" id="btnWarnOnly"><i class="fa-solid fa-triangle-exclamation"></i> Warnings only</button>
+        <button class="btn btn-ghost" id="btnClear"><i class="fa-solid fa-xmark"></i> Clear</button>
+      </div>
+    </div>
+    <div class="search-row">
+      <div class="search-wrap">
+        <i class="fas fa-search"></i>
+        <input id="q" class="search" placeholder="Try: 251 / calculus / radiograph / implant…" autocomplete="off" />
+      </div>
+    </div>
+    <div style="margin-top:10px;opacity:.9;font-size:.85rem;">
+      Tip: 多词搜索支持（root canal）。默认最多显示 80 条。Warnings 规则来自 PDF notes 的自动提取（可继续优化）。
+    </div>
+  </div>
+
+  <div id="results" class="results">
+    <div class="empty">
+      <i class="fas fa-search" style="font-size:2rem;opacity:.25"></i>
+      <p>Ready to search ADA database</p>
+    </div>
+  </div>
+</div>
+
+<!-- AI modal -->
+<div class="modal-backdrop" id="aiModal">
+  <div class="modal">
+    <div class="modal-head">
+      <div class="mh"><i class="fa-solid fa-wand-magic-sparkles"></i> Ask AI — Copy this prompt</div>
+      <button class="action-btn" id="aiClose" style="background:rgba(255,255,255,.18);color:#fff;">
+        <i class="fa-solid fa-xmark"></i> Close
+      </button>
+    </div>
+    <div class="modal-body">
+      <textarea id="aiPrompt"></textarea>
+      <div class="modal-actions">
+        <button class="action-btn" id="aiCopy"><i class="fa-regular fa-copy"></i> Copy prompt</button>
+        <button class="action-btn ai" id="aiOpen"><i class="fa-solid fa-arrow-up-right-from-square"></i> Open ChatGPT</button>
+      </div>
+      <div class="hint">Open ChatGPT 会打开新标签页；然后把 prompt 粘贴进去即可（GitHub Pages 不能直接内置调用 OpenAI API）。</div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // db.json format:
+  // [{ code, title, category, symbols, notes, warnings: [{level,kind,title,text,related_codes}] }]
+
+  const input = document.getElementById('q');
+  const results = document.getElementById('results');
+  const dbStatus = document.getElementById('dbStatus');
+  const hitStatus = document.getElementById('hitStatus');
+  const btnWarnOnly = document.getElementById('btnWarnOnly');
+  const btnClear = document.getElementById('btnClear');
+
+  const aiModal = document.getElementById('aiModal');
+  const aiPrompt = document.getElementById('aiPrompt');
+  const aiClose = document.getElementById('aiClose');
+  const aiCopy = document.getElementById('aiCopy');
+  const aiOpen = document.getElementById('aiOpen');
+
+  let DB = [];
+  let INDEX = [];
+  let WARN_ONLY = false;
+
+  function esc(s=''){
+    return String(s).replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+  }
+  function debounce(fn, wait=140){ let t; return (...args)=>{clearTimeout(t); t=setTimeout(()=>fn(...args),wait);} }
+  function highlight(text, q){
+    if(!q) return esc(text);
+    const tokens=q.split(/\s+/).filter(Boolean).slice(0,6);
+    let out=esc(text);
+    tokens.forEach(t=>{
+      const tt=esc(t);
+      try{
+        const re=new RegExp(tt.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'),'ig');
+        out=out.replace(re, m=>`<mark>${m}</mark>`);
+      }catch(e){}
+    });
+    return out;
+  }
+
+  async function copyToClipboard(text, btn){
+    try{
+      await navigator.clipboard.writeText(text);
+      const old = btn.innerHTML;
+      btn.innerHTML = '<i class="fa-solid fa-check"></i> Copied';
+      setTimeout(()=>btn.innerHTML=old, 1100);
+    }catch(e){
+      btn.innerHTML = '<i class="fa-solid fa-xmark"></i> Failed';
+      setTimeout(()=>btn.innerHTML='<i class="fa-regular fa-copy"></i> Copy', 1100);
+    }
+  }
+
+  function hasWarnings(item){
+    return (item.warnings || []).some(w => w.level === 'warning');
+  }
+
+  function buildAIPrompt(item){
+    const warnLines = (item.warnings || []).map(w => `- [${w.level.toUpperCase()}] ${w.title}: ${w.text}`).join('\n');
+    return [
+      "You are a dental billing assistant for Australia (ADA Schedule).",
+      "",
+      `Item code: ${item.code}`,
+      `Title: ${item.title}`,
+      `Category: ${item.category}`,
+      item.symbols && item.symbols.length ? `Symbols: ${item.symbols.join(' ')}` : "Symbols: (none)",
+      "",
+      "Extracted schedule notes (verbatim-ish):",
+      item.notes ? item.notes : "(no notes extracted)",
+      "",
+      "Extracted warnings / relationships:",
+      warnLines || "(none)",
+      "",
+      "Task:",
+      "1) Summarise what this item is used for (plain English).",
+      "2) Explain the KEY claiming cautions. If notes imply inclusion/exclusion with other item codes, list them explicitly.",
+      "3) If the restrictions are ambiguous, say so and suggest what to double-check.",
+      "",
+      "Return as:",
+      "- Quick summary",
+      "- Do / Don't list",
+      "- Related codes"
+    ].join('\n');
+  }
+
+  function openAIModal(item){
+    aiPrompt.value = buildAIPrompt(item);
+    aiModal.style.display = 'flex';
+  }
+  function closeAIModal(){ aiModal.style.display='none'; }
+
+  aiClose.addEventListener('click', closeAIModal);
+  aiModal.addEventListener('click', (e)=>{ if(e.target === aiModal) closeAIModal(); });
+  aiCopy.addEventListener('click', ()=> copyToClipboard(aiPrompt.value, aiCopy));
+  aiOpen.addEventListener('click', ()=>{
+    window.open('https://chat.openai.com/', '_blank');
+  });
+
+  function renderEmpty(msg){
+    results.innerHTML = `
+      <div class="empty">
+        <i class="fas fa-search" style="font-size:2rem;opacity:.25"></i>
+        <p>${esc(msg)}</p>
+      </div>`;
+  }
+
+  function renderList(list, totalHits, q){
+    hitStatus.innerHTML = `<i class="fa-solid fa-magnifying-glass"></i> <strong>${totalHits}</strong> hits`;
+
+    results.innerHTML = list.map(item => {
+      const warnTags = [];
+      if(item.symbols && item.symbols.length){
+        warnTags.push(`<span class="tag tag-warn"><i class="fa-solid fa-triangle-exclamation"></i> Notes ${esc(item.symbols.join(' '))}</span>`);
+      }
+      if(hasWarnings(item)){
+        warnTags.push(`<span class="tag tag-warn"><i class="fa-solid fa-shield-halved"></i> Warnings</span>`);
+      }
+
+      const tagsHtml = `
+        <span class="tag tag-cat"><i class="fa-solid fa-tag"></i> ${esc(item.category)}</span>
+        ${warnTags.join('')}
+      `;
+
+      const warnBlocks = (item.warnings || [])
+        .filter(w => w.level === 'warning')
+        .slice(0, 3)
+        .map(w => `
+          <div class="callout warn">
+            <i class="fa-solid fa-triangle-exclamation" style="margin-top:2px;"></i>
+            <div>
+              <div class="ct">${esc(w.title)}</div>
+              <div>${esc(w.text)}</div>
+            </div>
+          </div>
+        `).join('');
+
+      const noteBlocks = (item.warnings || [])
+        .filter(w => w.level !== 'warning')
+        .slice(0, 2)
+        .map(w => `
+          <div class="callout note">
+            <i class="fa-solid fa-circle-info" style="margin-top:2px;"></i>
+            <div>
+              <div class="ct">${esc(w.title)}</div>
+              <div>${esc(w.text)}</div>
+            </div>
+          </div>
+        `).join('');
+
+      return `
+        <div class="card cat-${esc(item.category)}">
+          <div class="card-head">
+            <div class="left">
+              <div class="code">#${esc(item.code)}</div>
+              <div class="title-line">${highlight(item.title, q)}</div>
+              <div class="meta">${tagsHtml}</div>
+              ${warnBlocks ? `<div class="warn-strip">${warnBlocks}</div>` : ``}
+            </div>
+            <div class="actions">
+              <button class="action-btn" data-copy="${esc(item.code)}" data-mode="code"><i class="fa-regular fa-copy"></i> Copy code</button>
+              <button class="action-btn" data-copy="${esc(item.code)} — ${esc(item.title)}" data-mode="full"><i class="fa-regular fa-copy"></i> Copy full</button>
+              <button class="action-btn ai" data-ai="${esc(item.code)}"><i class="fa-solid fa-wand-magic-sparkles"></i> Ask AI</button>
+            </div>
+          </div>
+
+          <details>
+            <summary>
+              <span><i class="fa-solid fa-circle-info"></i> Details</span>
+              <span style="color:#8e8e93;font-weight:950;">
+                ${item.symbols && item.symbols.length ? `Symbols: ${esc(item.symbols.join(' '))}` : 'No symbols'}
+                &nbsp; <i class="fa-solid fa-chevron-down"></i>
+              </span>
+            </summary>
+            <div class="detail-body">
+              <div><b>Item code:</b> ${esc(item.code)}</div>
+              <div><b>Category:</b> ${esc(item.category)}</div>
+              <div><b>Title:</b> ${esc(item.title)}</div>
+
+              ${noteBlocks ? `<div style="margin-top:10px;display:grid;gap:8px;">${noteBlocks}</div>` : ``}
+
+              ${item.notes ? `
+                <div class="notes-box">
+                  <div class="nh"><i class="fa-solid fa-file-lines"></i> Extracted notes</div>
+                  <div class="nt">${esc(item.notes)}</div>
+                </div>
+              ` : `<div class="hint">No notes extracted for this item from the PDF (layout / scan issues can cause this).</div>`}
+
+              <div class="hint">
+                If a specific rule is missing (例如你提到的“251 不可以和 114 一起用”), we can refine the extraction heuristics further—but we only show what we can support from the schedule text.
+              </div>
+            </div>
+          </details>
+        </div>
+      `;
+    }).join('') + (totalHits > list.length
+      ? `<div class="empty" style="padding:16px;">Showing ${list.length} of ${totalHits}. Refine keywords for more precise results.</div>`
+      : ``);
+
+    // bind copy
+    document.querySelectorAll('[data-copy]').forEach(btn=>{
+      btn.addEventListener('click', ()=>copyToClipboard(btn.dataset.copy, btn));
+    });
+    // bind AI
+    document.querySelectorAll('[data-ai]').forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        const code = btn.dataset.ai;
+        const item = DB.find(x => x.code === code);
+        if(item) openAIModal(item);
+      });
+    });
+  }
+
+  function searchCore(){
+    const q = input.value.toLowerCase().trim();
+    if(!q){
+      renderEmpty('Ready to search ADA database');
+      hitStatus.innerHTML = `<i class="fa-solid fa-magnifying-glass"></i> <strong>0</strong> hits`;
+      return;
+    }
+    const tokens = q.split(/\s+/).filter(Boolean);
+
+    let hits = INDEX.filter(x => {
+      if(x.code.startsWith(q)) return true;
+      if(tokens.length===1) return x._title.includes(tokens[0]);
+      return tokens.every(t => x._title.includes(t));
+    });
+
+    if(WARN_ONLY){
+      hits = hits.filter(x => x._hasWarn);
+    }
+
+    hits.sort((a,b)=>{
+      const ap=a.code.startsWith(q)?0:1, bp=b.code.startsWith(q)?0:1;
+      if(ap!==bp) return ap-bp;
+      if(b._warnScore!==a._warnScore) return b._warnScore-a._warnScore;
+      return a.code.localeCompare(b.code);
+    });
+
+    if(!hits.length){
+      renderEmpty(`No results for "${q}"`);
+      hitStatus.innerHTML = `<i class="fa-solid fa-magnifying-glass"></i> <strong>0</strong> hits`;
+      return;
+    }
+
+    const top = hits.slice(0,80).map(h => h._ref);
+    renderList(top, hits.length, q);
+  }
+
+  const search = debounce(searchCore, 130);
+
+  btnWarnOnly.addEventListener('click', ()=>{
+    WARN_ONLY = !WARN_ONLY;
+    btnWarnOnly.classList.toggle('active', WARN_ONLY);
+    searchCore();
+  });
+
+  btnClear.addEventListener('click', ()=>{
+    input.value='';
+    WARN_ONLY=false;
+    btnWarnOnly.classList.remove('active');
+    renderEmpty('Ready to search ADA database');
+    hitStatus.innerHTML = `<i class="fa-solid fa-magnifying-glass"></i> <strong>0</strong> hits`;
+    input.focus();
+  });
+
+  input.addEventListener('input', search);
+
+  // Load db.json
+  (async function init(){
+    try{
+      const r = await fetch('./db.json', { cache:'no-store' });
+      if(!r.ok) throw new Error('HTTP '+r.status);
+      DB = await r.json();
+
+      INDEX = DB.map(item => {
+        const title = (item.title || '');
+        const warns = (item.warnings || []);
+        const warnScore = warns.filter(w => w.level==='warning').length + (item.symbols && item.symbols.length ? 1 : 0);
+        return {
+          code: item.code,
+          _title: title.toLowerCase(),
+          _warnScore: warnScore,
+          _hasWarn: warnScore > 0,
+          _ref: item
+        };
+      });
+
+      dbStatus.innerHTML = `<i class="fa-solid fa-database"></i> Loaded <strong>${DB.length}</strong>`;
+      renderEmpty('Ready to search ADA database');
+    }catch(err){
+      dbStatus.innerHTML = `<i class="fa-solid fa-database"></i> Failed`;
+      results.innerHTML = `
+        <div class="empty">
+          <p><b>db.json load failed</b></p>
+          <p style="margin-top:8px">Make sure <code>db.json</code> is in the same folder as <code>index.html</code>.</p>
+        </div>`;
+    }
+  })();
+</script>
+</body>
+</html>
