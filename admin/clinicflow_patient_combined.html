@@ -286,7 +286,8 @@ function setPill(text, ok=true){
 }
 
 function getApiBase(){
-  return (localStorage.getItem("clinicflow_api_base")||"").replace(/\\/$/,"");
+  return (localStorage.getItem("clinicflow_api_base")||"").replace(/\/$/, "")
+;
 }
 
 /* Fund rule lookup (tolerant) */
