@@ -566,111 +566,89 @@ function renderResults(){
 }
 
 /* Modal controls */
+/* =========================
+   Modal + UI initialization
+   ========================= */
+
 const apiModal = document.getElementById("apiModal");
 const addModal = document.getElementById("addModal");
 
-document.getElementById("btnApi").addEventListener("click", ()=>{
-  document.getElementById("apiBase").value = getApiBase() || "";
-  apiModal.classList.add("active");
-});
-document.getElementById("btnAdd").addEventListener("click", ()=>{
-  openAdd();
-});
-
-function closeApi(){ apiModal.classList.remove("active"); document.getElementById("apiMsg").innerHTML=""; }
-function saveApi(){
-  const v = (document.getElementById("apiBase").value||"").trim().replace(/\\/$/,"");
-  if(!v){ document.getElementById("apiMsg").innerHTML = `<div class="msg warn">Please enter your Vercel base URL.</div>`; return; }
-  localStorage.setItem("clinicflow_api_base", v);
-  document.getElementById("apiMsg").innerHTML = `<div class="msg ok">Saved.</div>`;
-  setTimeout(closeApi, 500);
+function closeApi() {
+  apiModal.classList.remove("active");
 }
 
-function openAdd(){
-  // sync selects
-  document.getElementById("addPatient").value = currentPatient();
-  document.getElementById("addFund").value = currentFund();
-  document.getElementById("addDate").value = document.getElementById("asOf").value || isoToday();
+function closeAdd() {
+  addModal.classList.remove("active");
+}
+
+function openAdd() {
+  document.getElementById("addPatient").value =
+    document.getElementById("patientSelect").value;
+  document.getElementById("addFund").value =
+    document.getElementById("fundSelect").value;
+  document.getElementById("addDate").value =
+    document.getElementById("asOf").value || isoToday();
   document.getElementById("addCode").value = "";
-  document.getElementById("addTooth").value = document.getElementById("toothFilter").value || "";
+  document.getElementById("addTooth").value =
+    document.getElementById("toothFilter").value || "";
   document.getElementById("addNotes").value = "";
-  document.getElementById("addMsg").innerHTML = "";
   addModal.classList.add("active");
 }
-function openAddFrom(code){
+
+function openAddFrom(code) {
   openAdd();
   document.getElementById("addCode").value = code;
 }
-function closeAdd(){ addModal.classList.remove("active"); document.getElementById("addMsg").innerHTML=""; }
 
-async function submitClaim(){
-  const apiBase = getApiBase();
-  if(!apiBase){
-    document.getElementById("addMsg").innerHTML = `<div class="msg warn">Set API Base first (top right → API Base).</div>`;
-    return;
-  }
-  const patient = document.getElementById("addPatient").value;
-  const date = document.getElementById("addDate").value;
-  const fund = document.getElementById("addFund").value;
-  const code = pad3(document.getElementById("addCode").value);
-  const tooth = parseTooth(document.getElementById("addTooth").value);
-  const notes = (document.getElementById("addNotes").value||"").trim();
+/* =========================
+   Run AFTER DOM is ready
+   ========================= */
+window.addEventListener("DOMContentLoaded", () => {
+  // bind buttons
+  document.getElementById("btnApi")?.addEventListener("click", () => {
+    document.getElementById("apiBase").value =
+      localStorage.getItem("clinicflow_api_base") || "";
+    apiModal.classList.add("active");
+  });
 
-  if(!patient || !date || !code){
-    document.getElementById("addMsg").innerHTML = `<div class="msg warn">Patient / Date / Code are required.</div>`;
-    return;
-  }
+  document.getElementById("btnAdd")?.addEventListener("click", () => {
+    openAdd();
+  });
 
-  // client-side duplicate guard
-  const toothKey = tooth ? tooth.join(",") : "";
-  const dup = (claims[patient]||[]).some(x => String(x.date)===date && pad3(x.code)===code && ((Array.isArray(x.tooth)?x.tooth.join(","):"")===toothKey));
-  if(dup){
-    document.getElementById("addMsg").innerHTML = `<div class="msg warn">Duplicate record detected (same date/code/tooth).</div>`;
-    return;
-  }
-
-  document.getElementById("addMsg").innerHTML = `<div class="msg warn">Saving…</div>`;
-
-  try{
-    const resp = await fetch(apiBase + "/api/add-claim", {
-      method:"POST",
-      headers: {"Content-Type":"application/json"},
-      body: JSON.stringify({
-        owner_repo: OWNER_REPO,
-        path: "data/patient_claims.json",
-        claim: { patient, date, code, tooth, fund, notes }
-      })
+  // bind filters
+  document
+    .getElementById("patientSelect")
+    ?.addEventListener("change", () => {
+      renderHistory();
+      renderResults();
     });
 
-    const out = await resp.json().catch(()=>({}));
-    if(!resp.ok){
-      document.getElementById("addMsg").innerHTML = `<div class="msg bad">❌ Save failed: ${out.error || ("HTTP " + resp.status)}</div>`;
-      return;
-    }
+  document
+    .getElementById("fundSelect")
+    ?.addEventListener("change", renderResults);
 
-    document.getElementById("addMsg").innerHTML = `<div class="msg ok">✅ Committed. <a href="${out.commit_url}" target="_blank">Open commit</a></div>`;
-    await loadAll();
-    renderResults();
-    setTimeout(()=>{ closeAdd(); }, 700);
-  }catch(e){
-    console.error(e);
-    document.getElementById("addMsg").innerHTML = `<div class="msg bad">❌ Network error. Check API base.</div>`;
+  document
+    .getElementById("toothFilter")
+    ?.addEventListener("input", renderResults);
+
+  document
+    .getElementById("historyQuery")
+    ?.addEventListener("input", renderHistory);
+
+  document
+    .getElementById("search")
+    ?.addEventListener("input", renderResults);
+
+  // default date
+  const asOf = document.getElementById("asOf");
+  if (asOf && !asOf.value) {
+    asOf.value = isoToday();
   }
-}
 
-/* Events */
-document.getElementById("patientSelect").addEventListener("change", ()=>{
-  // keep fund select, but refresh
-  renderHistory();
-  renderResults();
+  // finally load data
+  loadAll();
 });
-document.getElementById("fundSelect").addEventListener("change", renderResults);
-document.getElementById("toothFilter").addEventListener("input", renderResults);
-document.getElementById("historyQuery").addEventListener("input", renderHistory);
-document.getElementById("search").addEventListener("input", renderResults);
 
-document.getElementById("asOf").value = isoToday();
-loadAll();
 </script>
 </body>
 </html>
