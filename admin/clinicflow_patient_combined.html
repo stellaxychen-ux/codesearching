@@ -665,6 +665,194 @@ window.addEventListener("DOMContentLoaded", () => {
   // finally load data
   loadAll();
 });
+  
+  // ---- API Base Save (for inline onclick) ----
+window.saveApi = function saveApi() {
+  const input = document.getElementById("apiBase");
+  const msg = document.getElementById("apiMsg");
+
+  if (!input) return;
+
+  let v = (input.value || "").trim();
+  if (!v) {
+    if (msg) msg.innerHTML = `<div class="msg warn">Please enter API Base.</div>`;
+    return;
+  }
+
+  if (v.endsWith("/")) v = v.slice(0, -1);
+  localStorage.setItem("clinicflow_api_base", v);
+
+  if (msg) msg.innerHTML = `<div class="msg ok">Saved.</div>`;
+
+  const modal = document.getElementById("apiModal");
+  if (modal) setTimeout(() => modal.classList.remove("active"), 300);
+};
+
+  // ---- Submit new claim ----
+window.submitClaim = async function submitClaim() {
+  const apiBase = (localStorage.getItem("clinicflow_api_base") || "").replace(/\/$/, "");
+  const msg = document.getElementById("addMsg");
+
+  if (!apiBase) {
+    if (msg) msg.innerHTML = `<div class="msg warn">Set API Base first.</div>`;
+    return;
+  }
+
+  const patient = document.getElementById("addPatient")?.value;
+  const date = document.getElementById("addDate")?.value;
+  const fund = document.getElementById("addFund")?.value;
+  const code = (document.getElementById("addCode")?.value || "").replace(/\D/g, "").padStart(3, "0");
+  const toothRaw = document.getElementById("addTooth")?.value || "";
+  const notes = document.getElementById("addNotes")?.value || "";
+
+  const tooth = toothRaw
+    ? toothRaw.split(",").map(t => t.trim()).filter(Boolean)
+    : null;
+
+  if (!patient || !date || !code) {
+    if (msg) msg.innerHTML = `<div class="msg warn">Patient, Date, Code required.</div>`;
+    return;
+  }
+
+  if (msg) msg.innerHTML = `<div class="msg warn">Saving…</div>`;
+
+  try {
+    const r = await fetch(apiBase + "/api/add-claim", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        owner_repo: "stellaxychen-ux/codesearching",
+        path: "data/patient_claims.json",
+        claim: { patient, date, fund, code, tooth, notes }
+      })
+    });
+
+    const out = await r.json().catch(() => ({}));
+
+    if (!r.ok) {
+      if (msg) msg.innerHTML = `<div class="msg bad">❌ ${out.error || "Save failed"}</div>`;
+      return;
+    }
+
+    if (msg) msg.innerHTML = `<div class="msg ok">✅ Saved & committed</div>`;
+
+    if (typeof loadAll === "function") loadAll();
+
+  } catch (e) {
+    if (msg) msg.innerHTML = `<div class="msg bad">Network error</div>`;
+  }
+};
+
+  // ---------- AI Recommend integration ----------
+function getApiBaseOrWarn() {
+  const apiBase = (localStorage.getItem("clinicflow_api_base") || "").replace(/\/$/, "");
+  if (!apiBase) {
+    const panel = document.getElementById("aiPanel");
+    if (panel) {
+      panel.style.display = "block";
+      panel.className = "msg warn";
+      panel.textContent = "Set API Base first (top right → API Base).";
+    }
+  }
+  return apiBase;
+}
+
+// Build candidate list from current results (max 20)
+function buildAiCandidatesFromQuery() {
+  const q = (document.getElementById("search").value || "").trim();
+  const res = matchDb(q); // uses your existing db search
+  const name = currentPatient();
+  const fund = currentFund();
+  const asOf = document.getElementById("asOf").value || isoToday();
+  const toothFilter = (document.getElementById("toothFilter").value || "").trim();
+  const tooth = toothFilter ? toothFilter.replace(/\D/g, "") : null;
+
+  // For each result code, reuse your existing eligibility badge builder
+  return res.slice(0, 20).map(it => {
+    const code = pad3(it.code || it.c);
+    const desc = it.desc || it.d || "";
+    const cat = it.category || it.t || "Gen";
+
+    // IMPORTANT: buildEligibilityBadges already computes:
+    // - fund rule frequency / last claim / next eligible
+    // - ADA warnings (from db)
+    // - notes
+    const badges = buildEligibilityBadges(code);
+
+    // Convert badges (HTML) to plain-ish text for the model
+    const badgeText = badges.map(b => {
+      const tmp = document.createElement("div");
+      tmp.innerHTML = b.html || "";
+      return `[${b.cls}] ` + (tmp.textContent || "").trim();
+    });
+
+    return {
+      code,
+      category: cat,
+      desc,
+      eligibilitySummary: badgeText.join("\n"),
+      // also pass raw db warning fields if present
+      adaWarnings: (dbMap[code]?.warnings || dbMap[code]?.warningObjects || []),
+      adaWarningText: (dbMap[code]?.warningText || dbMap[code]?.r || ""),
+      notes: (dbMap[code]?.notes || "")
+    };
+  });
+}
+
+// Pull patient history (recent)
+function buildAiHistory() {
+  const name = currentPatient();
+  const list = (claims[name] || []).slice().sort((a,b)=>String(b.date).localeCompare(String(a.date)));
+  return list.slice(0, 40);
+}
+
+async function runAiRecommend() {
+  const apiBase = getApiBaseOrWarn();
+  if (!apiBase) return;
+
+  const panel = document.getElementById("aiPanel");
+  panel.style.display = "block";
+  panel.className = "msg warn";
+  panel.textContent = "Thinking…";
+
+  const payload = {
+    patient: currentPatient(),
+    fund: currentFund(),
+    asOf: document.getElementById("asOf").value || isoToday(),
+    tooth: (document.getElementById("toothFilter").value || "").trim() || null,
+    history: buildAiHistory(),
+    candidates: buildAiCandidatesFromQuery(),
+    context: "Give clinic-facing recommendations based only on provided eligibility + warnings."
+  };
+
+  try {
+    const resp = await fetch(apiBase + "/api/ai-recommend", {
+      method: "POST",
+      headers: { "Content-Type":"application/json" },
+      body: JSON.stringify(payload)
+    });
+    const out = await resp.json().catch(()=>({}));
+    if (!resp.ok) {
+      panel.className = "msg bad";
+      panel.textContent = "AI error: " + (out.error || ("HTTP " + resp.status));
+      return;
+    }
+    panel.className = "msg ok";
+    panel.textContent = out.text || "(No output)";
+  } catch (e) {
+    panel.className = "msg bad";
+    panel.textContent = "Network error calling AI endpoint.";
+  }
+}
+
+// Bind buttons (put inside your DOMContentLoaded wireUI if you have one)
+window.addEventListener("DOMContentLoaded", () => {
+  document.getElementById("btnAi")?.addEventListener("click", runAiRecommend);
+  document.getElementById("btnAiClear")?.addEventListener("click", () => {
+    const panel = document.getElementById("aiPanel");
+    if (panel) { panel.style.display = "none"; panel.textContent = ""; }
+  });
+});
 
 </script>
 </body>
