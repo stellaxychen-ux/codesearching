@@ -261,7 +261,7 @@
       <div class="brand">
         <span class="dot"></span>
         <span>ClinicFlow</span>
-        <span style="font-weight:600;color:var(--muted);font-size:12px;">Claims & Eligibility</span>
+        <span style="font-weight:600;color:var(--muted);font-size:12px;"> & Eligibility</span>
       </div>
 
       <div class="actions">
@@ -352,9 +352,6 @@ function pad3(x){ return String(x||"").replace(/\D/g,"").slice(0,3).padStart(3,"
 
 // TODO: your app already has these globals after loadAll()
 // For this template, we assume they exist:
-window.claims = window.claims || {};
-window.fundRules = window.fundRules || {};
-window.dbMap = window.dbMap || {};
 
 // You already have currentFund() in your file; if not:
 function currentFund(){
@@ -506,6 +503,185 @@ window.addEventListener("DOMContentLoaded", async ()=>{
   renderHistory();
   renderResults();
 });
+  /* =========================
+   UI v2 connectors (REQUIRED)
+   ========================= */
+
+// If your original file already has currentPatient()/set patient logic,
+// we keep a local selectedPatient and expose currentPatient() for compatibility.
+let selectedPatient = null;
+
+// Ensure currentPatient() exists for any existing logic.
+if (typeof window.currentPatient !== "function") {
+  window.currentPatient = function currentPatient() {
+    return selectedPatient;
+  };
+}
+
+// If your original code uses currentFund(), keep it; otherwise use fundSelect.
+if (typeof window.currentFund !== "function") {
+  window.currentFund = function currentFund() {
+    return (document.getElementById("fundSelect")?.value || "bupa").toLowerCase();
+  };
+}
+
+// Robust HTML escape
+function esc(s){
+  return String(s ?? "").replace(/[&<>"']/g, m => ({
+    "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
+  }[m]));
+}
+
+function allPatientsFromClaims(){
+  const c = window.claims || {};
+  return Object.keys(c).sort((a,b)=>a.localeCompare(b));
+}
+
+function renderPatientListV2(){
+  const input = document.getElementById("patientSearch");
+  const listEl = document.getElementById("patientList");
+  if (!listEl) return;
+
+  const q = (input?.value || "").toLowerCase().trim();
+  const names = allPatientsFromClaims().filter(n => !q || n.toLowerCase().includes(q));
+
+  listEl.innerHTML = names.map(n=>{
+    const count = (window.claims?.[n] || []).length;
+    return `
+      <div class="patient-row ${n===selectedPatient ? "active" : ""}" data-name="${esc(n)}">
+        <div>
+          <div class="patient-name">${esc(n)}</div>
+          <div class="patient-meta">${count} claims</div>
+        </div>
+        <div class="patient-meta">›</div>
+      </div>
+    `;
+  }).join("") || `<div class="patient-meta" style="padding:10px;">No matches.</div>`;
+
+  // click handlers
+  listEl.querySelectorAll(".patient-row").forEach(row=>{
+    row.addEventListener("click", ()=>{
+      selectedPatient = row.getAttribute("data-name");
+      renderPatientListV2();
+      if (typeof window.renderHistory === "function") window.renderHistory();
+      if (typeof window.renderResults === "function") window.renderResults();
+    });
+  });
+}
+
+// If you replaced history renderer with the template version, ensure it uses window.claims
+// and selectedPatient. If your original had renderHistory, keep it. If not, provide one:
+if (typeof window.renderHistory !== "function") {
+  window.renderHistory = function renderHistory(){
+    const wrap = document.getElementById("historyWrap");
+    const header = document.getElementById("patientHeader");
+    if(!wrap) return;
+
+    const name = selectedPatient;
+    const items = (window.claims?.[name] || []).slice()
+      .sort((a,b)=>String(b.date).localeCompare(String(a.date)));
+
+    if(header){
+      header.innerHTML = name
+        ? `<span style="font-weight:800">${esc(name)}</span> <span style="color:var(--muted)">· ${items.length} claims</span>`
+        : "";
+    }
+
+    if(!name){
+      wrap.innerHTML = `<div class="patient-meta">Select a patient.</div>`;
+      return;
+    }
+    if(!items.length){
+      wrap.innerHTML = `<div class="patient-meta">No claim history.</div>`;
+      return;
+    }
+
+    const fundKey = window.currentFund();
+    const fr = (code, fund) => window.fundRules?.funds?.[fund]?.rules?.[code] || null;
+    const fb = (code) => window.fundRules?.fallback_rules?.[code] || null;
+
+    wrap.innerHTML = `<div class="history">` + items.map(cl=>{
+      const code = String(cl.code||"").replace(/\D/g,"").slice(0,3).padStart(3,"0");
+      const tooth = Array.isArray(cl.tooth) ? cl.tooth.join(", ") : (cl.tooth ? String(cl.tooth) : "—");
+      const fund = (cl.fund || "").toUpperCase();
+
+      const rule = fr(code, (cl.fund||fundKey||"").toLowerCase()) || fb(code);
+      const hint = rule?.frequency?.everyMonths
+        ? `Typically limited: every ${rule.frequency.everyMonths} months${rule.perTooth ? " (per tooth)" : ""}.`
+        : "";
+
+      return `
+        <div class="hrow">
+          <div class="htime">${esc(cl.date)}</div>
+          <div class="hmain">
+            <div class="hcode">#${esc(code)} ${fund ? `<span class="chip">${esc(fund)}</span>` : ""}</div>
+            <div class="hsub">Tooth: ${esc(tooth)}${cl.notes ? ` · ${esc(cl.notes)}` : ""}</div>
+            ${hint ? `<div class="hlimited">⟡ ${esc(hint)}</div>` : ``}
+          </div>
+        </div>
+      `;
+    }).join("") + `</div>`;
+  };
+}
+
+// Wire top buttons to your existing modal functions
+function wireTopButtonsV2(){
+  document.getElementById("btnAdd")?.addEventListener("click", ()=>{
+    if (typeof window.openAdd === "function") window.openAdd();
+    else {
+      alert("openAdd() not found. Make sure your original modal code is included.");
+    }
+  });
+
+  document.getElementById("btnApi")?.addEventListener("click", ()=>{
+    // if your original uses apiModal open logic, call it; otherwise just open modal by id
+    if (typeof window.openApi === "function") window.openApi();
+    else {
+      const m = document.getElementById("apiModal");
+      if (m) m.classList.add("active");
+    }
+  });
+
+  document.getElementById("btnAi")?.addEventListener("click", ()=>{
+    if (typeof window.runAiRecommend === "function") window.runAiRecommend();
+    else alert("runAiRecommend() not found.");
+  });
+
+  document.getElementById("btnAiClear")?.addEventListener("click", ()=>{
+    const panel = document.getElementById("aiPanel");
+    if(panel){ panel.style.display="none"; panel.textContent=""; }
+    document.getElementById("btnAiClear").style.display="none";
+  });
+}
+
+// IMPORTANT: call after your original loadAll finishes
+async function initUiV2(){
+  // Ensure data is loaded
+  if (typeof window.loadAll === "function") {
+    await window.loadAll();
+  }
+
+  const names = allPatientsFromClaims();
+  selectedPatient = selectedPatient || names[0] || null;
+
+  // bind search
+  document.getElementById("patientSearch")?.addEventListener("input", renderPatientListV2);
+
+  renderPatientListV2();
+  window.renderHistory?.();
+  window.renderResults?.();
+  wireTopButtonsV2();
+}
+
+// Start after DOM ready
+window.addEventListener("DOMContentLoaded", ()=>{
+  const asOf = document.getElementById("asOf");
+  if(asOf && !asOf.value) asOf.value = new Date().toISOString().slice(0,10);
+
+  // Avoid double init if you already call loadAll elsewhere:
+  initUiV2();
+});
+
 </script>
 </body>
 </html>
