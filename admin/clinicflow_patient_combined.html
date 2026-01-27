@@ -1,146 +1,1062 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ClinicFlow Admin</title>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>ClinicFlow Admin — Claims</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-<style>
-:root{
-  --bg:#f4f4f5;
-  --card:#ffffff;
-  --text:#111;
-  --muted:#6b7280;
-  --line:#e5e7eb;
-  --chip:#f3f4f6;
-  --shadow:0 10px 30px rgba(0,0,0,.06);
-  --radius:18px;
-}
-*{box-sizing:border-box}
-body{
-  margin:0;
-  font-family:Poppins,system-ui,-apple-system;
-  background:var(--bg);
-  color:var(--text);
-}
-.topbar{
-  position:sticky;top:0;z-index:50;
-  background:rgba(244,244,245,.9);
-  backdrop-filter:blur(10px);
-  border-bottom:1px solid var(--line);
-}
-.topbar-inner{
-  max-width:1240px;margin:auto;
-  padding:14px 16px;
-  display:flex;justify-content:space-between;align-items:center;gap:12px;
-}
-.brand{font-weight:800;display:flex;gap:8px;align-items:center}
-.actions{display:flex;gap:10px;flex-wrap:wrap}
-.btn{
-  border:1px solid var(--line);
-  background:#fff;
-  padding:10px 14px;
-  border-radius:14px;
-  font-weight:600;
-  cursor:pointer;
-}
-.btn.primary{background:#111;color:#fff}
-.wrap{max-width:1240px;margin:auto;padding:16px}
-.grid{display:grid;grid-template-columns:340px 1fr;gap:14px}
-@media(max-width:980px){.grid{grid-template-columns:1fr}}
-.card{
-  background:var(--card);
-  border:1px solid var(--line);
-  border-radius:var(--radius);
-  box-shadow:var(--shadow);
-  padding:14px;
-}
-.card-title{
-  font-size:12px;
-  font-weight:800;
-  letter-spacing:.8px;
-  text-transform:uppercase;
-  margin-bottom:10px;
-}
-.input{
-  width:100%;
-  padding:12px;
-  border-radius:14px;
-  border:1px solid var(--line);
-}
-.patient-row{
-  border:1px solid var(--line);
-  border-radius:14px;
-  padding:10px;
-  margin-top:8px;
-  display:flex;
-  justify-content:space-between;
-  cursor:pointer;
-}
-.patient-row.active{border-color:#111;background:#f7f7f7}
-.small{font-size:12px;color:var(--muted)}
-.modal{
-  position:fixed;inset:0;
-  background:rgba(0,0,0,.35);
-  display:none;align-items:center;justify-content:center;
-}
-.modal.active{display:flex}
-.modal-card{
-  background:#fff;
-  border-radius:20px;
-  padding:16px;
-  max-width:520px;width:100%;
-}
-</style>
+  <style>
+    :root{
+      --bg:#f4f4f5;
+      --card:#ffffff;
+      --text:#111111;
+      --muted:#6b7280;
+      --line:#e5e7eb;
+      --chip:#f3f4f6;
+      --shadow: 0 10px 30px rgba(0,0,0,.06);
+      --radius: 18px;
+    }
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      font-family:"Poppins", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      background:var(--bg);
+      color:var(--text);
+    }
+    a{ color:inherit; }
+
+    /* Top bar */
+    .topbar{
+      position:sticky; top:0; z-index:50;
+      background:rgba(244,244,245,.88);
+      backdrop-filter: blur(10px);
+      border-bottom:1px solid var(--line);
+    }
+    .topbar-inner{
+      max-width:1240px;
+      margin:0 auto;
+      padding:14px 16px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px;
+      font-weight:800; letter-spacing:.3px;
+    }
+    .brand .dot{
+      width:10px; height:10px; border-radius:999px; background:#111;
+      box-shadow:0 0 0 4px #eaeaec;
+    }
+    .actions{ display:flex; gap:10px; align-items:center; flex-wrap:wrap; }
+
+    .btn{
+      border:1px solid var(--line);
+      background:#fff;
+      color:#111;
+      padding:10px 12px;
+      border-radius:14px;
+      font-weight:600;
+      cursor:pointer;
+      font-size:13px;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      user-select:none;
+    }
+    .btn:hover{ background:#fafafa; }
+    .btn.primary{
+      background:#111; color:#fff; border-color:#111;
+    }
+    .btn.primary:hover{ opacity:.92; }
+    .btn.ghost{ background:transparent; }
+    .btn:disabled{ opacity:.5; cursor:not-allowed; }
+
+    .wrap{ max-width:1240px; margin:0 auto; padding:16px; }
+    .grid{
+      display:grid;
+      grid-template-columns: 340px 1fr;
+      gap:14px;
+      align-items:start;
+    }
+    @media (max-width: 980px){
+      .grid{ grid-template-columns:1fr; }
+    }
+
+    .card{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:14px;
+    }
+    .card-title{
+      font-size:12px;
+      font-weight:800;
+      letter-spacing:.8px;
+      text-transform:uppercase;
+      color:#111;
+      margin-bottom:10px;
+    }
+
+    .input{
+      width:100%;
+      padding:12px 12px;
+      border-radius:14px;
+      border:1px solid var(--line);
+      outline:none;
+      font-size:13px;
+      background:#fff;
+      font-family:"Poppins", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+    }
+    .input:focus{
+      border-color:#111;
+      box-shadow:0 0 0 3px rgba(17,17,17,.08);
+    }
+    .small{ font-size:12px; color:var(--muted); }
+
+    /* Patient list */
+    .patient-list{
+      margin-top:10px;
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+      max-height:460px;
+      overflow:auto;
+      padding-right:4px;
+    }
+    .patient-row{
+      border:1px solid var(--line);
+      background:#fff;
+      border-radius:14px;
+      padding:10px 12px;
+      cursor:pointer;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+    }
+    .patient-row:hover{ background:#fafafa; }
+    .patient-row.active{
+      border-color:#111;
+      background:#f7f7f7;
+    }
+    .patient-name{ font-weight:700; font-size:13px; }
+    .patient-meta{ font-size:12px; color:var(--muted); }
+
+    /* Right side columns */
+    .right{
+      display:grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap:14px;
+      align-items:start;
+    }
+    @media (max-width: 980px){
+      .right{ grid-template-columns:1fr; }
+    }
+
+    /* History timeline */
+    .history{
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+    .hrow{
+      display:grid;
+      grid-template-columns: 112px 1fr;
+      gap:12px;
+      padding:12px;
+      border:1px solid var(--line);
+      border-radius:16px;
+      background:#fff;
+    }
+    .htime{
+      font-weight:800;
+      font-size:12px;
+      letter-spacing:.2px;
+    }
+    .hmain{ display:flex; flex-direction:column; gap:4px; }
+    .hcode{
+      font-size:14px;
+      font-weight:700;
+      display:flex; align-items:center; gap:8px; flex-wrap:wrap;
+    }
+    .chip{
+      display:inline-flex;
+      align-items:center;
+      padding:4px 10px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:var(--chip);
+      font-size:12px;
+      font-weight:600;
+      color:#111;
+    }
+    .hsub{ font-size:12px; color:var(--muted); }
+    .hlimited{
+      font-size:12px;
+      font-style:italic;
+      color:#111;
+      opacity:.75;
+    }
+
+    /* Eligibility panel */
+    .filters{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:10px;
+    }
+    .filters .full{ grid-column:1 / -1; }
+
+    .result-card{
+      border:1px solid var(--line);
+      background:#fff;
+      border-radius:16px;
+      padding:12px;
+      margin-top:10px;
+    }
+    .code-title{
+      display:flex; align-items:baseline; justify-content:space-between; gap:10px;
+    }
+    .code-title .num{
+      font-weight:800;
+      font-size:18px;
+      letter-spacing:.2px;
+    }
+    .code-title .desc{
+      color:var(--muted);
+      font-size:12px;
+      font-weight:600;
+      text-align:right;
+      max-width:52%;
+    }
+    .badges{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-top:10px;
+    }
+    .badge{
+      border:1px solid var(--line);
+      background:var(--chip);
+      border-radius:999px;
+      padding:5px 10px;
+      font-size:12px;
+      font-weight:600;
+      color:#111;
+      line-height:1.25;
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      text-decoration:none;
+    }
+    .badge.ok{ background:#fff; border-color:#111; }
+    .badge.warn{ font-style:italic; }
+    .badge.bad{ border-color:#111; }
+    .badge.muted{ color:var(--muted); }
+
+    .ai-panel{
+      display:none;
+      margin-top:10px;
+      border:1px solid var(--line);
+      background:#fff;
+      border-radius:16px;
+      padding:12px;
+      white-space:pre-wrap;
+      line-height:1.45;
+      font-size:13px;
+    }
+
+    /* Modal */
+    .modal{
+      position:fixed; inset:0;
+      background:rgba(0,0,0,.35);
+      display:none;
+      align-items:center;
+      justify-content:center;
+      padding:18px;
+      z-index:1000;
+    }
+    .modal.active{ display:flex; }
+    .modal-card{
+      width:100%;
+      max-width:520px;
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:20px;
+      box-shadow: 0 25px 70px rgba(0,0,0,.20);
+      padding:16px;
+    }
+    .modal-head{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      margin-bottom:10px;
+    }
+    .modal-title{
+      font-weight:800;
+      letter-spacing:.2px;
+      font-size:14px;
+      text-transform:uppercase;
+    }
+    .xbtn{
+      border:1px solid var(--line);
+      background:#fff;
+      border-radius:12px;
+      padding:8px 10px;
+      cursor:pointer;
+      font-weight:700;
+    }
+    .xbtn:hover{ background:#fafafa; }
+    .form-grid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:10px;
+      margin-top:10px;
+    }
+    .form-grid .full{ grid-column:1 / -1; }
+    .msg{
+      margin-top:10px;
+      padding:10px 12px;
+      border-radius:14px;
+      border:1px solid var(--line);
+      background:#fff;
+      font-size:12px;
+      color:#111;
+    }
+    .msg.warn{ background:#fafafa; font-style:italic; }
+    .msg.bad{ background:#fff; border-color:#111; }
+    .msg.ok{ background:#fff; border-color:#111; }
+  </style>
 </head>
 
 <body>
+  <div class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <span class="dot"></span>
+        <span>🦷 ClinicFlow</span>
+        <span class="small" style="font-weight:600;">🧾 Claims • ✅ Eligibility</span>
+      </div>
 
-<div class="topbar">
-  <div class="topbar-inner">
-    <div class="brand">🦷 ClinicFlow <span class="small">🧾 Claims • ✅ Eligibility</span></div>
-    <div class="actions">
-      <button class="btn" onclick="openApi()">🔌 API Base</button>
-      <button class="btn primary" onclick="openAdd()">➕ Add claim</button>
+      <div class="actions">
+        <button class="btn ghost" id="btnApi">🔌 API Base</button>
+        <button class="btn primary" id="btnAdd">➕ Add claim</button>
+        <button class="btn" id="btnAi">✨ AI Recommend</button>
+      </div>
     </div>
   </div>
-</div>
 
-<div class="wrap">
-  <div class="grid">
-    <div class="card">
-      <div class="card-title">👥 Patients</div>
-      <input id="patientSearch" class="input" placeholder="🔎 Search patient"/>
-      <div id="patientList"></div>
-    </div>
+  <div class="wrap">
+    <div class="grid">
+      <!-- Left: patient search -->
+      <div class="card">
+        <div class="card-title">👥 Patients</div>
+        <input id="patientSearch" class="input" placeholder="🔎 Search patient name…" />
+        <div id="patientList" class="patient-list"></div>
+      </div>
 
-    <div class="card">
-      <div class="card-title">🗓️ Patient history</div>
-      <div id="history"></div>
+      <!-- Right: history + eligibility -->
+      <div class="right">
+        <div class="card">
+          <div class="card-title">🗓️ Patient history</div>
+          <div class="small" id="patientHeader"></div>
+          <div id="historyWrap" style="margin-top:12px;"></div>
+        </div>
+
+        <div class="card">
+          <div class="card-title">✅ Eligibility checker</div>
+
+          <div class="filters">
+            <div class="full">
+              <input id="search" class="input" placeholder="🔎 Search item code / keyword (e.g., 114, crown, clean)"/>
+            </div>
+
+            <div>
+              <input id="asOf" class="input" type="date"/>
+              <div class="small" style="margin-top:6px;">As of date</div>
+            </div>
+
+            <div>
+              <input id="toothFilter" class="input" placeholder="Tooth (optional) e.g., 16"/>
+              <div class="small" style="margin-top:6px;">Tooth filter</div>
+            </div>
+
+            <div class="full">
+              <select id="fundSelect" class="input">
+                <option value="bupa">Bupa</option>
+                <option value="medibank">Medibank</option>
+                <option value="hcf">HCF</option>
+                <option value="nib">nib</option>
+                <option value="hbf">HBF</option>
+                <option value="cbhs">CBHS</option>
+                <option value="hif">HIF</option>
+                <option value="westfund">Westfund</option>
+                <option value="guhealth">GU Health</option>
+                <option value="ahm">AHM</option>
+              </select>
+              <div class="small" style="margin-top:6px;">Fund</div>
+            </div>
+          </div>
+
+          <div id="eligibilityResults"></div>
+
+          <div id="aiPanel" class="ai-panel"></div>
+          <div style="display:flex; gap:10px; margin-top:10px;">
+            <button class="btn" id="btnAiClear" style="display:none;">Clear AI</button>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-</div>
 
-<div class="modal" id="addModal">
-  <div class="modal-card">
-    <div class="card-title">➕ Add new claim</div>
-    <input id="addPatient" class="input" placeholder="Patient"/>
-    <input id="addDate" type="date" class="input"/>
-    <input id="addCode" class="input" placeholder="Item code"/>
-    <input id="addTooth" class="input" placeholder="Tooth (optional)"/>
-    <button class="btn primary" onclick="closeAdd()">Save</button>
+  <!-- API Base Modal -->
+  <div class="modal" id="apiModal">
+    <div class="modal-card">
+      <div class="modal-head">
+        <div class="modal-title">API Base</div>
+        <button class="xbtn" id="apiClose">✕</button>
+      </div>
+      <div class="small">Paste your Vercel base URL (example: https://codesearching.vercel.app)</div>
+      <div class="form-grid">
+        <div class="full">
+          <input id="apiBase" class="input" placeholder="https://your-project.vercel.app" />
+        </div>
+      </div>
+      <div style="display:flex; gap:10px; margin-top:10px;">
+        <button class="btn primary" id="apiSave">Save</button>
+        <button class="btn" id="apiCancel">Cancel</button>
+      </div>
+      <div id="apiMsg"></div>
+    </div>
   </div>
-</div>
+
+  <!-- Add Claim Modal -->
+  <div class="modal" id="addModal">
+    <div class="modal-card">
+      <div class="modal-head">
+        <div class="modal-title">➕ Add new claim</div>
+        <button class="xbtn" id="addClose">✕</button>
+      </div>
+
+      <div class="form-grid">
+        <div class="full">
+          <select id="addPatient" class="input"></select>
+          <div class="small" style="margin-top:6px;">Patient</div>
+        </div>
+
+        <div>
+          <input id="addDate" class="input" type="date" />
+          <div class="small" style="margin-top:6px;">Date</div>
+        </div>
+
+        <div>
+          <select id="addFund" class="input">
+            <option value="">(Optional)</option>
+            <option value="bupa">Bupa</option>
+            <option value="medibank">Medibank</option>
+            <option value="hcf">HCF</option>
+            <option value="nib">nib</option>
+            <option value="hbf">HBF</option>
+            <option value="cbhs">CBHS</option>
+            <option value="hif">HIF</option>
+            <option value="westfund">Westfund</option>
+            <option value="guhealth">GU Health</option>
+            <option value="ahm">AHM</option>
+          </select>
+          <div class="small" style="margin-top:6px;">Fund</div>
+        </div>
+
+        <div>
+          <input id="addCode" class="input" placeholder="e.g., 114" />
+          <div class="small" style="margin-top:6px;">Item code</div>
+        </div>
+
+        <div>
+          <input id="addTooth" class="input" placeholder="e.g., 16 or 16,26" />
+          <div class="small" style="margin-top:6px;">Tooth (optional)</div>
+        </div>
+
+        <div class="full">
+          <input id="addNotes" class="input" placeholder="Notes (optional)" />
+          <div class="small" style="margin-top:6px;">Notes</div>
+        </div>
+      </div>
+
+      <div style="display:flex; gap:10px; margin-top:12px;">
+        <button class="btn primary" id="addSave">Save → Commit</button>
+        <button class="btn" id="addCancel">Cancel</button>
+      </div>
+
+      <div id="addMsg"></div>
+    </div>
+  </div>
 
 <script>
-function openAdd(){document.getElementById("addModal").classList.add("active")}
-function closeAdd(){document.getElementById("addModal").classList.remove("active")}
-function openApi(){alert("API Base setting here")}
-</script>
+const CLAIMS_PATH = "../data/patient_claims.json";
+const FUND_RULES_PATH = "../data/fund_rules.json";
+const DB_PATH = "../db.json";
 
+let claims = {};
+let fundRules = {};
+let dbList = [];
+let dbIndex = {};
+let selectedPatient = null;
+
+function isoToday(){ return new Date().toISOString().slice(0,10); }
+function esc(s){
+  return String(s ?? "").replace(/[&<>"']/g, (m)=>({
+    "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
+  }[m]));
+}
+function pad3(x){
+  const digits = String(x ?? "").replace(/\D/g,"").slice(0,3);
+  return digits.padStart(3,"0");
+}
+function parseToothInput(v){
+  const raw = String(v||"").trim();
+  if(!raw) return null;
+  const arr = raw.split(",").map(s=>s.trim().replace(/\D/g,"")).filter(Boolean);
+  return arr.length ? arr : null;
+}
+function parseDate(d){
+  const t = Date.parse(d);
+  return Number.isFinite(t) ? new Date(t) : null;
+}
+function addMonths(dateObj, months){
+  const d = new Date(dateObj.getTime());
+  const day = d.getDate();
+  d.setMonth(d.getMonth() + months);
+  if (d.getDate() !== day) d.setDate(0);
+  return d;
+}
+function fmtDate(d){
+  const y = d.getFullYear();
+  const m = String(d.getMonth()+1).padStart(2,"0");
+  const dd = String(d.getDate()).padStart(2,"0");
+  return `${y}-${m}-${dd}`;
+}
+function currentFund(){
+  return (document.getElementById("fundSelect")?.value || "bupa").toLowerCase();
+}
+function currentAsOf(){
+  return document.getElementById("asOf")?.value || isoToday();
+}
+function currentToothFilter(){
+  const v = (document.getElementById("toothFilter")?.value || "").trim();
+  return v ? v.replace(/\D/g,"") : "";
+}
+
+function iconForCode(code){
+  const c = Number(code);
+  if (!Number.isFinite(c)) return "📌";
+  if (c < 100) return "🔎";
+  if (c < 200) return "🪥";
+  if (c < 300) return "🦷";
+  if (c < 400) return "🧷";
+  if (c < 500) return "⚡";
+  if (c < 600) return "🧩";
+  if (c < 700) return "👑";
+  if (c < 900) return "🧑‍🔧";
+  return "📌";
+}
+
+async function loadAll(){
+  const [c, r, d] = await Promise.all([
+    fetch(CLAIMS_PATH + "?v=" + Date.now()).then(x=>x.json()),
+    fetch(FUND_RULES_PATH + "?v=" + Date.now()).then(x=>x.json()),
+    fetch(DB_PATH + "?v=" + Date.now()).then(x=>x.json())
+  ]);
+
+  claims = c || {};
+  fundRules = r || {};
+
+  if (Array.isArray(d)) dbList = d;
+  else if (Array.isArray(d?.items)) dbList = d.items;
+  else if (Array.isArray(d?.db)) dbList = d.db;
+  else dbList = [];
+
+  dbIndex = {};
+  for (const it of dbList){
+    const code = pad3(it.code ?? it.c ?? it.itemCode ?? it.item_code);
+    if (!code) continue;
+    dbIndex[code] = it;
+  }
+}
+
+function allPatientNames(){
+  return Object.keys(claims || {}).sort((a,b)=>a.localeCompare(b));
+}
+function renderPatientList(){
+  const q = (document.getElementById("patientSearch").value || "").toLowerCase().trim();
+  const listEl = document.getElementById("patientList");
+
+  const names = allPatientNames().filter(n => !q || n.toLowerCase().includes(q));
+  listEl.innerHTML = names.map(n=>{
+    const count = (claims[n]||[]).length;
+    return `
+      <div class="patient-row ${n===selectedPatient ? "active" : ""}" data-name="${esc(n)}">
+        <div>
+          <div class="patient-name">🧑‍⚕️ ${esc(n)}</div>
+          <div class="patient-meta">${count} claims</div>
+        </div>
+        <div class="patient-meta">›</div>
+      </div>
+    `;
+  }).join("") || `<div class="patient-meta" style="padding:10px;">No matches.</div>`;
+
+  listEl.querySelectorAll(".patient-row").forEach(row=>{
+    row.addEventListener("click", ()=>{
+      selectedPatient = row.getAttribute("data-name");
+      renderPatientList();
+      renderHistory();
+      renderResults();
+    });
+  });
+}
+function fillAddPatientOptions(){
+  const sel = document.getElementById("addPatient");
+  const names = allPatientNames();
+  sel.innerHTML = names.map(n => `<option value="${esc(n)}">${esc(n)}</option>`).join("");
+  if (selectedPatient) sel.value = selectedPatient;
+}
+
+function getPatientHistory(name){
+  return (claims[name] || []).slice().sort((a,b)=>String(b.date).localeCompare(String(a.date)));
+}
+function getRuleFor(code, fundKey){
+  const fr = fundRules?.funds?.[fundKey]?.rules?.[code] || null;
+  const fb = fundRules?.fallback_rules?.[code] || null;
+  return fr || fb;
+}
+function limitedHint(code, fundKey){
+  const rule = getRuleFor(code, fundKey);
+  if (!rule?.frequency?.everyMonths) return "";
+  const m = rule.frequency.everyMonths;
+  return `Typically limited: every ${m} months${rule.perTooth ? " (per tooth)" : ""}.`;
+}
+function renderHistory(){
+  const wrap = document.getElementById("historyWrap");
+  const header = document.getElementById("patientHeader");
+
+  if (!selectedPatient){
+    header.textContent = "";
+    wrap.innerHTML = `<div class="patient-meta">Select a patient.</div>`;
+    return;
+  }
+
+  const list = getPatientHistory(selectedPatient);
+  header.innerHTML = `<span style="font-weight:800">${esc(selectedPatient)}</span> <span class="small">· ${list.length} claims</span>`;
+
+  if (!list.length){
+    wrap.innerHTML = `<div class="patient-meta">No claim history.</div>`;
+    return;
+  }
+
+  const fallbackFund = currentFund();
+
+  wrap.innerHTML = `<div class="history">` + list.map(cl=>{
+    const code = pad3(cl.code);
+    const tooth = Array.isArray(cl.tooth) ? cl.tooth.join(", ") : (cl.tooth ? String(cl.tooth) : "—");
+    const fundKey = (cl.fund || fallbackFund || "").toLowerCase();
+    const fundBadge = cl.fund ? `<span class="chip">${esc(String(cl.fund).toUpperCase())}</span>` : "";
+    const hint = limitedHint(code, fundKey);
+
+    return `
+      <div class="hrow">
+        <div class="htime">${esc(cl.date)}</div>
+        <div class="hmain">
+          <div class="hcode">${iconForCode(code)} #${esc(code)} ${fundBadge}</div>
+          <div class="hsub">Tooth: ${esc(tooth)}${cl.notes ? ` · ${esc(cl.notes)}` : ""}</div>
+          ${hint ? `<div class="hlimited">⟡ ${esc(hint)}</div>` : ``}
+        </div>
+      </div>
+    `;
+  }).join("") + `</div>`;
+}
+
+function searchDb(query){
+  const q = String(query||"").toLowerCase().trim();
+  if (!q) return [];
+  const qDigits = q.replace(/\D/g,"");
+
+  const out = [];
+  for (const it of dbList){
+    const code = pad3(it.code ?? it.c ?? it.itemCode ?? it.item_code);
+    if(!code) continue;
+
+    const desc = it.desc ?? it.d ?? it.description ?? "";
+    const cat = it.category ?? it.t ?? it.type ?? "";
+    const kw = it.k ?? it.keywords ?? it.keyword ?? "";
+    const notes = it.notes ?? it.note ?? "";
+    const warning = it.warningText ?? it.r ?? it.warningsText ?? "";
+
+    const hay = `${code} ${desc} ${cat} ${kw} ${notes} ${warning}`.toLowerCase();
+
+    if (qDigits && code.startsWith(qDigits.padStart(3,"0").slice(0,3))) { out.push({code, it}); continue; }
+    if (hay.includes(q)) out.push({code, it});
+  }
+  out.sort((a,b)=>a.code.localeCompare(b.code));
+  return out.slice(0, 30);
+}
+
+function lastClaimForCode(code, patientName, toothFilter, perTooth){
+  const hist = getPatientHistory(patientName);
+  for (const cl of hist){
+    if (pad3(cl.code) !== code) continue;
+    if (!perTooth) return cl;
+
+    if (!toothFilter) return cl;
+    if (Array.isArray(cl.tooth) && cl.tooth.includes(toothFilter)) return cl;
+    if (typeof cl.tooth === "string" && cl.tooth.replace(/\D/g,"") === toothFilter) return cl;
+    if (typeof cl.tooth === "number" && String(cl.tooth) === toothFilter) return cl;
+  }
+  return null;
+}
+
+function computeEligibility(code){
+  const fundKey = currentFund();
+  const asOf = parseDate(currentAsOf());
+  const toothFilter = currentToothFilter();
+  const rule = getRuleFor(code, fundKey);
+
+  const ada = dbIndex[code] || {};
+  const warningText = String(ada.warningText ?? ada.r ?? "").trim();
+  const notes = String(ada.notes ?? "").trim();
+
+  let eligible = true;
+  let nextEligible = null;
+  let reason = "";
+
+  if (!selectedPatient){
+    eligible = false;
+    reason = "Select a patient.";
+  } else if (rule?.frequency?.everyMonths && asOf){
+    const last = lastClaimForCode(code, selectedPatient, toothFilter, !!rule.perTooth);
+    if (last?.date){
+      const lastD = parseDate(last.date);
+      if (lastD){
+        const next = addMonths(lastD, Number(rule.frequency.everyMonths));
+        if (asOf < next){
+          eligible = false;
+          nextEligible = fmtDate(next);
+          reason = `Last claimed ${last.date}.` + (rule.perTooth ? " (per tooth)" : "");
+        } else {
+          eligible = true;
+          reason = `Last claimed ${last.date}.`;
+        }
+      }
+    }
+  }
+
+  return {
+    code,
+    eligible,
+    nextEligible,
+    reason,
+    warningText,
+    notes,
+    ruleSummary: rule?.frequency?.everyMonths ? `every ${rule.frequency.everyMonths} months${rule.perTooth ? " (per tooth)" : ""}` : "",
+    ruleLink: rule?.link || null
+  };
+}
+
+function buildBadges(e){
+  const badges = [];
+
+  badges.push({cls:"badge muted", text:e.ruleSummary ? `🏦 Fund rule: ${e.ruleSummary}` : "🏦 Fund rule: (not set) · fallback may apply"});
+
+  if (e.eligible){
+    badges.push({cls:"badge ok", text:"✅ Eligible now"});
+  } else {
+    badges.push({cls:"badge bad", text: e.nextEligible ? `⛔ Not eligible · ⏳ next: ${e.nextEligible}` : "⛔ Not eligible"});
+  }
+
+  if (e.reason) badges.push({cls:"badge", text:e.reason});
+
+  if (e.warningText) badges.push({cls:"badge warn", text:`⚠️ ADA warning: ${e.warningText}`});
+  if (e.notes) badges.push({cls:"badge warn", text:`📝 Notes: ${e.notes}`});
+
+  if (e.ruleLink) badges.push({cls:"badge", text:"🔗 More details", link:e.ruleLink});
+
+  return badges;
+}
+
+function renderResults(){
+  const box = document.getElementById("eligibilityResults");
+  const q = (document.getElementById("search").value || "").trim();
+  const results = searchDb(q);
+
+  if (!q){
+    box.innerHTML = `<div class="small" style="margin-top:10px;">Type an item code or keyword to check eligibility.</div>`;
+    return;
+  }
+  if (!results.length){
+    box.innerHTML = `<div class="small" style="margin-top:10px;">No matches.</div>`;
+    return;
+  }
+
+  box.innerHTML = results.map(({code, it})=>{
+    const desc = it.desc ?? it.d ?? it.description ?? "";
+    const e = computeEligibility(code);
+    const badges = buildBadges(e);
+
+    const badgesHtml = badges.map(b=>{
+      if (b.link){
+        return `<a class="${b.cls}" href="${esc(b.link)}" target="_blank" rel="noopener noreferrer">${esc(b.text)} ↗</a>`;
+      }
+      return `<span class="${b.cls}">${esc(b.text)}</span>`;
+    }).join("");
+
+    return `
+      <div class="result-card">
+        <div class="code-title">
+          <div class="num">#${esc(code)}</div>
+          <div class="desc">${esc(desc)}</div>
+        </div>
+        <div class="badges">${badgesHtml}</div>
+        <div style="margin-top:10px; display:flex; gap:10px; flex-wrap:wrap;">
+          <button class="btn" data-addcode="${esc(code)}">Add claim</button>
+        </div>
+      </div>
+    `;
+  }).join("");
+
+  box.querySelectorAll("button[data-addcode]").forEach(btn=>{
+    btn.addEventListener("click", ()=>{
+      const code = btn.getAttribute("data-addcode");
+      openAdd(code);
+    });
+  });
+}
+
+function getApiBase(){
+  let v = (localStorage.getItem("clinicflow_api_base") || "").trim();
+  if (v.endsWith("/")) v = v.slice(0,-1);
+  return v;
+}
+function setApiBase(v){
+  let s = (v || "").trim();
+  if (s.endsWith("/")) s = s.slice(0,-1);
+  localStorage.setItem("clinicflow_api_base", s);
+}
+function openApi(){
+  document.getElementById("apiBase").value = getApiBase();
+  document.getElementById("apiMsg").innerHTML = "";
+  document.getElementById("apiModal").classList.add("active");
+}
+function closeApi(){ document.getElementById("apiModal").classList.remove("active"); }
+function saveApi(){
+  const v = (document.getElementById("apiBase").value || "").trim();
+  if(!v){
+    document.getElementById("apiMsg").innerHTML = `<div class="msg warn">Please enter a Vercel base URL.</div>`;
+    return;
+  }
+  setApiBase(v);
+  document.getElementById("apiMsg").innerHTML = `<div class="msg ok">Saved.</div>`;
+  setTimeout(closeApi, 350);
+}
+
+function openAdd(prefillCode){
+  if(!selectedPatient){
+    alert("Select a patient first.");
+    return;
+  }
+  fillAddPatientOptions();
+  document.getElementById("addPatient").value = selectedPatient;
+  document.getElementById("addDate").value = currentAsOf() || isoToday();
+  document.getElementById("addFund").value = currentFund();
+  document.getElementById("addCode").value = prefillCode ? prefillCode : "";
+  document.getElementById("addTooth").value = currentToothFilter() || "";
+  document.getElementById("addNotes").value = "";
+  document.getElementById("addMsg").innerHTML = "";
+  document.getElementById("addModal").classList.add("active");
+}
+function closeAdd(){ document.getElementById("addModal").classList.remove("active"); }
+
+async function submitClaim(){
+  const apiBase = getApiBase();
+  const msg = document.getElementById("addMsg");
+
+  if(!apiBase){
+    msg.innerHTML = `<div class="msg warn">Set API Base first (top right → API Base).</div>`;
+    return;
+  }
+
+  const patient = document.getElementById("addPatient").value;
+  const date = document.getElementById("addDate").value;
+  const fund = (document.getElementById("addFund").value || "").toLowerCase();
+  const code = pad3(document.getElementById("addCode").value);
+  const tooth = parseToothInput(document.getElementById("addTooth").value);
+  const notes = (document.getElementById("addNotes").value || "").trim();
+
+  if(!patient || !date || !code){
+    msg.innerHTML = `<div class="msg warn">Patient / Date / Code are required.</div>`;
+    return;
+  }
+
+  msg.innerHTML = `<div class="msg warn">Saving…</div>`;
+
+  try{
+    const resp = await fetch(apiBase + "/api/add-claim", {
+      method:"POST",
+      headers:{ "Content-Type":"application/json" },
+      body: JSON.stringify({
+        owner_repo: "stellacxy0208/codesearching",
+        path: "data/patient_claims.json",
+        claim: { patient, date, code, tooth, fund: fund || null, notes: notes || null }
+      })
+    });
+
+    const out = await resp.json().catch(()=>({}));
+
+    if(!resp.ok){
+      msg.innerHTML = `<div class="msg bad">❌ Save failed: ${esc(out.error || ("HTTP " + resp.status))}</div>`;
+      return;
+    }
+
+    msg.innerHTML = `<div class="msg ok">✅ Committed.${out.commit_url ? ` <a href="${esc(out.commit_url)}" target="_blank" rel="noopener noreferrer">Open commit ↗</a>` : ""}</div>`;
+
+    await loadAll();
+    renderPatientList();
+    renderHistory();
+    renderResults();
+
+    setTimeout(closeAdd, 450);
+  } catch(e){
+    msg.innerHTML = `<div class="msg bad">❌ Network error. Check API Base / Vercel.</div>`;
+  }
+}
+
+function buildAiCandidates(){
+  const q = (document.getElementById("search").value || "").trim();
+  const matches = searchDb(q).slice(0, 20);
+  return matches.map(({code, it})=>{
+    const e = computeEligibility(code);
+    return {
+      code,
+      desc: it.desc ?? it.d ?? it.description ?? "",
+      category: it.category ?? it.t ?? "",
+      eligible: e.eligible,
+      nextEligible: e.nextEligible,
+      reason: e.reason,
+      fundKey: currentFund(),
+      ruleSummary: e.ruleSummary,
+      warningText: e.warningText,
+      notes: e.notes
+    };
+  });
+}
+function buildAiHistory(){
+  if(!selectedPatient) return [];
+  return getPatientHistory(selectedPatient).slice(0, 60);
+}
+async function runAiRecommend(){
+  const apiBase = getApiBase();
+  const panel = document.getElementById("aiPanel");
+  const clearBtn = document.getElementById("btnAiClear");
+
+  if(!apiBase){
+    panel.style.display = "block";
+    panel.textContent = "Set API Base first (top right → API Base).";
+    clearBtn.style.display = "inline-flex";
+    return;
+  }
+  if(!selectedPatient){
+    panel.style.display = "block";
+    panel.textContent = "Select a patient first.";
+    clearBtn.style.display = "inline-flex";
+    return;
+  }
+
+  panel.style.display = "block";
+  panel.textContent = "Thinking…";
+  clearBtn.style.display = "inline-flex";
+
+  try{
+    const resp = await fetch(apiBase + "/api/ai-recommend", {
+      method:"POST",
+      headers:{ "Content-Type":"application/json" },
+      body: JSON.stringify({
+        patient: selectedPatient,
+        fund: currentFund(),
+        asOf: currentAsOf(),
+        tooth: currentToothFilter() || null,
+        history: buildAiHistory(),
+        candidates: buildAiCandidates(),
+        context: "Generate clinic-facing recommendations. Do not invent policy details."
+      })
+    });
+
+    const out = await resp.json().catch(()=>({}));
+    if(!resp.ok){
+      panel.textContent = "AI error: " + (out.error || ("HTTP " + resp.status));
+      return;
+    }
+    panel.textContent = out.text || "(No output)";
+  } catch(e){
+    panel.textContent = "Network error calling AI endpoint.";
+  }
+}
+
+function bindUI(){
+  document.getElementById("patientSearch").addEventListener("input", renderPatientList);
+  document.getElementById("search").addEventListener("input", renderResults);
+  document.getElementById("fundSelect").addEventListener("change", ()=>{ renderHistory(); renderResults(); });
+  document.getElementById("toothFilter").addEventListener("input", renderResults);
+  document.getElementById("asOf").addEventListener("change", ()=>{ renderHistory(); renderResults(); });
+
+  document.getElementById("btnApi").addEventListener("click", openApi);
+  document.getElementById("btnAdd").addEventListener("click", ()=>openAdd(""));
+  document.getElementById("btnAi").addEventListener("click", runAiRecommend);
+
+  document.getElementById("btnAiClear").addEventListener("click", ()=>{
+    document.getElementById("aiPanel").style.display = "none";
+    document.getElementById("aiPanel").textContent = "";
+    document.getElementById("btnAiClear").style.display = "none";
+  });
+
+  document.getElementById("apiClose").addEventListener("click", closeApi);
+  document.getElementById("apiCancel").addEventListener("click", closeApi);
+  document.getElementById("apiSave").addEventListener("click", saveApi);
+
+  document.getElementById("addClose").addEventListener("click", closeAdd);
+  document.getElementById("addCancel").addEventListener("click", closeAdd);
+  document.getElementById("addSave").addEventListener("click", submitClaim);
+
+  document.getElementById("apiModal").addEventListener("click", (e)=>{ if(e.target.id === "apiModal") closeApi(); });
+  document.getElementById("addModal").addEventListener("click", (e)=>{ if(e.target.id === "addModal") closeAdd(); });
+}
+
+window.addEventListener("DOMContentLoaded", async ()=>{
+  const asOf = document.getElementById("asOf");
+  if (asOf && !asOf.value) asOf.value = isoToday();
+
+  bindUI();
+
+  try{
+    await loadAll();
+  } catch(e){
+    document.getElementById("eligibilityResults").innerHTML =
+      `<div class="msg bad">Failed to load JSON. Check paths: ${esc(String(e))}</div>`;
+    return;
+  }
+
+  const names = allPatientNames();
+  selectedPatient = names[0] || null;
+
+  renderPatientList();
+  fillAddPatientOptions();
+  renderHistory();
+  renderResults();
+});
+</script>
 </body>
 </html>
