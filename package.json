@@ -1,0 +1,25 @@
+{
+  "name": "clinicflow",
+  "version": "0.1.0",
+  "description": "ClinicFlow Admin",
+  "main": "electron/main.js",
+  "author": "ClinicFlow",
+  "license": "UNLICENSED",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --mac"
+  },
+  "devDependencies": {
+    "electron": "^29.0.0",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "com.clinicflow.admin",
+    "productName": "ClinicFlow",
+    "mac": {
+      "category": "public.app-category.medical",
+      "target": ["dmg"],
+      "icon": "build/icon.icns"
+    }
+  }
+}
