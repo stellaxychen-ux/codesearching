@@ -4265,6 +4265,16 @@
       "tooth": null,
       "fund": null,
       "notes": ""
+    },
+    {
+      "date": "2026-01-23",
+      "code": "324",
+      "tooth": [
+        "47"
+      ],
+      "fund": "medibank",
+      "notes": "",
+      "enteredAt": "2026-01-29T04:58:35.179Z"
     }
   ],
   "Kay Qian Sun": [
